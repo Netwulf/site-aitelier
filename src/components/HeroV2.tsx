@@ -73,14 +73,14 @@ export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
                 ? "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.9] tracking-tight text-ancestral-white"
                 : "glitch text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.9] tracking-tight text-ancestral-white"
               }
-              data-text="Escola de arte para a era da IA."
+              data-text="Onde Criadores de Mundos se Encontram."
               variants={prefersReducedMotion ? {} : textReveal}
               initial="hidden"
               animate="visible"
             >
-              Escola de <span className="text-tech-olive">arte</span>
+              Onde Criadores de <span className="text-tech-olive">Mundos</span>
               <br />
-              para a era da IA.
+              se Encontram.
             </motion.h1>
 
             {/* Subtitle - poetic positioning */}
