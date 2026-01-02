@@ -15,14 +15,14 @@ export const ManifestoMoment = () => {
           className="border-l-8 border-tech-olive pl-8 md:pl-12"
         >
           <blockquote className="text-2xl md:text-4xl lg:text-5xl font-serif italic leading-tight text-void-black">
-            A arte que ensinamos cria.
+            Onde pessoas viram autores.
             <br />
-            A arte que criamos ensina.
+            Onde ideias viram obras.
           </blockquote>
 
           <p className="mt-8 text-lg md:text-xl text-void-black/70 font-sans">
             Nem tudo que importa é visível —
-            <span className="text-tech-olive font-medium"> mas tudo pode ser organizado.</span>
+            <span className="text-tech-olive font-medium"> mas tudo pode ser criado.</span>
           </p>
         </motion.div>
       </div>

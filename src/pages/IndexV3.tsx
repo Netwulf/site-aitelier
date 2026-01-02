@@ -86,7 +86,7 @@ const IndexV3 = () => {
                 <div className="h-px bg-matrix-green/50 flex-1" />
               </div>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brutal-white leading-tight">
-                Tudo pode ser <span className="text-matrix-green">criado.</span>
+                Torne o inconsciente <span className="text-matrix-green">consciente.</span>
               </h2>
             </div>
 
