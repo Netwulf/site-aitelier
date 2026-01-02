@@ -23,11 +23,11 @@ export const CLONES: Record<string, CloneConfig> = {
       endpoint: "https://unified-clones-api-production.up.railway.app/neil_gaiman/chat",
     },
     suggestedPrompts: [
-      "How do I overcome writer's block?",
-      "What makes a story truly memorable?",
-      "Tell me about the power of imagination",
+      "Como supero o bloqueio criativo?",
+      "O que torna uma história memorável?",
+      "Me conta sobre o poder da imaginação",
     ],
-    placeholder: "Ask about writing, stories, imagination...",
+    placeholder: "Pergunte sobre escrita, histórias, imaginação...",
     status: "active",
   },
 
@@ -49,11 +49,11 @@ export const CLONES: Record<string, CloneConfig> = {
       endpoint: "https://unified-clones-api-production.up.railway.app/ursula_k_le_guin/chat",
     },
     suggestedPrompts: [
-      "What is the Carrier Bag Theory of Fiction?",
-      "How do I build a believable world?",
-      "Tell me about the power of imagination in dark times",
+      "O que é a Teoria do Saco de Carregar da Ficção?",
+      "Como construo um mundo crível?",
+      "Me conta sobre o poder da imaginação em tempos difíceis",
     ],
-    placeholder: "Ask about worldbuilding, stories, resistance...",
+    placeholder: "Pergunte sobre mundos, histórias, resistência...",
     status: "active",
   },
 
@@ -153,11 +153,11 @@ export const CLONES: Record<string, CloneConfig> = {
       endpoint: "https://unified-clones-api-production.up.railway.app/david_lynch/chat",
     },
     suggestedPrompts: [
-      "How do I catch the big fish of ideas?",
-      "What is the role of intuition in creation?",
-      "Tell me about consciousness and meditation",
+      "Como pesco os grandes peixes de ideias?",
+      "Qual o papel da intuição na criação?",
+      "Me conta sobre consciência e meditação",
     ],
-    placeholder: "Ask about creativity, consciousness, dreams...",
+    placeholder: "Pergunte sobre criatividade, consciência, sonhos...",
     status: "active",
   },
 
