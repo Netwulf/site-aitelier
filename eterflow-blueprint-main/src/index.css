@@ -1,0 +1,483 @@
+/* AI.TELIER - BRUTALISTA TECH ANCESTRAL */
+/* Design System v3 - Olive Green / Black / Cream */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   DESIGN TOKENS - CSS Variables
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Dark Theme (Default) */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 90 52% 57%;  /* Olive #8dc75e */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
+
+    --accent: 263 70% 58%; /* Violet #7C3AED - raro */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 90 52% 57%;
+
+    --radius: 0px;
+  }
+
+  /* Light Theme */
+  .light {
+    --background: 40 20% 96%;  /* #F5F5F0 */
+    --foreground: 0 0% 0%;
+
+    --card: 40 33% 98%;  /* #FAF8F5 */
+    --card-foreground: 0 0% 0%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 90 52% 57%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 263 70% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 90 52% 57%;
+  }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-neutral-0 text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+  }
+
+  /* Headlines - Space Grotesk */
+  h1, h2, h3, h4, h5, h6,
+  .font-display, .font-heading {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* Code - IBM Plex Mono */
+  code, pre, kbd, samp,
+  .font-mono, .font-code {
+    font-family: 'IBM Plex Mono', Monaco, monospace;
+  }
+
+  /* Brutalista Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-olive;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-olive-500;
+  }
+}
+
+/* ============================================
+   BRUTALISTA COMPONENTS
+   ============================================ */
+
+@layer components {
+
+  /* ---------- Typography ---------- */
+
+  .text-olive {
+    @apply text-olive-400;
+  }
+
+  .text-highlight {
+    @apply text-olive-400 font-semibold;
+  }
+
+  .text-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ---------- Buttons ---------- */
+
+  .btn-brutal {
+    @apply inline-flex items-center justify-center;
+    @apply bg-olive text-neutral-0 font-semibold;
+    @apply px-6 py-3;
+    @apply border-2 border-neutral-0;
+    @apply shadow-hard;
+    @apply transition-all duration-150;
+    @apply hover:translate-x-[-2px] hover:translate-y-[-2px];
+    @apply hover:shadow-hard-lg;
+    @apply active:translate-x-0 active:translate-y-0;
+    @apply active:shadow-none;
+  }
+
+  .btn-brutal-outline {
+    @apply inline-flex items-center justify-center;
+    @apply bg-transparent text-white font-semibold;
+    @apply px-6 py-3;
+    @apply border-2 border-white;
+    @apply transition-all duration-150;
+    @apply hover:bg-white hover:text-neutral-0;
+  }
+
+  .btn-brutal-dark {
+    @apply inline-flex items-center justify-center;
+    @apply bg-neutral-0 text-white font-semibold;
+    @apply px-6 py-3;
+    @apply border-2 border-olive;
+    @apply shadow-hard-olive;
+    @apply transition-all duration-150;
+    @apply hover:translate-x-[-2px] hover:translate-y-[-2px];
+    @apply hover:shadow-[6px_6px_0_0_#8dc75e];
+    @apply active:translate-x-0 active:translate-y-0;
+    @apply active:shadow-none;
+  }
+
+  /* ---------- Cards ---------- */
+
+  .card-brutal {
+    @apply bg-neutral-100 border-2 border-neutral-200;
+    @apply p-6;
+  }
+
+  .card-brutal-outline {
+    @apply bg-transparent border-2 border-neutral-200;
+    @apply p-6;
+    @apply transition-colors duration-200;
+    @apply hover:border-olive;
+  }
+
+  .card-brutal-light {
+    @apply bg-neutral-800 text-neutral-0;
+    @apply border-2 border-neutral-0;
+    @apply p-6;
+  }
+
+  /* ---------- Sections ---------- */
+
+  .section-dark {
+    @apply bg-neutral-0 text-white;
+  }
+
+  .section-light {
+    @apply bg-neutral-800 text-neutral-0;
+  }
+
+  .section-cream {
+    @apply bg-neutral-900 text-neutral-0;
+  }
+
+  /* ---------- Borders & Dividers ---------- */
+
+  .border-brutal {
+    @apply border-2 border-neutral-0;
+  }
+
+  .border-brutal-olive {
+    @apply border-2 border-olive;
+  }
+
+  .divider {
+    @apply w-full h-px bg-neutral-200;
+  }
+
+  .divider-olive {
+    @apply w-full h-px bg-olive;
+  }
+
+  /* ---------- Text Accents ---------- */
+
+  .accent-bar {
+    @apply w-12 h-1 bg-olive mb-4;
+  }
+
+  .accent-bar-lg {
+    @apply w-24 h-1 bg-olive mb-6;
+  }
+
+  /* ---------- Film Grain Overlay ---------- */
+
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-[0.04];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    animation: grain 6s steps(4) infinite;
+  }
+
+  /* ---------- Links ---------- */
+
+  .link-brutal {
+    @apply text-olive underline underline-offset-4;
+    @apply transition-colors duration-150;
+    @apply hover:text-olive-300;
+  }
+
+  .link-brutal-dark {
+    @apply text-neutral-0 underline underline-offset-4;
+    @apply transition-colors duration-150;
+    @apply hover:text-olive;
+  }
+
+  /* ---------- Badges ---------- */
+
+  .badge-brutal {
+    @apply inline-flex items-center;
+    @apply px-3 py-1;
+    @apply bg-olive text-neutral-0;
+    @apply text-xs font-mono font-semibold uppercase tracking-wider;
+  }
+
+  .badge-brutal-outline {
+    @apply inline-flex items-center;
+    @apply px-3 py-1;
+    @apply border border-olive text-olive;
+    @apply text-xs font-mono font-semibold uppercase tracking-wider;
+  }
+
+  .badge-brutal-violet {
+    @apply inline-flex items-center;
+    @apply px-3 py-1;
+    @apply bg-violet text-white;
+    @apply text-xs font-mono font-semibold uppercase tracking-wider;
+  }
+
+  /* ---------- Inputs ---------- */
+
+  .input-brutal {
+    @apply w-full bg-neutral-100 text-white;
+    @apply px-4 py-3;
+    @apply border-2 border-neutral-200;
+    @apply placeholder:text-neutral-400;
+    @apply focus:border-olive focus:outline-none;
+    @apply transition-colors duration-150;
+  }
+
+  .input-brutal-light {
+    @apply w-full bg-white text-neutral-0;
+    @apply px-4 py-3;
+    @apply border-2 border-neutral-0;
+    @apply placeholder:text-neutral-400;
+    @apply focus:border-olive focus:outline-none;
+    @apply transition-colors duration-150;
+  }
+
+  /* ---------- Image Containers ---------- */
+
+  .img-brutal {
+    @apply border-2 border-neutral-0;
+    @apply grayscale;
+    @apply transition-all duration-300;
+    @apply hover:grayscale-0;
+  }
+
+  .img-brutal-color {
+    @apply border-2 border-neutral-0;
+  }
+
+  /* ---------- Blockquote ---------- */
+
+  .blockquote-brutal {
+    @apply border-l-4 border-olive;
+    @apply pl-6 py-2;
+    @apply text-neutral-400 italic;
+  }
+
+  /* ---------- Code Blocks ---------- */
+
+  .code-brutal {
+    @apply bg-neutral-100 text-olive-300;
+    @apply px-2 py-1;
+    @apply font-mono text-sm;
+    @apply border border-neutral-200;
+  }
+
+  .pre-brutal {
+    @apply bg-neutral-100;
+    @apply p-4;
+    @apply font-mono text-sm;
+    @apply border-2 border-neutral-200;
+    @apply overflow-x-auto;
+  }
+
+  /* ---------- Animations ---------- */
+
+  .animate-in {
+    @apply opacity-0 translate-y-4;
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .animate-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .stagger > * {
+    @apply opacity-0 translate-y-4;
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .stagger.visible > *:nth-child(1) { transition-delay: 0ms; @apply opacity-100 translate-y-0; }
+  .stagger.visible > *:nth-child(2) { transition-delay: 80ms; @apply opacity-100 translate-y-0; }
+  .stagger.visible > *:nth-child(3) { transition-delay: 160ms; @apply opacity-100 translate-y-0; }
+  .stagger.visible > *:nth-child(4) { transition-delay: 240ms; @apply opacity-100 translate-y-0; }
+  .stagger.visible > *:nth-child(5) { transition-delay: 320ms; @apply opacity-100 translate-y-0; }
+  .stagger.visible > *:nth-child(6) { transition-delay: 400ms; @apply opacity-100 translate-y-0; }
+
+  /* ---------- Cursor Blink (Terminal Aesthetic) ---------- */
+
+  .cursor-blink::after {
+    content: '_';
+    @apply text-olive;
+    animation: blink 1s steps(1) infinite;
+  }
+
+  /* ---------- Marquee ---------- */
+
+  .marquee {
+    @apply overflow-hidden whitespace-nowrap;
+  }
+
+  .marquee-content {
+    @apply inline-block;
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+@layer utilities {
+  /* Selection */
+  ::selection {
+    @apply bg-olive text-neutral-0;
+  }
+
+  /* Focus States - Brutalista */
+  .focus-brutal {
+    @apply focus:outline-none focus:ring-2 focus:ring-olive focus:ring-offset-2 focus:ring-offset-neutral-0;
+  }
+
+  /* Container Widths */
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4;
+  }
+
+  .container-wide {
+    @apply max-w-6xl mx-auto px-4;
+  }
+
+  /* Aspect Ratios */
+  .aspect-hero {
+    aspect-ratio: 21/9;
+  }
+
+  .aspect-editorial {
+    aspect-ratio: 3/4;
+  }
+
+  /* Hide Scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Grid Patterns */
+  .grid-brutal {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Violet Accent (Rare Use) */
+  .text-violet-accent {
+    @apply text-violet;
+  }
+
+  .bg-violet-accent {
+    @apply bg-violet;
+  }
+
+  .border-violet-accent {
+    @apply border-violet;
+  }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .btn-brutal,
+  .btn-brutal-dark,
+  .btn-brutal-outline {
+    @apply w-full justify-center;
+  }
+}

@@ -1,0 +1,540 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aitelier.com/schemas/brand-config-v2.3.json",
+  "title": "Brand Configuration Schema v2.3 (Visual System Prompts)",
+  "description": "Defines brand identity for Instagram Content Creator v2.3 - Added visual_system_prompts for custom visual style variants with intelligent style selection",
+  "type": "object",
+  "required": ["id", "name", "design", "content"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "minLength": 2,
+      "maxLength": 50,
+      "description": "Brand identifier (lowercase, alphanumeric, hyphens only)",
+      "examples": ["alan-nicolas", "academia-lendaria", "my-brand"]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "Brand display name",
+      "examples": ["Alan Nicolas", "Academia Lendária", "My Brand"]
+    },
+    "handle": {
+      "type": "string",
+      "pattern": "^@[a-zA-Z0-9_.]+$",
+      "maxLength": 30,
+      "description": "Instagram handle (optional)",
+      "examples": ["@oalanicolas", "@academialendaria"]
+    },
+    "avatar": {
+      "type": "object",
+      "description": "Brand avatar/logo configuration (optional)",
+      "properties": {
+        "source": {
+          "enum": ["local", "remote"],
+          "description": "Avatar source type"
+        },
+        "path": {
+          "type": "string",
+          "description": "File path (for local) or URL (for remote)"
+        },
+        "fallback": {
+          "type": "string",
+          "format": "uri",
+          "description": "Fallback URL if primary source fails"
+        }
+      },
+      "required": ["source"],
+      "additionalProperties": false
+    },
+    "design": {
+      "type": "object",
+      "description": "Visual design configuration (REQUIRED)",
+      "required": ["colors"],
+      "properties": {
+        "typography": {
+          "type": "object",
+          "description": "Typography configuration (optional, for extended brands)",
+          "additionalProperties": true
+        },
+        "visual_style": {
+          "type": "object",
+          "description": "Visual styling options (optional, for extended brands)",
+          "additionalProperties": true
+        },
+        "colors": {
+          "type": "object",
+          "description": "Brand color palette (all colors in hex format)",
+          "required": ["primary", "secondary", "accent"],
+          "properties": {
+            "primary": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$",
+              "description": "Primary brand color (hex format)",
+              "examples": ["#000000"]
+            },
+            "secondary": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$",
+              "description": "Secondary brand color (hex format)",
+              "examples": ["#FFFFFF"]
+            },
+            "accent": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$",
+              "description": "Accent/highlight color (hex format)",
+              "examples": ["#FFD700"]
+            },
+            "text": {
+              "type": "object",
+              "description": "Text colors (optional)",
+              "properties": {
+                "primary": {
+                  "type": "string",
+                  "pattern": "^#[0-9A-Fa-f]{6}$"
+                },
+                "secondary": {
+                  "type": "string",
+                  "pattern": "^#[0-9A-Fa-f]{6}$"
+                }
+              },
+              "additionalProperties": true
+            },
+            "background": {
+              "type": "object",
+              "description": "Background colors (optional)",
+              "properties": {
+                "main": {
+                  "type": "string",
+                  "pattern": "^#[0-9A-Fa-f]{6}$"
+                },
+                "card": {
+                  "type": "string",
+                  "pattern": "^#[0-9A-Fa-f]{6}$"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "voice": {
+      "type": "object",
+      "description": "Brand voice configuration (optional, for extended brands)",
+      "properties": {
+        "tone": {
+          "type": "string"
+        },
+        "personality": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "language_style": {
+          "type": "string"
+        },
+        "avoid_terms": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "preferred_phrases": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "content": {
+      "type": "object",
+      "description": "Content preferences and image style (REQUIRED in v2.1+)",
+      "required": ["image_style"],
+      "properties": {
+        "image_style": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Freeform description of the brand's image aesthetic and photography style. Replaces the deprecated 'theme' field, allowing unlimited customization.",
+          "examples": [
+            "High-contrast black and white photography with dramatic lighting and minimalist composition",
+            "Cosmic brutalist photography with sacred geometry, dimensional portals, and neon green accents",
+            "Professional commercial photography with clean modern composition, ultra-sharp focus, perfect lighting"
+          ]
+        },
+        "visual_system_prompts": {
+          "type": "array",
+          "description": "Custom visual style prompt variants for image generation (optional, v2.3+). Define multiple style variants that the Visual Planner can intelligently select from based on slide content.",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "base_prompt", "suitable_for", "aspect_ratio"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9-]+$",
+                "description": "Unique identifier for this style variant (lowercase, alphanumeric, hyphens only)",
+                "examples": ["neo-brutalist", "full-rotoscope", "liminal-hybrid"]
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "description": "Human-readable name for this style variant",
+                "examples": ["Neo-Brutalist Grid System", "Full Rotoscope Animation", "Liminal Hybrid (Sketch + Photo)"]
+              },
+              "base_prompt": {
+                "type": "string",
+                "minLength": 50,
+                "description": "Complete DALL-E/Imagen base prompt with comprehensive style instructions. This will be combined with contextual scene descriptions during generation.",
+                "examples": [
+                  "Neo-brutalist visual system, highly structured, Bauhaus constructivist aesthetic. CORE PALETTE: Black, Cream (#E8DCC8), Phosphorescent Neon Green (#00FF00)..."
+                ]
+              },
+              "suitable_for": {
+                "type": "array",
+                "items": { "type": "string" },
+                "minItems": 1,
+                "description": "Use cases where this style is most appropriate. Used by Visual Planner for intelligent style selection.",
+                "examples": [
+                  ["conceptual", "structural", "data-heavy", "technical"],
+                  ["emotional", "narrative", "personal", "journey"],
+                  ["transitional", "transformative", "threshold", "hybrid"]
+                ]
+              },
+              "aspect_ratio": {
+                "type": "string",
+                "pattern": "^\\d+:\\d+$",
+                "description": "Preferred aspect ratio for this style variant",
+                "examples": ["4:5", "16:9", "1:1"]
+              },
+              "creature_catalog_enabled": {
+                "type": "boolean",
+                "description": "Enable creature catalog selection for this visual style (optional, Story 070)"
+              },
+              "creature_catalog_path": {
+                "type": "string",
+                "description": "Path to the creature catalog JSON file (required if creature_catalog_enabled is true)"
+              },
+              "children_catalog_enabled": {
+                "type": "boolean",
+                "description": "Enable children catalog selection for this visual style (optional, Story 070)"
+              },
+              "children_catalog_path": {
+                "type": "string",
+                "description": "Path to the children catalog JSON file (required if children_catalog_enabled is true)"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "branding": {
+      "type": "object",
+      "description": "Branding display options (optional, for extended brands)",
+      "additionalProperties": true
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Brand config metadata (optional)",
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+$"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "product": {
+      "type": "object",
+      "description": "Product or service information (optional, v2.2+). Helps AI understand what the brand sells or provides.",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Product/service description - what you offer",
+          "examples": [
+            "Online fitness coaching program focused on sustainable lifestyle transformation",
+            "SaaS platform for automating social media content creation",
+            "Personal development coaching for high-performers"
+          ]
+        },
+        "value_proposition": {
+          "type": "string",
+          "description": "Core value proposition - the primary benefit customers receive",
+          "examples": [
+            "Get fit without sacrificing your lifestyle or spending hours in the gym",
+            "Create a month's worth of engaging social content in under an hour",
+            "Unlock peak performance without burnout"
+          ]
+        },
+        "key_features": {
+          "type": "array",
+          "description": "List of key features or differentiators",
+          "items": { "type": "string" },
+          "examples": [
+            ["Personalized workout plans", "Nutrition guidance", "24/7 community support", "Progress tracking app"],
+            ["AI-powered content generation", "Multi-platform scheduling", "Analytics dashboard", "Brand voice training"]
+          ]
+        },
+        "category": {
+          "type": "string",
+          "description": "Product category for context",
+          "examples": ["SaaS", "Coaching", "E-commerce", "Digital Products", "Services", "Education"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "icp": {
+      "type": "object",
+      "description": "Ideal Customer Profile (optional, v2.2+). Defines target audience demographics, psychographics, and behaviors.",
+      "properties": {
+        "demographics": {
+          "type": "object",
+          "description": "Demographic information about target audience",
+          "properties": {
+            "age_range": {
+              "type": "string",
+              "examples": ["25-45", "18-35", "30-50"]
+            },
+            "occupation": {
+              "type": "array",
+              "items": { "type": "string" },
+              "examples": [["Entrepreneurs", "Executives", "Professionals"]]
+            },
+            "income_level": {
+              "type": "string",
+              "examples": ["$50k-$100k", "$100k+", "Middle to upper class"]
+            },
+            "location": {
+              "type": "string",
+              "examples": ["Global, English-speaking", "United States", "Urban areas"]
+            },
+            "education": {
+              "type": "string",
+              "examples": ["College educated", "High school or above", "Advanced degrees"]
+            }
+          },
+          "additionalProperties": true
+        },
+        "psychographics": {
+          "type": "object",
+          "description": "Psychological attributes, values, and lifestyle",
+          "properties": {
+            "values": {
+              "type": "array",
+              "items": { "type": "string" },
+              "examples": [["Excellence", "Growth", "Authenticity", "Freedom"]]
+            },
+            "interests": {
+              "type": "array",
+              "items": { "type": "string" },
+              "examples": [["Personal development", "Technology", "Fitness", "Business"]]
+            },
+            "challenges": {
+              "type": "array",
+              "items": { "type": "string" },
+              "examples": [["Time management", "Work-life balance", "Staying motivated"]]
+            },
+            "tech_savviness": {
+              "type": "string",
+              "examples": ["Tech-savvy", "Moderate", "Early adopter"]
+            },
+            "buying_behavior": {
+              "type": "string",
+              "examples": ["Research-driven", "Impulse buyer", "Value-conscious"]
+            }
+          },
+          "additionalProperties": true
+        },
+        "pain_points": {
+          "type": "array",
+          "description": "Key pain points or problems the target audience faces",
+          "items": { "type": "string" },
+          "examples": [
+            ["Lack of time to exercise", "Confused by conflicting fitness advice", "Previous failed attempts"],
+            ["Struggling to create consistent content", "Don't know what to post", "Social media feels overwhelming"]
+          ]
+        },
+        "goals": {
+          "type": "array",
+          "description": "What the target audience wants to achieve",
+          "items": { "type": "string" },
+          "examples": [
+            ["Get in shape sustainably", "Build healthy habits", "Feel confident"],
+            ["Build personal brand", "Grow social media presence", "Attract more clients"]
+          ]
+        },
+        "objections": {
+          "type": "array",
+          "description": "Common objections or hesitations when considering your product",
+          "items": { "type": "string" },
+          "examples": [
+            ["Too expensive", "Don't have time", "Tried similar things before"],
+            ["Worried about learning curve", "Concerned about quality", "Unsure if it fits my niche"]
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "offers": {
+      "type": "array",
+      "description": "Product or service offerings (optional, v2.2+). List of specific offers, tiers, or packages.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Offer name",
+            "examples": ["Starter Package", "Premium Coaching", "Enterprise Plan"]
+          },
+          "description": {
+            "type": "string",
+            "description": "What's included in this offer",
+            "examples": [
+              "30-day transformation program with weekly check-ins",
+              "1-on-1 coaching with unlimited messaging support"
+            ]
+          },
+          "price_point": {
+            "type": "string",
+            "description": "Price or pricing tier",
+            "examples": ["$297", "$997/month", "$49-99", "Custom pricing"]
+          },
+          "usp": {
+            "type": "string",
+            "description": "Unique selling point for this specific offer",
+            "examples": [
+              "Perfect for beginners - no gym required",
+              "Best value - includes all premium features"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "narrative": {
+      "type": "object",
+      "description": "Brand narrative and storytelling elements (optional, v2.2+). The story behind the brand.",
+      "properties": {
+        "mission": {
+          "type": "string",
+          "description": "Brand mission statement - why the brand exists",
+          "examples": [
+            "To empower people to achieve sustainable fitness transformations without sacrificing their lifestyle",
+            "To democratize content creation through AI, making every entrepreneur a content creator"
+          ]
+        },
+        "vision": {
+          "type": "string",
+          "description": "Long-term vision - where the brand is heading",
+          "examples": [
+            "A world where everyone has access to personalized fitness guidance",
+            "Becoming the #1 AI-powered content platform for entrepreneurs"
+          ]
+        },
+        "origin_story": {
+          "type": "string",
+          "description": "How and why the brand started - the founder's journey",
+          "examples": [
+            "After struggling with my own weight for years and trying every fad diet, I discovered the power of sustainable habit change...",
+            "I was spending 20+ hours per week on social media content and realized there had to be a better way..."
+          ]
+        },
+        "core_message": {
+          "type": "string",
+          "description": "The primary message or belief the brand promotes",
+          "examples": [
+            "Fitness doesn't have to be complicated or time-consuming",
+            "Great content comes from authenticity, not perfection",
+            "You already have everything you need to succeed"
+          ]
+        },
+        "brand_manifesto": {
+          "type": "string",
+          "description": "Brand philosophy or manifesto - deeper beliefs and values",
+          "examples": [
+            "We believe everyone deserves to feel strong and confident. We reject quick fixes and promote sustainable change. We build community, not competition.",
+            "We stand for authentic connection over vanity metrics. We believe AI should amplify human creativity, not replace it. We empower creators to own their voice."
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "references": {
+      "type": "object",
+      "description": "Visual and competitive references (optional, v2.2+). Inspiration and market context.",
+      "properties": {
+        "visual_inspirations": {
+          "type": "array",
+          "description": "Brands or styles that inspire the visual direction",
+          "items": { "type": "string" },
+          "examples": [
+            ["Apple - clean minimalism", "Nike - bold energy", "Patagonia - authentic lifestyle"],
+            ["Airbnb - friendly approachable", "Stripe - technical precision", "Notion - calm productivity"]
+          ]
+        },
+        "competitor_analysis": {
+          "type": "array",
+          "description": "Key competitors and differentiation points",
+          "items": {
+            "type": "object",
+            "properties": {
+              "competitor": {
+                "type": "string",
+                "description": "Competitor name"
+              },
+              "what_they_do_well": {
+                "type": "string",
+                "description": "Their strengths"
+              },
+              "how_we_differ": {
+                "type": "string",
+                "description": "Our differentiation"
+              }
+            },
+            "additionalProperties": true
+          },
+          "examples": [
+            [
+              {
+                "competitor": "Peloton",
+                "what_they_do_well": "Premium community experience",
+                "how_we_differ": "More affordable, no equipment required, flexible scheduling"
+              }
+            ]
+          ]
+        },
+        "style_references": {
+          "type": "array",
+          "description": "URLs, Pinterest boards, or descriptions of visual style references",
+          "items": { "type": "string" },
+          "examples": [
+            ["pinterest.com/board/minimal-fitness", "Moody editorial photography", "High-contrast B&W portraits"]
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

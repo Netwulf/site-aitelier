@@ -1,0 +1,612 @@
+# ============================================================
+# AI.TELIER STUDIO - BRIEFING SINTETICA FACTORY
+# ============================================================
+# Estrutura de pensamento para refatoração narrativa
+# Gerado: 2025-12-27
+# Status: DRAFT - Aguardando validação
+# ============================================================
+
+meta:
+  project_name: "AI.TELIER Studio"
+  slug: "ai-telier-studio"
+  type: "institutional-site"
+  creative_mode: "artistic"
+  aesthetic_direction: "brutal-poetry" # Manter estética atual
+
+# ============================================================
+# ESTRATÉGIA CENTRAL
+# ============================================================
+strategy:
+  # A transformação que o site precisa fazer no visitante
+  transformation:
+    before: "Pessoa competente que sente que algo está errado - sua complexidade não aparece publicamente"
+    after: "Pessoa que entende que existe um caminho para expressar sua identidade sem virar personagem genérico"
+
+  # Propósito único
+  purpose: |
+    Fazer o visitante qualificado sentir: "Finalmente alguém que entende o problema.
+    E parece ter um caminho que não exige que eu finja ser outra pessoa."
+
+  # Posicionamento
+  positioning:
+    what: "Studio de Storytelling e Identidade"
+    how: "Antiagência - sistema enxuto sem burocracia"
+    why: "Extraímos o código-fonte de quem você é e criamos sistemas que fazem isso existir no mundo"
+
+  # Público-alvo
+  audience:
+    ideal:
+      - "Fundadores com densidade interna que não aparece"
+      - "Experts que querem se diferenciar sem virar personagem"
+      - "Criadores que buscam algo que dure, não que viralize"
+    anti:
+      - "Quem quer fórmula pronta"
+      - "Quem quer viralizar rápido"
+      - "Quem quer 'postar mais'"
+      - "Quem terceiriza pensamento"
+
+# ============================================================
+# ARCO NARRATIVO (Estrutura de 5 Atos)
+# ============================================================
+narrative:
+  # O gancho que captura em 10 segundos
+  hook: |
+    "Extraímos o código-fonte de quem você é
+    e criamos sistemas que fazem isso existir no mundo."
+
+  # Estrutura fractal: 1-3-3-3-3-3-1
+  structure:
+
+    # ─────────────────────────────────────────────────────────
+    # PRÓLOGO (1 seção) - O Gancho
+    # ─────────────────────────────────────────────────────────
+    prologue:
+      temperature: "COLD"
+      section: "Hero"
+      purpose: "Estabelecer identidade e capturar atenção"
+      content:
+        headline: "AI.TELIER"
+        subline: "Studio de Storytelling e Identidade"
+        statement: "Extraímos o código-fonte de quem você é e criamos sistemas que fazem isso existir no mundo."
+        cta: "Iniciar conversa"
+      visual:
+        background: "portal-cosmic ou hero-portal existente"
+        effects: "glitch sutil no headline, matrix green preservado"
+
+    # ─────────────────────────────────────────────────────────
+    # BREATHER 1 - Transição para o problema
+    # ─────────────────────────────────────────────────────────
+    breather_1:
+      type: "silence"
+      temperature: "COLD"
+      purpose: "Pausa antes da dor"
+
+    # ─────────────────────────────────────────────────────────
+    # ATO I (3 seções) - O Problema
+    # ─────────────────────────────────────────────────────────
+    act_1:
+      title: "O Problema"
+      temperature: "COLD → COOL"
+      purpose: "Articular a dor que o visitante sente mas não consegue nomear"
+
+      sections:
+        - id: "problem-1"
+          headline: "A maioria das pessoas competentes hoje vive abaixo da própria complexidade."
+          content: "Não por falta de talento. Mas porque os modelos disponíveis exigem simplificação, personagem e conformidade."
+
+        - id: "problem-2"
+          headline: "Você até consegue jogar o jogo. Mas sente que algo está errado."
+          content: "Fingir ser normal cansa. Fingir ser genérico mata."
+
+        - id: "problem-3"
+          headline: "A IA avança e torna irrelevante tudo que é repetitivo, raso ou copiável."
+          content: "O que sobra é o insubstituível — mas quase ninguém sabe como expressar isso publicamente."
+
+    # ─────────────────────────────────────────────────────────
+    # BREATHER 2 - Pergunta de transição
+    # ─────────────────────────────────────────────────────────
+    breather_2:
+      type: "question"
+      temperature: "COOL"
+      content: "E se o problema não fosse você, mas o modelo?"
+      purpose: "Virar a perspectiva - do problema para a visão"
+
+    # ─────────────────────────────────────────────────────────
+    # ATO II (3 seções) - A Visão
+    # ─────────────────────────────────────────────────────────
+    act_2:
+      title: "A Visão"
+      temperature: "COOL → NEUTRAL"
+      purpose: "Apresentar uma nova forma de ver o mundo"
+
+      sections:
+        - id: "vision-1"
+          headline: "Se a IA faz igual, não é o seu trabalho."
+          content: "O trabalho humano agora é: pensamento, visão, síntese, linguagem, presença."
+
+        - id: "vision-2"
+          headline: "Isso não se resolve com mais conteúdo."
+          content: "Se resolve com clareza sobre quem você é e como isso se manifesta."
+
+        - id: "vision-3"
+          headline: "AI.TELIER é um studio onde marcas pessoais são tratadas como obras vivas."
+          content: "Trabalhamos com fundadores, experts e criadores que já têm densidade interna, mas não conseguem traduzir isso em presença pública, linguagem e negócio."
+
+    # ─────────────────────────────────────────────────────────
+    # BREATHER 3 - Manifesto
+    # ─────────────────────────────────────────────────────────
+    breather_3:
+      type: "manifesto"
+      temperature: "NEUTRAL"
+      content: |
+        "Não criamos personagens.
+        Não seguimos tendências.
+        Não vendemos fórmulas.
+
+        Organizamos identidades complexas
+        em arquiteturas claras de expressão,
+        narrativa e negócio."
+      purpose: "Posição forte antes do método"
+
+    # ─────────────────────────────────────────────────────────
+    # ATO III (4 seções) - Como Trabalhamos (Brand OS)
+    # ─────────────────────────────────────────────────────────
+    act_3:
+      title: "Como Trabalhamos"
+      temperature: "NEUTRAL → WARM"
+      purpose: "Apresentar o método sem vender curso"
+      subtitle: "BRAND OS - O sistema operacional da sua identidade"
+
+      sections:
+        - id: "method-1"
+          phase: "01 — Mapeamento"
+          content: "Entendemos a pessoa antes da marca. Visão, contradições, limites, potência e verdade."
+          output: "Código-fonte extraído"
+
+        - id: "method-2"
+          phase: "02 — Direção"
+          content: "Transformamos identidade em narrativa, linguagem e posicionamento público."
+          output: "Arquitetura de expressão"
+
+        - id: "method-3"
+          phase: "03 — Manifestação"
+          content: "Marca, imagem, estética e expressão visual coerente. Do rascunho ao filme final."
+          output: "Identidade manifesta"
+
+        - id: "method-4"
+          phase: "04 — Sustentação"
+          content: "Um sistema vivo que gera conteúdo a partir do código-fonte. Alimentado por IA, guiado por verdade. Sempre coerente. Sempre evoluindo."
+          output: "Motor de presença ativo"
+
+    # ─────────────────────────────────────────────────────────
+    # BREATHER 4 - Quote de autoridade
+    # ─────────────────────────────────────────────────────────
+    breather_4:
+      type: "quote"
+      temperature: "WARM"
+      content: "Usamos inteligência artificial como extensão criativa. Nunca como atalho."
+      author: "AI.TELIER"
+      purpose: "Posição sobre IA antes de mostrar capacidades"
+
+    # ─────────────────────────────────────────────────────────
+    # ATO IV (2-3 seções) - Capacidades
+    # ─────────────────────────────────────────────────────────
+    act_4:
+      title: "Imagem, Cinema e Manifesto"
+      temperature: "WARM"
+      purpose: "Mostrar que storytelling vai além de palavras"
+
+      sections:
+        - id: "capabilities-1"
+          headline: "Storytelling não vive só em palavras."
+          content: "Ele ganha corpo em imagem. Tempo em cinema. Permanência em sistemas."
+
+        - id: "capabilities-2"
+          headline: "Criamos ensaios, fotografias, filmes e manifestos visuais."
+          content: "Com linguagem autoral e direção clara. Do storyboard ao frame final."
+
+    # ─────────────────────────────────────────────────────────
+    # PORTFÓLIO (Seção visual)
+    # ─────────────────────────────────────────────────────────
+    portfolio:
+      title: "Portfólio"
+      temperature: "NEUTRAL"
+      purpose: "Provar com trabalho real"
+      subtitle: "Expressões do studio em diferentes camadas"
+
+      filters:
+        - "Pessoas"
+        - "Cinema & Manifesto"
+        - "Identidade & Sistema"
+        - "Arquivo Autoral"
+
+      note: "Cada projeto nasce de uma identidade diferente. O olhar é o mesmo."
+      cta: "Ver projetos"
+
+      # Assets a serem adicionados
+      assets_needed:
+        - type: "images"
+          description: "Fotos de projetos de marca pessoal"
+        - type: "videos"
+          description: "Filmes/manifestos produzidos"
+        - type: "visual_arts"
+          description: "Identidades visuais criadas"
+
+    # ─────────────────────────────────────────────────────────
+    # BREATHER 5 - Diferenciação
+    # ─────────────────────────────────────────────────────────
+    breather_5:
+      type: "stat"
+      temperature: "COOL"
+      content: "0"
+      label: "equipe grande. ruído. burocracia."
+      purpose: "Transição para antiagência"
+
+    # ─────────────────────────────────────────────────────────
+    # ATO V (2 seções) - Infraestrutura + Para Quem É
+    # ─────────────────────────────────────────────────────────
+    act_5:
+      title: "A Infraestrutura"
+      temperature: "COOL → HOT"
+      purpose: "Explicar modelo operacional e filtrar visitantes"
+
+      sections:
+        - id: "infra-1"
+          headline: "Não operamos como agência tradicional."
+          content: "Sem equipe grande. Sem ruído. Sem burocracia. Criamos um sistema enxuto que funciona como antiagência."
+
+        - id: "infra-2"
+          headline: "O motor roda. A essência permanece."
+          content: "Você recebe direção criativa, conteúdo estruturado e presença contínua — sem depender de inspiração, sem terceirizar pensamento."
+
+    # ─────────────────────────────────────────────────────────
+    # PARA QUEM É (Filtro)
+    # ─────────────────────────────────────────────────────────
+    filter:
+      title: "Para Quem É"
+      temperature: "HOT"
+      purpose: "Filtro forte - visitante decide se continua"
+
+      is_for:
+        headline: "É para quem:"
+        items:
+          - "já tem repertório mas não consegue expressar"
+          - "sente que sua complexidade não aparece"
+          - "quer se diferenciar sem virar personagem"
+          - "busca algo que dure"
+
+      not_for:
+        headline: "Não é para quem:"
+        items:
+          - "quer fórmula pronta"
+          - "quer viralizar rápido"
+          - "quer 'postar mais'"
+          - "terceiriza pensamento"
+
+    # ─────────────────────────────────────────────────────────
+    # BREATHER 6 - Preparação para oferta
+    # ─────────────────────────────────────────────────────────
+    breather_6:
+      type: "question"
+      temperature: "WARM"
+      content: "Pronto para existir de verdade?"
+      purpose: "Transição para oferta"
+
+    # ─────────────────────────────────────────────────────────
+    # A OFERTA
+    # ─────────────────────────────────────────────────────────
+    offer:
+      title: "A Oferta"
+      temperature: "WARM"
+      purpose: "Apresentar o que entregamos sem preço"
+
+      headline: "Arquitetura de Marca + Motor de Presença"
+      subline: "Um sistema completo para sustentar sua identidade pública, narrativa e conteúdo sem improviso, sem personagem, sem trabalho fantasma."
+
+      phases:
+        - name: "Fase 1 — Arquitetura"
+          items:
+            - "Diagnóstico profundo"
+            - "Tese central"
+            - "Linguagem própria"
+            - "Estética"
+            - "Posicionamento"
+            - "Fronteiras"
+
+        - name: "Fase 2 — Motor de Presença"
+          items:
+            - "Direção criativa"
+            - "Planejamento"
+            - "Conteúdo estruturado"
+            - "Sistema com IA operando nos bastidores"
+            - "Atualização constante"
+            - "Coerência no tempo"
+
+      cta: "Iniciar conversa"
+
+    # ─────────────────────────────────────────────────────────
+    # EPÍLOGO - CTA Final
+    # ─────────────────────────────────────────────────────────
+    epilogue:
+      temperature: "COLD"
+      section: "CTA Final"
+      purpose: "Fechamento com clareza"
+
+      content:
+        headline: "Se você sente que sua marca não expressa quem você é de verdade,"
+        subline: "talvez a gente deva conversar."
+        cta: "Iniciar conversa"
+
+    # ─────────────────────────────────────────────────────────
+    # ELEMENTOS MANTIDOS
+    # ─────────────────────────────────────────────────────────
+    preserved:
+      - component: "Partners"
+        purpose: "Quem confiou - prova social"
+        placement: "Após portfólio ou antes do CTA final"
+
+      - component: "Journal"
+        purpose: "Blog conectado - conteúdo de profundidade"
+        placement: "Footer ou seção dedicada"
+        note: "Manter integração Substack RSS"
+
+      - component: "Footer"
+        purpose: "Institucional"
+        content:
+          - "AI.TELIER"
+          - "Studio de Storytelling e Identidade"
+          - "Brasil"
+          - "[Instagram] [Email]"
+
+# ============================================================
+# MAPA DE TEMPERATURA (Jornada Emocional)
+# ============================================================
+temperature_map:
+  journey: |
+    COLD (Hero)
+    → COLD (Problema - impacto)
+    → COOL (Visão - informativo)
+    → NEUTRAL (Método - técnico)
+    → WARM (Capacidades - humanização)
+    → NEUTRAL (Portfólio - demonstração)
+    → COOL (Infraestrutura - contexto)
+    → HOT (Para Quem É - filtro/urgência)
+    → WARM (Oferta - convite)
+    → COLD (CTA Final - impacto de fechamento)
+
+  rationale: |
+    O arco começa frio (impacto), aquece gradualmente conforme
+    mostramos método e capacidades, atinge pico quente no filtro
+    (momento de decisão), e esfria novamente para o CTA final
+    (seriedade, peso da decisão).
+
+# ============================================================
+# DIREÇÃO VISUAL
+# ============================================================
+visual:
+  # Manter estética existente
+  preserve:
+    - "Brutal poetry aesthetic"
+    - "Matrix green (#00FF41) como cor primária"
+    - "Glass morphism nos cards"
+    - "Backgrounds escuros com gradients"
+    - "Tipografia monospace para elementos técnicos"
+    - "Serif (Georgia) para momentos poéticos"
+    - "Efeitos de glitch sutis"
+    - "Grid patterns e scanlines"
+
+  # Ajustes para nova narrativa
+  evolve:
+    - "Menos terminal/código, mais editorial"
+    - "Breathers mais amplos (60-70vh)"
+    - "Tipografia ainda mais dramática nos headlines"
+    - "Transições de temperatura mais marcadas"
+    - "Portfólio como galeria visual imersiva"
+
+# ============================================================
+# FRASES DE IMPACTO (Curação)
+# ============================================================
+impact_phrases:
+  hooks:
+    - "Extraímos o código-fonte de quem você é"
+    - "A maioria das pessoas competentes vive abaixo da própria complexidade"
+    - "Se a IA faz igual, não é o seu trabalho"
+    - "Fingir ser normal cansa. Fingir ser genérico mata."
+
+  manifestos:
+    - "Não criamos personagens. Não seguimos tendências. Não vendemos fórmulas."
+    - "Onde a narrativa vira infraestrutura."
+    - "Usamos IA como extensão criativa. Nunca como atalho."
+    - "O motor roda. A essência permanece."
+
+  closers:
+    - "Se você sente que sua marca não expressa quem você é de verdade, talvez a gente deva conversar."
+    - "Tech + Ancestral."
+
+# ============================================================
+# DECISÕES PENDENTES
+# ============================================================
+pending_decisions:
+  - question: "Manter seção de eventos?"
+    options:
+      - "Sim - como agenda do studio"
+      - "Não - foco total em serviço"
+    default: "Não"
+
+  - question: "Journal/Blog como seção ou só footer?"
+    options:
+      - "Seção dedicada antes do CTA"
+      - "Apenas link no footer"
+    default: "Link no footer"
+
+  - question: "Portfólio com filtros ou scroll contínuo?"
+    options:
+      - "Filtros (Pessoas, Cinema, Identidade, Arquivo)"
+      - "Scroll contínuo estilo galeria"
+    default: "Filtros"
+
+  - question: "CTA único ou dois botões?"
+    options:
+      - "Único: 'Iniciar conversa'"
+      - "Dois: 'Ver portfólio' + 'Iniciar conversa'"
+    default: "Único"
+
+# ============================================================
+# CONSULTA AOS CLONES (2025-12-27)
+# ============================================================
+clone_consultations:
+  completed: true
+  document: "docs/prd/ai-telier-clone-consultations.md"
+
+  synthesis:
+    jobs: "Muito explicativo. Cortar para 4-5 seções. Portfólio como herói."
+    disney: "Falta espelho emocional. Começar reconhecendo ELES."
+    leonardo: "Falta fluxo natural. Gradientes, não blocos."
+    schwartz: "Erro de consciência. Mercado é Problem Aware."
+    hormozi: "Oferta abstrata. Tangibilizar deliverables."
+
+  consensus:
+    - "MENOS TEXTO, MAIS VISUAL"
+    - "PORTFÓLIO COMO PROVA (não esconder)"
+    - "REDUZIR SEÇÕES (4-5, não 9)"
+    - "COMEÇAR PELO VISITANTE (espelho antes de vitrine)"
+    - "OMITIR O MÉTODO (guardar para interessados)"
+
+# ============================================================
+# ESTRUTURA REVISADA (PÓS-BENCHMARK RESEARCH)
+# ============================================================
+# IMPORTANTE: As opiniões dos clones vieram com viés de landing page.
+# Após deep research, a estrutura correta é INSTITUCIONAL.
+# Ver: docs/prd/ai-telier-benchmark-research.md
+# ============================================================
+
+institutional_structure:
+  note: "Baseada em benchmarks: Pentagram, Collins, Porto Rocha, DixonBaxi"
+
+  principle: |
+    Landing page: convence, explica, vende
+    Site institucional: demonstra, mostra, existe
+
+  navigation:
+    items:
+      - "Work"
+      - "Studio"
+      - "Journal"
+      - "Contact"
+    style: "minimalista, sem dropdown"
+
+  pages:
+    home:
+      sections:
+        - id: "hero"
+          type: "statement"
+          options:
+            - "Statement simples: 'AI.TELIER — Studio de Storytelling e Identidade'"
+            - "Projeto de destaque em full-bleed"
+          note: "NÃO é pitch, é identidade"
+
+        - id: "selected-work"
+          type: "portfolio-preview"
+          quantity: "4-6 projetos"
+          layout: "grid assimétrico"
+          images: "full-bleed, grandes"
+          cta: "Ver todos os projetos →"
+          note: "O trabalho fala. Sem explicações."
+
+        - id: "brief-about"
+          type: "teaser"
+          content: "2-3 frases sobre o studio"
+          cta: "Conhecer o studio →"
+          note: "Não manifesto. Não filosofia. Fato."
+
+      what_NOT_to_include:
+        - "Seção 'O Problema'"
+        - "Seção 'A Visão'"
+        - "Seção 'Como Trabalhamos'"
+        - "Seção 'Para Quem É'"
+        - "CTA agressivo"
+        - "Testimonials"
+        - "Preços"
+
+    work:
+      title: "Work"
+      path: "/work"
+      content:
+        - "Grid de projetos"
+        - "Filtros: Pessoas | Cinema | Identidade"
+        - "Cada projeto → página de case study"
+      case_study_structure:
+        - "Hero image full-bleed"
+        - "Título + cliente + ano"
+        - "Descrição breve (2-3 parágrafos)"
+        - "Galeria de imagens"
+        - "Próximo projeto"
+      status: "CRIAR (placeholder até ter assets)"
+
+    studio:
+      title: "Studio"
+      path: "/studio"
+      content:
+        - "Statement do studio (1-2 parágrafos)"
+        - "Taynã Puri — Founder (foto + bio curta)"
+        - "Objetivo do projeto"
+        - "Localização"
+      what_NOT_to_include:
+        - "Manifesto de 10 parágrafos"
+        - "Timeline da empresa"
+        - "Missão/Visão/Valores"
+        - "Testemunhos"
+      status: "CRIAR"
+
+    journal:
+      title: "Journal"
+      path: "/journal"
+      content:
+        - "Artigos + Pensamentos"
+        - "Eventos (se houver)"
+        - "Newsletter signup integrado"
+      note: "Autoridade através de pensamento, não SEO"
+      status: "MANTER + ADICIONAR newsletter"
+
+    contact:
+      title: "Contact"
+      path: "/contact"
+      content:
+        - "Email: hello@aitelier.studio (ou similar)"
+        - "Instagram: @aitelier.studio"
+        - "São Paulo, Brasil"
+        - "Formulário simples: Nome + Email + Mensagem"
+      what_NOT_to_include:
+        - "Formulário com 10 campos"
+        - "'Selecione seu orçamento'"
+        - "Chatbot"
+        - "FAQ"
+      status: "CRIAR"
+
+  footer:
+    items:
+      - "Newsletter signup (sutil)"
+      - "Email"
+      - "Instagram"
+      - "São Paulo, Brasil"
+    style: "Minimalista, pode ter personalidade"
+
+# ============================================================
+# PRÓXIMOS PASSOS
+# ============================================================
+next_steps:
+  1: "Validar estrutura institucional com João"
+  2: "Definir statement do studio (1-2 frases)"
+  3: "Coletar assets: fotos Taynã + projetos portfolio"
+  4: "Definir bio curta de Taynã Puri"
+  5: "Refatorar para estrutura: Home + Work + Studio + Journal + Contact"
+  6: "Manter estética brutal-poetry mas simplificar navegação"
+  7: "Implementar newsletter signup no footer/journal"
+
+# ============================================================
+# DOCUMENTOS DE REFERÊNCIA
+# ============================================================
+reference_docs:
+  prd: "docs/prd/ai-telier-studio-refactor.md"
+  clone_consultations: "docs/prd/ai-telier-clone-consultations.md"
+  benchmark_research: "docs/prd/ai-telier-benchmark-research.md"

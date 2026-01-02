@@ -1,0 +1,16 @@
+{
+  "name": "AI.TELIER",
+  "short_name": "AI.TELIER",
+  "description": "Studio de Criação, Storytelling e IA. Filmmakers, estrategistas e criadores transformando identidade em presença.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00ff88",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

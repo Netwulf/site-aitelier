@@ -1,0 +1,7 @@
+project_id = "fjgjhedstnhdqgobnjlc"
+
+[functions.scrape-instagram]
+verify_jwt = false
+
+[functions.analyze-profile]
+verify_jwt = false

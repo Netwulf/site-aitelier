@@ -1,0 +1,410 @@
+{
+  "id": "taypuri",
+  "name": "Taynã Puri",
+  "handle": "@taypuri",
+  "avatar": {
+    "source": "local",
+    "path": "expansion-packs/instagram-content-creator/assets/brands/taypuri/avatar.png",
+    "fallback": "https://via.placeholder.com/56"
+  },
+  "design": {
+    "colors": {
+      "primary": "#000000",
+      "secondary": "#FFFFFF",
+      "accent": "#8dc75e",
+      "text": {
+        "primary": "#FFFFFF",
+        "secondary": "#FFFFFF",
+        "highlight": "#8dc75e"
+      },
+      "background": {
+        "main": "#000000",
+        "card": "#1A1A1A"
+      }
+    },
+    "typography": {
+      "primary_font": {
+        "family": "Space Grotesk",
+        "source": "google-fonts",
+        "usage": "Títulos, capas, headlines - hierarquia visual forte",
+        "weights": [400, 600, 700, 900],
+        "url": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;900&display=swap",
+        "fallback": "sans-serif"
+      },
+      "secondary_font": {
+        "family": "Inter",
+        "source": "google-fonts",
+        "usage": "Body text principal - maior parte do conteúdo legível",
+        "weights": [400, 500, 600],
+        "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap",
+        "fallback": "sans-serif"
+      },
+      "tertiary_font": {
+        "family": "IBM Plex Mono",
+        "source": "google-fonts",
+        "usage": "Elementos técnicos, código, dados, detalhes monospace",
+        "weights": [400, 600],
+        "url": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap",
+        "fallback": "monospace"
+      },
+      "scale": {
+        "hero": "72px",
+        "h1": "48px",
+        "h2": "36px",
+        "body": "28px",
+        "caption": "18px"
+      }
+    },
+    "visual_style": {
+      "image_treatment": "editorial-brutalism",
+      "border_radius": "0px",
+      "shadow": "none",
+      "overlay_opacity": 0.3,
+      "cover_guidelines": "Capas devem ser SEM TEXTO, puramente visuais e impactantes. Foco máximo em composição visual forte para capturar atenção imediata."
+    },
+    "slide_variations": {
+      "default": {
+        "background": "#000000",
+        "text_primary": "#FFFFFF",
+        "text_secondary": "#CCCCCC",
+        "accent": "#8dc75e"
+      },
+      "light": {
+        "background": "#F5F5F0",
+        "text_primary": "#000000",
+        "text_secondary": "#333333",
+        "accent": "#8dc75e",
+        "usage": "1-2 slides por carrossel para quebrar monotonia visual"
+      },
+      "cream": {
+        "background": "#FAF8F5",
+        "text_primary": "#1A1A1A",
+        "text_secondary": "#444444",
+        "accent": "#6B8E4E",
+        "usage": "Variação suave para slides de transição ou contexto"
+      }
+    }
+  },
+  "voice": {
+    "tone": "jornalistico-questionador",
+    "personality": [
+      "Escritor direto",
+      "Jornalista investigativo",
+      "Rebelde pragmático",
+      "Questionador incisivo"
+    ],
+    "language_style": "natural-eloquent",
+    "writing_style": {
+      "format": "journalistic-conversational",
+      "sentence_structure": {
+        "type": "complete-sentences-only",
+        "avoid_fragments": true,
+        "use_articles": true,
+        "use_conjunctions": ["e", "mas", "porque", "então", "quando"],
+        "use_prepositions": ["de", "para", "com", "sobre", "entre"]
+      },
+      "numerical_expression": {
+        "write_percentages_as_words": true,
+        "avoid_math_symbols": [">", "<", "=", "+", "-"],
+        "use_comparison_words": ["maior que", "menor que", "igual a", "mais do que"]
+      },
+      "narrative_approach": {
+        "structure": "story-arc",
+        "phases": {
+          "setup": "slides 1-3: Hook with intrigue, challenge assumptions",
+          "conflict": "slides 4-7: Reveal tension, contradictions, hidden truths",
+          "resolution": "slides 8-10: Perspective shift, actionable insight, invitation"
+        },
+        "use_transitions": true,
+        "link_slides": true
+      },
+      "address_style": {
+        "primary": "second-person (você)",
+        "secondary": "first-person-plural (a gente, nós)",
+        "use_rhetorical_questions": true,
+        "conversational_markers": ["olha", "veja", "repara", "sabe o que", "e se eu te contar"]
+      },
+      "concreteness": {
+        "ground_abstractions": true,
+        "use_daily_examples": true,
+        "metaphors_from": "cotidiano, objetos físicos, experiências compartilhadas",
+        "avoid_generic_concepts": true
+      },
+      "emotional_palette": [
+        "ironia inteligente",
+        "frustração controlada",
+        "esperança pragmática",
+        "curiosidade provocativa",
+        "indignação justificada"
+      ],
+      "journalistic_elements": {
+        "attribute_sources": true,
+        "use_lede_hooks": true,
+        "contextualize_data": true,
+        "inverted_pyramid": true
+      },
+      "quality_gates": {
+        "read_aloud_test": true,
+        "coffee_conversation_test": "Could you say this to a friend over coffee?",
+        "emotional_resonance_test": "Does reader FEEL something, not just KNOW?",
+        "credibility_test": "Could this appear in a news article?"
+      }
+    },
+    "writing_principles": [
+      "Verdade sem filtro > conforto do leitor",
+      "Simplicidade eloquente > complexidade forçada",
+      "Conversa real > pose de guru",
+      "Arte vem da autenticidade, não de artifício",
+      "Confronta ideias, não pessoas",
+      "Escreve como fala: direto, sem rodeios"
+    ],
+    "avoid_terms": [
+      "talvez",
+      "pode ser",
+      "tipo assim",
+      "basicalmente",
+      "portal",
+      "manifeste",
+      "transcenda",
+      "sagrado",
+      "cósmico",
+      "desperte",
+      "ative",
+      "integre",
+      "atravesse",
+      "geometria",
+      "ancestralidade",
+      "porra",
+      "caralho",
+      "merda",
+      "foda",
+      "MIMIMI",
+      "covarde",
+      "lixo"
+    ],
+    "preferred_patterns": [
+      "Frases completas com contexto e implicação",
+      "Perguntas-acusação que contêm resposta implícita",
+      "Afirmações fortes sem hedge words",
+      "Metáforas concretas do cotidiano",
+      "Linguagem coloquial com punch mas bem escrita",
+      "Verbos de ação naturais (faz, cria, muda, para)",
+      "Ironia estrutural com aspas como questionamento",
+      "Escalada de envolvimento (distante → pessoal)"
+    ],
+    "examples_good_copy": [
+      "A USP lançou a Cátedra de Inteligência Artificial Responsável, em parceria com o Google — um centro permanente dedicado a estudar e propor caminhos para 'uso ético e seguro' da IA.",
+      "O Google — uma das Big Tech que mais depende de IA — agora ajuda a escrever o futuro das regras no Brasil. Isso protege as pessoas… ou protege o próprio Google da concorrência?",
+      "Regulação mal feita pode travar startups, limitar experimentos, burocratizar pesquisa e afastar novos talentos. Concentra poder nas poucas empresas que já dominam a IA.",
+      "A busca por eletricidade cresce mais rápido que qualquer outra fonte de energia. Ela ainda representa só 20% do consumo global… mas já move 40% da economia mundial.",
+      "A inteligência artificial está acelerando a crise energética que ela mesma cria. Cada modelo de IA precisa de imensas quantidades de energia e data centers colossais.",
+      "A escola te ensinou que aprender é um processo passivo, lento e interminável. Te disseram que você precisa estar 'pronto' antes de fazer qualquer coisa — fundamental, médio, faculdade, mestrado. E você nunca começa de fato.",
+      "A obesidade mental acontece quando você consome sem propósito. Estuda 'porque precisa'. Acumula 'para um dia usar'. Mas não há fogo, não há calor, não há transformação. É energia morta."
+    ],
+    "examples_bad_copy": [
+      "Atravesse o portal de transformação",
+      "Manifeste a geometria sagrada do digital",
+      "As raízes do futuro clamam por ação",
+      "Desperte seu código ancestral",
+      "Ative a consciência cósmica",
+      "Integre as pontes entre mundos"
+    ]
+  },
+  "content": {
+    "image_style": "Editorial illustration style. Storyboard aesthetic with cinematic framing. Hand-drawn ink sketch quality on paper texture. Newspaper/journal visual language. Clean structured composition. Intentional sketches with editorial quality. Visual reference: quality editorial, newspaper illustration style, cinematic storyboards. Black/white/cream palette with olive green (#8dc75e) as accent. Covers must be TEXT-FREE, purely visual.",
+    "dalle_prompts": {
+      "style_modifiers": [
+        "editorial illustration style",
+        "storyboard cinematic framing",
+        "newspaper editorial visual",
+        "hand-drawn ink sketch quality",
+        "clean grid composition",
+        "structured layout",
+        "journal notebook aesthetic",
+        "olive green #8dc75e accent highlights",
+        "preto/branco/creme palette",
+        "high contrast lighting",
+        "minimalist essentialism style",
+        "text-free composition for covers"
+      ],
+      "subject_focus": "conceptual-editorial",
+      "default_composition": "editorial-structured"
+    },
+    "copy_preferences": {
+      "emoji_usage": "minimal-natural",
+      "headline_style": "direct-confrontational",
+      "sentence_structure": "Jornalístico. Frases completas com contexto, insight e implicação. Bem escrito e envolvente.",
+      "question_style": "perguntas-acusação que contêm resposta implícita",
+      "tone_guidelines": [
+        "Fala como pessoa real, não como coach",
+        "Usa linguagem coloquial sem perder inteligência",
+        "Confronta com PERGUNTAS INTELIGENTES, não com agressividade ou palavrões",
+        "Estilo JORNALÍSTICO: contexto + insight + implicação",
+        "Prefere 'você' a 'o indivíduo'",
+        "Usa contrações naturais: 'tá', 'pra', 'cê'",
+        "NUNCA usa palavrões ou linguagem vulgar",
+        "Tom de jornalista investigativo, não de coach agressivo"
+      ],
+      "highlight_guidelines": [
+        "SEMPRE destaque 2-3 palavras juntas, ou frases pequenas (2-5 palavras)",
+        "NUNCA destaque apenas 1 palavra isolada",
+        "Exemplos bons: 'barata e abundante', 'Mais prototipagem rápida', 'perda de tempo'",
+        "Exemplos ruins: 'Mental', 'Ative', 'Conecte' (apenas 1 palavra)",
+        "Use 1-2 highlights por slide, mas cada um com múltiplas palavras"
+      ],
+      "cta_verbs": [
+        "Faz",
+        "Para",
+        "Cria",
+        "Muda",
+        "Testa",
+        "Começa",
+        "Decide",
+        "Escolhe",
+        "Experimenta",
+        "Constrói"
+      ]
+    },
+    "visual_system_prompts": [
+      {
+        "id": "shamanic-cinematic",
+        "name": "Shamanic Futurism Cinema",
+        "base_prompt": "CINEMATIC SHAMANIC FUTURISM. Shot on Arri Alexa 65, Panavision anamorphic primes 40-100mm. Real photography aesthetic NOT 3D render. Feature film quality - Blade Runner 2049 meets Planet Earth II meets Annihilation. :: ENVIRONMENT: Bioengineered wilderness, nature enhanced by symbiotic tech. Massive trees with bioluminescent circuitry in bark. Overgrown brutalist ruins as substrate for new ecosystem. Water everywhere: rain, mist, flooded areas. Perpetual twilight: blue hour, golden hour, or deep night. :: LIGHTING: ONLY motivated practical sources - bioluminescence is REAL light. High contrast 6:1 to 10:1 ratio, deep shadows, glowing highlights. Multi-source color: cyan from fungal, amber from sap, green from moss, magenta from flowers. Volumetric atmosphere catches ALL light. :: COLOR: Vibrant bioluminescent primaries: CYAN, EMERALD, AMBER, MAGENTA, VIOLET on earth tone base. No flat neon - all glow has DEPTH. Blade Runner 2049 + Annihilation grading. :: CAMERA: Observational distance OR intimate macro. Shallow DoF T1.4-T2.8. Anamorphic oval bokeh, horizontal flares. Frame holds on moments. :: TEXTURE: Organic 35mm film grain 400-800 ISO. Material reality: fur, wet surfaces, glow depth. Slight halation. Rain on lens occasionally. :: FORBIDDEN: Videogame CGI, flat digital illustration, uniform black backgrounds, clean sci-fi sterility, cartoonish proportions, static flat lighting, HDR crunchiness, ANY TEXT.",
+        "suitable_for": [
+          "covers",
+          "visionary",
+          "transformational",
+          "ecosystem",
+          "nature-tech",
+          "consciousness",
+          "ritual",
+          "mythic"
+        ],
+        "aspect_ratio": "16:9",
+        "creature_catalog_enabled": true,
+        "creature_catalog_path": "expansion-packs/instagram-content-creator/config/creature-catalog.json",
+        "children_catalog_enabled": true,
+        "children_catalog_path": "expansion-packs/instagram-content-creator/config/children-catalog.json"
+      },
+      {
+        "id": "urban-brutalist",
+        "name": "Urban Brutalist Photography",
+        "base_prompt": "Black and white atmospheric urban photography with cold desaturated tones, brutal concrete geometry, raw industrial structures, tunnels, overpasses, urban architectural voids. Deep blacks and harsh white light creating high contrast. Grainy film texture, analog imperfections, slight blur from motion, subtle noise. :: GEOMETRIC DIGITAL INTERVENTIONS: Flat solid color blocks in olive green (#8dc75e), sharp rectangles and bars cutting through the photo, aligned like OS UI fragments. No gradients, only flat color. :: FIGURES: When present appear as silhouettes or partial profiles, hooded, walking or turning away, never posed, never smiling, anonymous, cinematic, outsider energy. :: DIGITAL ARTIFACTS: Micro-glitches, scanlines, pixel fragments, horizontal data streaks, extremely subtle matrix-like rain used as texture not illustration. No heavy sci-fi VFX. :: TENSION: Visual tension between gritty analog photograph and razor-sharp digital overlays. Anti-corporate, anti-polished, anti-algorithm aesthetic. Editorial resistance and manifesto energy. :: MOOD: Dystopian contemporary realism, systemic rupture, a glitch in reality. Clean composition, strong negative space, graphic hierarchy. :: FORBIDDEN: 3D renders, glossy surfaces, surreal fantasy elements, soft gradients, warm saturated colors, ANY VISIBLE TEXT OR LETTERS OR WORDS on image.",
+        "suitable_for": [
+          "covers",
+          "confrontational",
+          "structural",
+          "systemic",
+          "manifesto",
+          "data-heavy"
+        ],
+        "aspect_ratio": "16:9"
+      },
+      {
+        "id": "full-rotoscope",
+        "name": "Waking Life Rotoscope",
+        "base_prompt": "Waking Life rotoscoping style, hand-drawn outlines with organic wobble, painterly cell-shading, surreal shifting contours. Realistic human proportions but with dreamlike warping at the edges. Minimal color gradients, flat muted tones with olive green (#8dc75e) as occasional unexpected color accent. Background half-rendered, half-sketch, as if reality is dissolving. Subtle trembling lines, slight motion blur even in still frame. Analog film grain over digital drawing. :: THEMES: Questioning reality, exploring possibilities, consciousness awakening, modern life tension. Characters appear engaged, curious, or in moment of realization - never sad or melancholic. :: COMPOSITION: Mid-shot or full-body in everyday environments that feel slightly unreal or bending, with objects stretching or melting subtly. :: FORBIDDEN: Sad expressions, melancholic faces, tears, depression, glossy lighting, anime shine, perfect symmetry, heavy stylization. :: AESTHETIC: Waking Life (2001), A Scanner Darkly, indie rotoscope animation, dreamlike realism. NO TEXT on image.",
+        "suitable_for": [
+          "narrative",
+          "emotional",
+          "journey",
+          "personal",
+          "problem",
+          "introspection"
+        ],
+        "aspect_ratio": "16:9"
+      },
+      {
+        "id": "liminal-hybrid",
+        "name": "Liminal Hybrid Rotoscope",
+        "base_prompt": "THRESHOLD HYBRID: Subject in aggressive sketch overlay, environment as soft photo base with granular texture. :: CORE STYLE: Digital Rotoscoping Animation, Waking Life style, Richard Linklater inspired. :: LINE WORK: Bold outlines, vibrating lines only on the subject. :: TEXTURE: Intense cross-hatching on the figure, environment has heavy film grain texture overlay. :: ATMOSPHERE: Subtle visual instability, high contrast between the sketch subject and the photographic background. :: Muted color palette on the environment (teal/taupe), subject uses saturated color accents. :: AI.TELIER CONCEPTUAL LAYER: Brutalist composition, CORE PALETTE accents (Neon Green #8dc75e / Black / Cream), threshold between states visualization. :: COMPOSITION: Cinematic composition, soft depth of field, angular perspective. ABSOLUTELY NO TEXT OR LETTERS OR WORDS on image.",
+        "suitable_for": [
+          "insight",
+          "solution",
+          "transition",
+          "cta",
+          "transformation"
+        ],
+        "aspect_ratio": "16:9"
+      }
+    ]
+  },
+  "branding": {
+    "show_header": true,
+    "header_position": "center"
+  },
+  "expert_photos": {
+    "expert_id": "taypuri",
+    "photo_library_path": "assets/image-library/expert/expert-tay/resized",
+    "usage_priority": "high",
+    "categories": {
+      "portrait": "8 fotos profissionais (Tay_AI series) - headshots para slides de CTA e autoridade",
+      "casual": "13 fotos casuais autênticas (taypuri_pic series) - conexão pessoal e storytelling",
+      "working": "Fotos casuais também funcionam para slides de processo e jornada"
+    },
+    "photo_collections": [
+      {
+        "name": "Tay_AI Series",
+        "count": 8,
+        "files": ["Tay_AI11.jpg", "Tay_AI12.jpg", "Tay_AI13.jpg", "Tay_AI17.jpg", "Tay_AI18.jpg", "Tay_AI21.jpg", "Tay_AI25.jpg", "Tay_AI28.jpg"],
+        "description": "Retratos profissionais em estilo editorial - para autoridade e CTAs"
+      },
+      {
+        "name": "Casual Pics",
+        "count": 13,
+        "files": ["taypuri_pic1.jpg", "taypuri_pic2.jpg", "taypuri_pic3.jpg", "taypuri_pic4.jpg", "taypuri_pic5.jpg", "taypuri_pic6.jpg", "taypuri_pic7.jpg", "taypuri_pic8.jpg", "taypuri_pic9.jpg", "taypuri_pic10.jpg", "taypuri_pic11.jpg", "taypuri_pic12.jpg", "taypuri_pic13.jpg"],
+        "description": "Fotos autênticas e casuais - para storytelling, conexão e realness"
+      }
+    ],
+    "notes": "21 fotos indexadas no sistema de busca semântica. Todas redimensionadas para min 1080px. Priorizar Tay_AI series para CTAs e autoridade, casual pics para narrativa e conexão.",
+    "indexed_in_library": true,
+    "total_count": 21
+  },
+  "experimental": {
+    "plan_b_styles": {
+      "woodcut_engraving": {
+        "status": "backlog",
+        "description": "Estilo gravura/nanquim inspirado em @SahilBloom - The 5 Types of Wealth",
+        "visual_reference": "Heavy cross-hatching, vintage editorial illustration, newspaper engravings",
+        "when_to_test": "Para slides conceituais e metáforas visuais fortes",
+        "prompt_additions": [
+          "woodcut engraving style",
+          "vintage editorial illustration",
+          "heavy cross-hatching ink work",
+          "newspaper engraving aesthetic",
+          "book illustration quality"
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "created": "2025-11-04T00:00:00Z",
+    "updated": "2025-12-03T20:40:00.000Z",
+    "version": "4.2",
+    "active": true,
+    "description": "Taypuri - Escritor rebelde autêntico. Tom: confrontativo-direto, jornalista investigativo. Visual: editorial-illustration (storyboard, cinema, esboço). Preto/branco/creme + verde oliva. Typography: Space Grotesk (títulos grandes) + Inter (body) + IBM Plex Mono (técnico). Copy: direto, sem rodeios, com punch. 21 fotos expert indexadas. v4.2: Expert photos configuradas e indexadas no sistema de busca semântica.",
+    "tags": [
+      "taypuri",
+      "authentic-voice",
+      "confrontational-writer",
+      "journalist-rebel",
+      "editorial-illustration",
+      "v4.2-expert-photos",
+      "storyboard-aesthetic",
+      "ink-sketch",
+      "natural-eloquent",
+      "google-fonts",
+      "slide-variations",
+      "semantic-search-enabled",
+      "21-expert-photos"
+    ],
+    "migration_applied": "v4.2-expert-photos-indexed",
+    "changes_v4_2": [
+      "Adicionadas 21 fotos expert ao sistema de busca semântica",
+      "Atualizada seção expert_photos com categorização detalhada",
+      "Fotos redimensionadas para min 1080px (requisito do sistema)",
+      "Configuradas 2 coleções: Tay_AI Series (8 profissionais) e Casual Pics (13 autênticas)",
+      "Sistema pronto para geração de ads com fotos reais do expert"
+    ]
+  }
+}

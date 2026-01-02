@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
+  <!-- Sankofa-inspired spiral (looking back to move forward) -->
+  <path d="M50,20 Q70,20 70,40 Q70,55 55,55 Q45,55 45,45 Q45,35 55,35" stroke-linecap="round"/>
+
+  <!-- Marajoara-inspired double spiral -->
+  <circle cx="25" cy="75" r="12" stroke-width="0.3"/>
+  <circle cx="25" cy="75" r="8" stroke-width="0.3"/>
+  <circle cx="75" cy="75" r="12" stroke-width="0.3"/>
+  <circle cx="75" cy="75" r="8" stroke-width="0.3"/>
+
+  <!-- Connecting geometric lines -->
+  <line x1="37" y1="75" x2="63" y2="75" stroke-width="0.3"/>
+  <line x1="50" y1="55" x2="50" y2="63" stroke-width="0.3"/>
+
+  <!-- Corner accents (Adinkra-style) -->
+  <path d="M10,10 L20,10 L20,20" stroke-width="0.3" fill="none"/>
+  <path d="M90,10 L80,10 L80,20" stroke-width="0.3" fill="none"/>
+  <path d="M10,90 L20,90 L20,80" stroke-width="0.3" fill="none"/>
+  <path d="M90,90 L80,90 L80,80" stroke-width="0.3" fill="none"/>
+</svg>
