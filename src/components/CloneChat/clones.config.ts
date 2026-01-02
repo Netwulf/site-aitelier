@@ -17,7 +17,7 @@ export const CLONES: Record<string, CloneConfig> = {
     description: "Converse com um clone cognitivo do mestre das historias. Sabedoria sobre escrita e imaginacao.",
     avatar: {
       type: "image",
-      imageUrl: "/clones/neil-gaiman.jpg",
+      imageUrl: "/clones/neil-gaiman-aitelier.png",
     },
     api: {
       endpoint: "https://unified-clones-api-production.up.railway.app/neil_gaiman/chat",
@@ -43,7 +43,7 @@ export const CLONES: Record<string, CloneConfig> = {
     description: "Converse com a mestre da ficcao cientifica e fantasia. Sabedoria sobre mundos, narrativa e resistencia.",
     avatar: {
       type: "image",
-      imageUrl: "/clones/ursula-le-guin.jpg",
+      imageUrl: "/clones/ursula-le-guin-aitelier.png",
     },
     api: {
       endpoint: "https://unified-clones-api-production.up.railway.app/ursula_k_le_guin/chat",
@@ -147,7 +147,7 @@ export const CLONES: Record<string, CloneConfig> = {
     description: "Cineasta visionario e pintor. Criador de Twin Peaks, Mulholland Drive. Mestre da consciencia e do misterio.",
     avatar: {
       type: "image",
-      imageUrl: "/clones/david-lynch.jpg",
+      imageUrl: "/clones/david-lynch-aitelier.png",
     },
     api: {
       endpoint: "https://unified-clones-api-production.up.railway.app/david_lynch/chat",
