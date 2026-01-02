@@ -73,14 +73,14 @@ export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
                 ? "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.9] tracking-tight text-ancestral-white"
                 : "glitch text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.9] tracking-tight text-ancestral-white"
               }
-              data-text="Onde Criadores de Mundos se Encontram."
+              data-text="Escola de arte para a era da IA."
               variants={prefersReducedMotion ? {} : textReveal}
               initial="hidden"
               animate="visible"
             >
-              Onde Criadores de <span className="text-tech-olive">Mundos</span>
+              Escola de <span className="text-tech-olive">arte</span>
               <br />
-              se Encontram.
+              para a era da IA.
             </motion.h1>
 
             {/* Subtitle - poetic positioning */}
@@ -92,9 +92,7 @@ export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
               animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              Onde storytelling, negócios e tecnologia
-              <br />
-              se organizam como <span className="text-tech-olive">linguagem.</span>
+              Onde Criadores de Mundos se Encontram.
             </motion.p>
 
             {/* Philosophy tagline */}
