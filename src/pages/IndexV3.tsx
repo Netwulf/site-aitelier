@@ -9,6 +9,7 @@ import { FooterV2 } from "@/components/FooterV2";
 import VisualBreather from "@/components/VisualBreather";
 import { SacredGeometryOverlay } from "@/components/SacredGeometryOverlay";
 import { ManifestoMoment } from "@/components/ManifestoMoment";
+import { ClonesShowcase } from "@/components/ClonesShowcase";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { useScrollOptimization } from "@/hooks/useScrollOptimization";
 
@@ -99,6 +100,12 @@ const IndexV3 = () => {
 
         {/* Manifesto Moment - Warm Ivory Breathing Room */}
         <ManifestoMoment />
+
+        {/* Brutal Line Divider */}
+        <div className="brutal-line-glow" />
+
+        {/* Section: AI Clones Showcase */}
+        <ClonesShowcase />
 
         {/* Brutal Line Divider */}
         <div className="brutal-line-glow" />
