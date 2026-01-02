@@ -110,6 +110,58 @@ export const CLONES: Record<string, CloneConfig> = {
   },
 
   // ============================================
+  // TAYNA PURI - Futuro Ancestral
+  // ============================================
+  "tayna-puri": {
+    id: "tayna-puri",
+    name: "Tayna Puri",
+    title: "Tayna Puri",
+    subtitle: "Futuro Ancestral",
+    category: "UPLOADED INTELLIGENCE",
+    description: "Pensador brasileiro que une sabedoria ancestral com IA. Criador da filosofia Futuro Ancestral.",
+    avatar: {
+      type: "image",
+      imageUrl: "/tayna-portraits/tayna-studio-contemplative.png",
+    },
+    api: {
+      endpoint: "https://unified-clones-api-production.up.railway.app/tayna_puri/chat",
+    },
+    suggestedPrompts: [
+      "O que e o Futuro Ancestral?",
+      "Como criar um negocio de uma pessoa so?",
+      "Como unir tecnologia e espiritualidade?",
+    ],
+    placeholder: "Pergunte sobre IA, negocios, espiritualidade...",
+    status: "active",
+  },
+
+  // ============================================
+  // DAVID LYNCH - Master of Consciousness
+  // ============================================
+  "david-lynch": {
+    id: "david-lynch",
+    name: "David Lynch",
+    title: "David Lynch",
+    subtitle: "Master of Consciousness",
+    category: "UPLOADED INTELLIGENCE",
+    description: "Cineasta visionario e pintor. Criador de Twin Peaks, Mulholland Drive. Mestre da consciencia e do misterio.",
+    avatar: {
+      type: "icon",
+      icon: "Sparkles",
+    },
+    api: {
+      endpoint: "https://unified-clones-api-production.up.railway.app/david_lynch/chat",
+    },
+    suggestedPrompts: [
+      "How do I catch the big fish of ideas?",
+      "What is the role of intuition in creation?",
+      "Tell me about consciousness and meditation",
+    ],
+    placeholder: "Ask about creativity, consciousness, dreams...",
+    status: "active",
+  },
+
+  // ============================================
   // TEMPLATE - Copy this for new clones
   // ============================================
   // "clone-slug": {

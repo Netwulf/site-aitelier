@@ -125,6 +125,15 @@ src/components/CloneChat/
 |-------|-----|-----|
 | Neil Gaiman | `/chat/neil-gaiman` | Railway |
 | Ursula K. Le Guin | `/chat/ursula-le-guin` | Railway |
+| Tayna Puri | `/chat/tayna-puri` | Railway |
+| David Lynch | `/chat/david-lynch` | Railway |
+
+## Clones Coming Soon
+
+| Clone | URL | Status |
+|-------|-----|--------|
+| Dan Koe | `/chat/dan-koe` | Sem RAG |
+| Steve Jobs | `/chat/steve-jobs` | Sem RAG |
 
 ---
 
