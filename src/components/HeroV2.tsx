@@ -28,7 +28,7 @@ export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/hero-options/Video_ai.telier01.mp4" type="video/mp4" />
         </video>
