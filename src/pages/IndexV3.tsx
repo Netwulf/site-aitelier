@@ -24,19 +24,22 @@ import concreteVoid from "@/assets/gallery/concrete-void.png";
 const triptychItems = [
   {
     title: "ESCOLA",
-    subtitle: "Formação de autores e One-Person Studios. Cursos, laboratórios, formações.",
+    tags: ["Cursos", "Laboratórios", "Formações"],
+    description: "Formação de autores e One-Person Studios.",
     href: "/escola",
     cta: "Entrar na Escola",
   },
   {
     title: "STUDIO",
-    subtitle: "Direção criativa para founders e marcas pessoais. Filmes, narrativas, presença.",
+    tags: ["Filmes", "Narrativas", "Presença"],
+    description: "Direção criativa para founders e marcas pessoais.",
     href: "/studio",
     cta: "Conversar com o Studio",
   },
   {
     title: "PLAYGROUND",
-    subtitle: "Obras, ferramentas e experimentos públicos. Experienciar, testar, imergir.",
+    tags: ["Obras", "Ferramentas", "Experimentos"],
+    description: "Espaço público para experienciar, testar, imergir.",
     href: "/playground",
     cta: "Explorar o Playground",
   },
@@ -83,7 +86,7 @@ const IndexV3 = () => {
                 <div className="h-px bg-matrix-green/50 flex-1" />
               </div>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brutal-white leading-tight">
-                Torne o inconsciente <span className="text-matrix-green">consciente.</span>
+                Tudo pode ser <span className="text-matrix-green">criado.</span>
               </h2>
             </div>
 

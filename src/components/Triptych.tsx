@@ -3,7 +3,8 @@ import { ArrowRight } from "lucide-react";
 
 interface TriptychItem {
   title: string;
-  subtitle: string;
+  tags: string[];
+  description: string;
   href: string;
   cta?: string;
 }
@@ -35,14 +36,28 @@ export const Triptych = ({ items }: TriptychProps) => {
           {/* Content */}
           <div className="relative z-10">
             {/* Title */}
-            <h3 className="text-3xl md:text-4xl font-bold text-brutal-white uppercase tracking-tight mb-4
+            <h3 className="text-3xl md:text-4xl font-bold text-brutal-white uppercase tracking-tight mb-3
                            group-hover:text-matrix-green transition-colors">
               {item.title}
             </h3>
 
-            {/* Subtitle */}
-            <p className="text-brutal-white/70 text-base md:text-lg leading-relaxed mb-8">
-              {item.subtitle}
+            {/* Tags - keywords em linha */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {item.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs font-mono uppercase tracking-wider
+                             text-warm-ivory/90 bg-warm-ivory/10
+                             px-2 py-1 rounded-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Description - mais curta */}
+            <p className="text-brutal-white/60 text-sm md:text-base leading-relaxed mb-8">
+              {item.description}
             </p>
 
             {/* CTA */}
