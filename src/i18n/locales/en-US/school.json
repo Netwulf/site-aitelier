@@ -15,6 +15,7 @@
     "cta2": "Learn About the Program",
     "slots": "slots",
     "months": "months",
+    "liveHours": "/week live",
     "scroll": "EXPLORE"
   },
   "entry": {
@@ -324,6 +325,242 @@
         "tag": "PROGRAM",
         "topics": ["All disciplines", "Integrative project", "Individual mentoring", "Professional portfolio", "Certification"]
       }
+    }
+  },
+  "csc": {
+    "hero": {
+      "badge": "Founding Class",
+      "slots": "12 Spots • 6 Months",
+      "title1": "Cinema",
+      "title2": "without Cameras",
+      "subtitle1": "The first cinematic direction training course",
+      "subtitle2": "100% powered by AI",
+      "subtitleEnd": "in Brazil.",
+      "impact1": "It's not a tool tutorial. It's real cinema training:",
+      "impact2": "direction, mise en scène, shot breakdown, script, sound",
+      "cta1": "Apply Now",
+      "cta2": "View Syllabus",
+      "meta": {
+        "slots": "spots",
+        "months": "months",
+        "liveHours": "/week live",
+        "aiSupport": "AI Support"
+      },
+      "scroll": "SCROLL"
+    },
+    "virada": {
+      "terminal": "> THE_TURNING_POINT.manifest",
+      "p1": "I was CEO of",
+      "company": "Hollywood Film Academy",
+      "p2line1": "One of the largest film schools in the world.",
+      "p2line2": "We trained thousands of filmmakers in traditional production.",
+      "highlight1": "But in 2023, I saw something that changed everything:",
+      "highlight2": "the power that was coming with AI.",
+      "p3line1": "It was no longer about having a team, budget, equipment.",
+      "p3line2": "It was about having",
+      "p3vision": "vision",
+      "p4line1": "I left Hollywood Film Academy to create something new.",
+      "p4line2": "A place where cinema knowledge meets the power of AI.",
+      "quote1": "\"AI doesn't replace the filmmaker.",
+      "quote2": "It frees those who have vision.\"",
+      "p5part1": "This course is the synthesis of",
+      "p5part2": "decades of cinema",
+      "p5part3": "with the most advanced",
+      "p5part4": "artificial intelligence",
+      "p6line1": "It's not about pushing buttons. It's about mastering the language of cinema",
+      "p6line2": "and using AI as your unlimited production crew."
+    },
+    "syllabus": {
+      "terminal": "> CINEMATOGRAPHIC_SYLLABUS.syllabus",
+      "title1": "What You Will",
+      "title2": "Master",
+      "subtitle1": "6 fundamental pillars of cinema. Real film school knowledge,",
+      "subtitle2": "applied with cutting-edge AI tools.",
+      "bottomNote": "// Each pillar includes theory, guided practice and creation of your own work",
+      "pillars": {
+        "01": {
+          "title": "Direction",
+          "subtitle": "The vision that guides everything",
+          "description": "How to translate an idea into visual language. Scene command, actor direction (human and synthetic), atmosphere building.",
+          "topics": ["Creative command", "AI actor direction", "Atmosphere building", "Narrative point of view"]
+        },
+        "02": {
+          "title": "Mise en Scène",
+          "subtitle": "What's in the frame",
+          "description": "Frame composition, element positioning, expressive lighting, set design and costume as narrative.",
+          "topics": ["Frame composition", "Narrative lighting", "Set design", "Costume as character"]
+        },
+        "03": {
+          "title": "Shot Breakdown",
+          "subtitle": "Editing before editing",
+          "description": "Fragmenting the scene into shots. Cut logic, rhythm, continuity. How to think cinematically before generating.",
+          "topics": ["Scene fragmentation", "Cut logic", "Rhythm and timing", "Continuity"]
+        },
+        "04": {
+          "title": "Screenplay",
+          "subtitle": "The invisible structure",
+          "description": "Dramatic structure, character arcs, dialogues, subtext. How to write for AI to execute with precision.",
+          "topics": ["3-act structure", "Character arc", "Dialogue and subtext", "Cinematic prompts"]
+        },
+        "05": {
+          "title": "Sound & Music",
+          "subtitle": "50% of cinema is sound",
+          "description": "Sound design, dialogues, foley, original music. How to create complete soundscapes with AI.",
+          "topics": ["Sound design", "Dialogue and ADR", "Foley and ambience", "AI music composition"]
+        },
+        "06": {
+          "title": "Visual Language",
+          "subtitle": "The filmmaker's vocabulary",
+          "description": "Color grading, texture, camera movement, transitions. How to create a consistent visual identity.",
+          "topics": ["Color science", "Camera movement", "Narrative transitions", "Visual identity"]
+        }
+      }
+    },
+    "comoFunciona": {
+      "terminal": "> METHODOLOGY.structure",
+      "title1": "How It",
+      "title2": "Works",
+      "subtitle1": "A hybrid structure that combines the best of in-person teaching",
+      "subtitle2": "with the unlimited power of artificial intelligence.",
+      "mainFeature": {
+        "title": "Weekly Live Sessions",
+        "description": "The heart of the training. 3 hours per week of direct immersion with Taynã Puri.",
+        "columns": {
+          "theory": {
+            "label": "THEORY",
+            "description": "Cinema fundamentals, work analysis, visual language"
+          },
+          "practice": {
+            "label": "PRACTICE",
+            "description": "Guided live creation, experimentation, real-time feedback"
+          },
+          "review": {
+            "label": "REVIEW",
+            "description": "Analysis of class works, creative direction, individual evolution"
+          }
+        }
+      },
+      "features": {
+        "recordedContent": {
+          "title": "Recorded Content",
+          "description": "Support library with techniques, references and tutorials to review when needed."
+        },
+        "aiSupport": {
+          "title": "24h AI Support",
+          "description": "Trained intelligences to help you anytime. Technical, creative, prompt questions."
+        },
+        "humanFeedback": {
+          "title": "Human Feedback",
+          "description": "Individualized follow-up on your works. Personalized creative direction."
+        },
+        "aitelierTools": {
+          "title": "ai.telier Tools",
+          "description": "Access to proprietary ai.telier tools. Prompts, workflows, cinematic templates."
+        },
+        "mentorClones": {
+          "title": "Mentor Clones",
+          "description": "Converse with intelligences trained on great filmmakers. Lynch, Kubrick, Tarkovsky by your side."
+        }
+      },
+      "timeline": {
+        "terminal": "> 6_MONTH_JOURNEY.timeline",
+        "month": "MONTH",
+        "start": "Fundamentals + Experimentation",
+        "end": "Final Work Production"
+      }
+    },
+    "turmaFundadora": {
+      "terminal": "> FOUNDING_CLASS.exclusive",
+      "title1": "The First",
+      "title2": "Class",
+      "subtitle": "12 people who will inaugurate a new movement in Brazilian cinema.",
+      "slotsLabel": "spots in the founding class",
+      "details": "6 months of intensive training • 3h per week live",
+      "benefits": {
+        "lifetime": {
+          "title": "Lifetime Access",
+          "description": "All future program updates, forever."
+        },
+        "exclusivity": {
+          "title": "Exclusivity",
+          "description": "Only 12 people. Individual attention guaranteed."
+        },
+        "priority": {
+          "title": "Priority",
+          "description": "First access to new tools and resources from ai.telier."
+        },
+        "community": {
+          "title": "Founding Community",
+          "description": "Network with Brazil's first AI filmmakers."
+        }
+      },
+      "process": {
+        "title": "Selection Process",
+        "line1": "It's not about money. It's about fit.",
+        "line2": "We look for people with their own vision, willingness to experiment,",
+        "line3": "and a real desire to create cinema in a new way."
+      }
+    },
+    "quemDirige": {
+      "terminal": "> WHO_LEADS.profile",
+      "caption": "TAYNÃ PURI • FOUNDER",
+      "title1": "Taynã",
+      "title2": "Puri",
+      "p1": "I left Hollywood Film Academy because I saw the future coming.",
+      "p2": "After training thousands of filmmakers in the traditional model — large teams, high budgets, long processes — I realized AI was about to change everything.",
+      "p3line1": "It was no longer about having resources.",
+      "p3line2": "It was about having",
+      "p3vision": "vision",
+      "p4": "I founded ai.telier to unite deep cinema knowledge with the power of new technologies. To create a place where people with vision could finally realize their works.",
+      "credentials": [
+        "Former CEO of Hollywood Film Academy",
+        "Trained thousands of filmmakers in traditional production",
+        "Founder of ai.telier",
+        "Pioneer in AI-powered cinema in Brazil"
+      ],
+      "quote": "\"This course is everything I wish I had when I started. Real cinema, without the usual barriers.\""
+    },
+    "candidatura": {
+      "terminal": "> APPLICATION.apply",
+      "title": "Apply",
+      "subtitle1": "12 spots. A simple process.",
+      "subtitle2": "Tell us about yourself and why you want to be part of it.",
+      "form": {
+        "name": "FULL NAME",
+        "namePlaceholder": "Your name",
+        "email": "EMAIL",
+        "emailPlaceholder": "your@email.com",
+        "experience": "EXPERIENCE WITH CINEMA / AI",
+        "experiencePlaceholder": "Briefly share your experience (optional)",
+        "why": "WHY DO YOU WANT TO PARTICIPATE?",
+        "whyPlaceholder": "What attracts you to this training? What kind of work would you like to create?",
+        "submit": "Submit Application",
+        "note": "// We analyze each application individually"
+      },
+      "success": {
+        "title": "Application Received",
+        "line1": "Thank you for applying to the founding class.",
+        "line2": "We will review your application and contact you soon.",
+        "note": "// Keep an eye on your email"
+      },
+      "contact": {
+        "text": "Questions? Get in touch:",
+        "email": "contato@aitelier.com"
+      }
+    },
+    "finalCta": {
+      "terminal": "> FINAL_FRAME.manifest",
+      "title1": "Cinema is changing.",
+      "title2": "Will you watch or direct?",
+      "subtitle1": "It's not about technology. It's about finally having the tools",
+      "subtitle2": "to realize what you've always had in your head.",
+      "cta": "Apply to the Founding Class",
+      "meta": {
+        "slots": "12 spots",
+        "months": "6 months",
+        "start": "Starting soon"
+      },
+      "footer": "// CINEMA_WITHOUT_CAMERAS_v1.0 • AI.TELIER • 2025"
     }
   }
 }

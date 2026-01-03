@@ -128,7 +128,7 @@ export const EscolaHero = () => {
               <span className="text-matrix-green">6</span> {t('hero.months')}
             </div>
             <div>
-              <span className="text-matrix-green">3h</span>/semana ao vivo
+              <span className="text-matrix-green">3h</span>{t('hero.liveHours')}
             </div>
           </motion.div>
         </div>

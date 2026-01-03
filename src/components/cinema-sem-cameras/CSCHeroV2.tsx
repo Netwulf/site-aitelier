@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTranslation } from "react-i18next";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
 export const CSCHeroV2 = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('school');
 
   const scrollToContent = () => {
     document.getElementById("a-virada")?.scrollIntoView({ behavior: "smooth" });
@@ -43,11 +45,11 @@ export const CSCHeroV2 = () => {
             className="inline-flex items-center gap-3 mb-8"
           >
             <span className="font-mono-v2 text-xs text-tech-olive tracking-[0.3em] uppercase">
-              Turma Fundadora
+              {t('csc.hero.badge')}
             </span>
             <span className="text-tech-olive/50">|</span>
             <span className="font-mono-v2 text-xs text-text-muted tracking-wider">
-              12 Vagas • 6 Meses
+              {t('csc.hero.slots')}
             </span>
           </motion.div>
 
@@ -59,9 +61,9 @@ export const CSCHeroV2 = () => {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold
                        leading-[0.95] tracking-tight text-ancestral-white mb-6"
           >
-            Cinema
+            {t('csc.hero.title1')}
             <br />
-            <span className="text-tech-olive">sem Câmeras</span>
+            <span className="text-tech-olive">{t('csc.hero.title2')}</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -72,8 +74,8 @@ export const CSCHeroV2 = () => {
             className="text-xl md:text-2xl lg:text-3xl text-ancestral-white/90 max-w-2xl
                        leading-relaxed font-display mb-6"
           >
-            O primeiro curso de formação em direção cinematográfica{" "}
-            <span className="text-tech-olive">100% impulsionado por IA</span> do Brasil.
+            {t('csc.hero.subtitle1')}{" "}
+            <span className="text-tech-olive">{t('csc.hero.subtitle2')}</span> {t('csc.hero.subtitleEnd')}
           </motion.p>
 
           {/* Impact phrase */}
@@ -83,9 +85,9 @@ export const CSCHeroV2 = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-base md:text-lg text-text-muted max-w-xl leading-relaxed mb-10"
           >
-            Não é tutorial de ferramenta. É formação real em cinema:{" "}
+            {t('csc.hero.impact1')}{" "}
             <span className="text-ancestral-white">
-              direção, mise en scène, decupagem, roteiro, som
+              {t('csc.hero.impact2')}
             </span>.
           </motion.p>
 
@@ -103,7 +105,7 @@ export const CSCHeroV2 = () => {
                          hover:bg-tech-olive/90 transition-all duration-300
                          shadow-[0_0_40px_rgba(141,199,94,0.3)]"
             >
-              <span>Candidatar-se</span>
+              <span>{t('csc.hero.cta1')}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
@@ -112,7 +114,7 @@ export const CSCHeroV2 = () => {
                          border-2 border-ancestral-white/30 text-ancestral-white font-medium
                          hover:border-tech-olive hover:text-tech-olive transition-all duration-300"
             >
-              Ver Ementa
+              {t('csc.hero.cta2')}
             </a>
           </motion.div>
 
@@ -125,19 +127,19 @@ export const CSCHeroV2 = () => {
           >
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-tech-olive" />
-              <span><span className="text-tech-olive">12</span> vagas</span>
+              <span><span className="text-tech-olive">12</span> {t('csc.hero.meta.slots')}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-tech-olive" />
-              <span><span className="text-tech-olive">6</span> meses</span>
+              <span><span className="text-tech-olive">6</span> {t('csc.hero.meta.months')}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-tech-olive" />
-              <span><span className="text-tech-olive">3h</span>/semana ao vivo</span>
+              <span><span className="text-tech-olive">3h</span>{t('csc.hero.meta.liveHours')}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 bg-tech-olive" />
-              <span>Suporte IA <span className="text-tech-olive">24h</span></span>
+              <span>{t('csc.hero.meta.aiSupport')} <span className="text-tech-olive">24h</span></span>
             </div>
           </motion.div>
         </div>
@@ -152,7 +154,7 @@ export const CSCHeroV2 = () => {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2
                    text-text-muted/70 hover:text-tech-olive transition-colors cursor-pointer"
       >
-        <span className="text-xs font-mono-v2 tracking-[0.3em]">SCROLL</span>
+        <span className="text-xs font-mono-v2 tracking-[0.3em]">{t('csc.hero.scroll')}</span>
         <motion.div
           animate={prefersReducedMotion ? {} : { y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}

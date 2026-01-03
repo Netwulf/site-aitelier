@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTranslation } from "react-i18next";
 
 export const CSCVirada = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('school');
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   const fadeUp = {
@@ -30,7 +32,7 @@ export const CSCVirada = () => {
           className="mb-12"
         >
           <span className="text-xs font-mono-v2 text-text-muted tracking-widest">
-            {">"} A_VIRADA.manifest
+            {t('csc.virada.terminal')}
           </span>
         </motion.div>
 
@@ -43,8 +45,8 @@ export const CSCVirada = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-2xl md:text-3xl text-ancestral-white font-display leading-relaxed"
           >
-            Eu era CEO da{" "}
-            <span className="text-tech-olive">Hollywood Film Academy</span>.
+            {t('csc.virada.p1')}{" "}
+            <span className="text-tech-olive">{t('csc.virada.company')}</span>.
           </motion.p>
 
           <motion.p
@@ -54,9 +56,9 @@ export const CSCVirada = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-text-secondary leading-relaxed"
           >
-            Uma das maiores escolas de cinema do mundo.
+            {t('csc.virada.p2line1')}
             <br />
-            Formamos milhares de cineastas em produção tradicional.
+            {t('csc.virada.p2line2')}
           </motion.p>
 
           <motion.div
@@ -67,9 +69,9 @@ export const CSCVirada = () => {
             className="py-8 border-l-4 border-tech-olive pl-6"
           >
             <p className="text-xl md:text-2xl text-ancestral-white font-display leading-relaxed">
-              Mas em 2023, eu vi algo que mudou tudo:
+              {t('csc.virada.highlight1')}
               <br />
-              <span className="text-tech-olive">o poder que estava chegando com a IA.</span>
+              <span className="text-tech-olive">{t('csc.virada.highlight2')}</span>
             </p>
           </motion.div>
 
@@ -80,9 +82,9 @@ export const CSCVirada = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xl md:text-2xl text-text-secondary leading-relaxed"
           >
-            Não era mais sobre ter equipe, orçamento, equipamento.
+            {t('csc.virada.p3line1')}
             <br />
-            Era sobre ter <span className="text-ancestral-white">visão</span>.
+            {t('csc.virada.p3line2')} <span className="text-ancestral-white">{t('csc.virada.p3vision')}</span>.
           </motion.p>
 
           <motion.p
@@ -92,9 +94,9 @@ export const CSCVirada = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-xl md:text-2xl text-text-secondary leading-relaxed"
           >
-            Saí da Hollywood Film Academy para criar algo novo.
+            {t('csc.virada.p4line1')}
             <br />
-            Um lugar onde o conhecimento de cinema encontra o poder da IA.
+            {t('csc.virada.p4line2')}
           </motion.p>
 
           {/* Pull quote */}
@@ -106,9 +108,9 @@ export const CSCVirada = () => {
             className="py-10 my-10 border-y border-text-muted/20"
           >
             <p className="text-3xl md:text-4xl font-display text-ancestral-white leading-tight text-center">
-              "A IA não substitui o cineasta.
+              {t('csc.virada.quote1')}
               <br />
-              <span className="text-tech-olive">Ela liberta quem tem visão.</span>"
+              <span className="text-tech-olive">{t('csc.virada.quote2')}</span>
             </p>
           </motion.blockquote>
 
@@ -119,11 +121,11 @@ export const CSCVirada = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-xl md:text-2xl text-ancestral-white leading-relaxed"
           >
-            Este curso é a síntese de{" "}
-            <span className="text-tech-olive">décadas de cinema</span>
+            {t('csc.virada.p5part1')}{" "}
+            <span className="text-tech-olive">{t('csc.virada.p5part2')}</span>
             <br />
-            com o que há de mais avançado em{" "}
-            <span className="text-tech-olive">inteligência artificial</span>.
+            {t('csc.virada.p5part3')}{" "}
+            <span className="text-tech-olive">{t('csc.virada.p5part4')}</span>.
           </motion.p>
 
           <motion.p
@@ -133,9 +135,9 @@ export const CSCVirada = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="text-lg text-text-muted leading-relaxed"
           >
-            Não é sobre apertar botões. É sobre dominar a linguagem do cinema
+            {t('csc.virada.p6line1')}
             <br />
-            e usar IA como sua equipe de produção ilimitada.
+            {t('csc.virada.p6line2')}
           </motion.p>
         </div>
       </div>

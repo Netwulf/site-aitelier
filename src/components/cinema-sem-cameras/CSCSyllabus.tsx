@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTranslation } from "react-i18next";
 import {
   Film,
   Eye,
@@ -10,66 +11,21 @@ import {
   Palette,
 } from "lucide-react";
 
-const pillars = [
-  {
-    id: "01",
-    icon: Eye,
-    title: "Direção",
-    subtitle: "A visão que guia tudo",
-    description:
-      "Como traduzir uma ideia em linguagem visual. Comando de cena, direção de atores (humanos e sintéticos), construção de atmosfera.",
-    topics: ["Comando criativo", "Direção de atores IA", "Construção de atmosfera", "Ponto de vista narrativo"],
-  },
-  {
-    id: "02",
-    icon: Clapperboard,
-    title: "Mise en Scène",
-    subtitle: "O que está em cena",
-    description:
-      "Composição de quadro, posicionamento de elementos, iluminação expressiva, cenografia e figurino como narrativa.",
-    topics: ["Composição de quadro", "Iluminação narrativa", "Cenografia", "Figurino como personagem"],
-  },
-  {
-    id: "03",
-    icon: Film,
-    title: "Decupagem",
-    subtitle: "A montagem antes da montagem",
-    description:
-      "Fragmentação da cena em planos. Lógica de corte, ritmo, continuidade. Como pensar cinematicamente antes de gerar.",
-    topics: ["Fragmentação de cena", "Lógica de corte", "Ritmo e timing", "Raccord e continuidade"],
-  },
-  {
-    id: "04",
-    icon: FileText,
-    title: "Roteiro",
-    subtitle: "A estrutura invisível",
-    description:
-      "Estrutura dramática, arcos de personagem, diálogos, subtext. Como escrever para IA executar com precisão.",
-    topics: ["Estrutura de 3 atos", "Arco de personagem", "Diálogo e subtext", "Prompts cinematográficos"],
-  },
-  {
-    id: "05",
-    icon: Volume2,
-    title: "Som & Música",
-    subtitle: "50% do cinema é som",
-    description:
-      "Design de som, diálogos, foley, música original. Como criar paisagens sonoras completas com IA.",
-    topics: ["Sound design", "Diálogo e ADR", "Foley e ambientes", "Composição musical IA"],
-  },
-  {
-    id: "06",
-    icon: Palette,
-    title: "Linguagem Visual",
-    subtitle: "O vocabulário do cineasta",
-    description:
-      "Color grading, textura, movimento de câmera, transições. Como criar uma identidade visual consistente.",
-    topics: ["Color science", "Camera movement", "Transições narrativas", "Identidade visual"],
-  },
-];
+const pillarIcons = {
+  "01": Eye,
+  "02": Clapperboard,
+  "03": Film,
+  "04": FileText,
+  "05": Volume2,
+  "06": Palette,
+};
 
 export const CSCSyllabus = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('school');
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+
+  const pillarIds = ["01", "02", "03", "04", "05", "06"];
 
   return (
     <section
@@ -86,26 +42,27 @@ export const CSCSyllabus = () => {
           className="text-center mb-16"
         >
           <span className="text-xs font-mono-v2 text-text-muted tracking-widest block mb-4">
-            {">"} EMENTA_CINEMATOGRAFICA.syllabus
+            {t('csc.syllabus.terminal')}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-ancestral-white mb-6">
-            O Que Você Vai{" "}
-            <span className="text-tech-olive">Dominar</span>
+            {t('csc.syllabus.title1')}{" "}
+            <span className="text-tech-olive">{t('csc.syllabus.title2')}</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            6 pilares fundamentais do cinema. Conhecimento real de escola de cinema,
+            {t('csc.syllabus.subtitle1')}
             <br className="hidden md:block" />
-            aplicado com ferramentas de IA de última geração.
+            {t('csc.syllabus.subtitle2')}
           </p>
         </motion.div>
 
         {/* Pillars grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {pillars.map((pillar, index) => {
-            const Icon = pillar.icon;
+          {pillarIds.map((id, index) => {
+            const Icon = pillarIcons[id as keyof typeof pillarIcons];
+            const topics = t(`csc.syllabus.pillars.${id}.topics`, { returnObjects: true }) as string[];
             return (
               <motion.div
-                key={pillar.id}
+                key={id}
                 initial={prefersReducedMotion ? {} : { opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -115,7 +72,7 @@ export const CSCSyllabus = () => {
                 {/* Number */}
                 <span className="absolute top-4 right-4 text-6xl font-display font-black
                                text-tech-olive/10 group-hover:text-tech-olive/20 transition-colors">
-                  {pillar.id}
+                  {id}
                 </span>
 
                 {/* Icon */}
@@ -125,20 +82,20 @@ export const CSCSyllabus = () => {
 
                 {/* Title */}
                 <h3 className="text-2xl font-display font-bold text-ancestral-white mb-1 normal-case">
-                  {pillar.title}
+                  {t(`csc.syllabus.pillars.${id}.title`)}
                 </h3>
                 <p className="text-sm text-tech-olive font-mono-v2 mb-4">
-                  {pillar.subtitle}
+                  {t(`csc.syllabus.pillars.${id}.subtitle`)}
                 </p>
 
                 {/* Description */}
                 <p className="text-text-secondary text-sm leading-relaxed mb-6">
-                  {pillar.description}
+                  {t(`csc.syllabus.pillars.${id}.description`)}
                 </p>
 
                 {/* Topics */}
                 <ul className="space-y-2">
-                  {pillar.topics.map((topic, i) => (
+                  {topics.map((topic, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-text-muted">
                       <span className="w-1 h-1 bg-tech-olive" />
                       {topic}
@@ -158,7 +115,7 @@ export const CSCSyllabus = () => {
           className="mt-12 text-center"
         >
           <p className="text-text-muted text-sm font-mono-v2">
-            // Cada pilar inclui teoria, prática guiada e criação de obra própria
+            {t('csc.syllabus.bottomNote')}
           </p>
         </motion.div>
       </div>

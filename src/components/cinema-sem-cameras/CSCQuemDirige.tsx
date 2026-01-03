@@ -1,17 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTranslation } from "react-i18next";
 
 export const CSCQuemDirige = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('school');
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
-  const credentials = [
-    "Ex-CEO da Hollywood Film Academy",
-    "Formou milhares de cineastas em produção tradicional",
-    "Fundador do ai.telier",
-    "Pioneiro em cinema impulsionado por IA no Brasil",
-  ];
+  const credentials = t('csc.quemDirige.credentials', { returnObjects: true }) as string[];
 
   return (
     <section
@@ -63,7 +60,7 @@ export const CSCQuemDirige = () => {
             <div className="mt-4 flex items-center gap-4">
               <div className="flex-1 h-px bg-text-muted/20" />
               <span className="text-xs font-mono-v2 text-text-muted tracking-widest">
-                TAYNÃ PURI • FUNDADOR
+                {t('csc.quemDirige.caption')}
               </span>
               <div className="flex-1 h-px bg-text-muted/20" />
             </div>
@@ -76,35 +73,31 @@ export const CSCQuemDirige = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="text-xs font-mono-v2 text-text-muted tracking-widest block mb-4">
-              {">"} QUEM_DIRIGE.profile
+              {t('csc.quemDirige.terminal')}
             </span>
 
             <h2 className="text-4xl md:text-5xl font-display font-bold text-ancestral-white mb-6">
-              Taynã{" "}
-              <span className="text-tech-olive">Puri</span>
+              {t('csc.quemDirige.title1')}{" "}
+              <span className="text-tech-olive">{t('csc.quemDirige.title2')}</span>
             </h2>
 
             <div className="space-y-6 mb-8">
               <p className="text-xl text-ancestral-white/90 leading-relaxed">
-                Deixei a Hollywood Film Academy porque vi o futuro chegando.
+                {t('csc.quemDirige.p1')}
               </p>
 
               <p className="text-lg text-text-secondary leading-relaxed">
-                Depois de formar milhares de cineastas no modelo tradicional —
-                equipes grandes, orçamentos altos, processos longos —
-                percebi que a IA estava prestes a mudar tudo.
+                {t('csc.quemDirige.p2')}
               </p>
 
               <p className="text-lg text-text-secondary leading-relaxed">
-                Não era mais sobre ter recursos.
+                {t('csc.quemDirige.p3line1')}
                 <br />
-                Era sobre ter <span className="text-ancestral-white">visão</span>.
+                {t('csc.quemDirige.p3line2')} <span className="text-ancestral-white">{t('csc.quemDirige.p3vision')}</span>.
               </p>
 
               <p className="text-lg text-text-secondary leading-relaxed">
-                Fundei o ai.telier para unir o conhecimento profundo de cinema
-                com o poder das novas tecnologias. Para criar um lugar onde
-                pessoas com visão pudessem finalmente realizar suas obras.
+                {t('csc.quemDirige.p4')}
               </p>
             </div>
 
@@ -132,8 +125,7 @@ export const CSCQuemDirige = () => {
               className="p-6 border-l-4 border-tech-olive bg-stone-dark/30"
             >
               <p className="text-lg font-display text-ancestral-white italic">
-                "Este curso é tudo que eu gostaria de ter tido quando comecei.
-                Cinema de verdade, sem as barreiras de sempre."
+                {t('csc.quemDirige.quote')}
               </p>
             </motion.blockquote>
           </motion.div>

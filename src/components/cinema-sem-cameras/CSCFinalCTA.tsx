@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTranslation } from "react-i18next";
 
 export const CSCFinalCTA = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('school');
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
@@ -26,19 +28,19 @@ export const CSCFinalCTA = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="text-xs font-mono-v2 text-text-muted tracking-widest block mb-8">
-            {">"} FINAL_FRAME.manifest
+            {t('csc.finalCta.terminal')}
           </span>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-ancestral-white mb-8 leading-tight">
-            O cinema está mudando.
+            {t('csc.finalCta.title1')}
             <br />
-            <span className="text-tech-olive">Você vai assistir ou dirigir?</span>
+            <span className="text-tech-olive">{t('csc.finalCta.title2')}</span>
           </h2>
 
           <p className="text-lg text-text-secondary max-w-2xl mx-auto mb-12">
-            Não é sobre tecnologia. É sobre finalmente ter as ferramentas
+            {t('csc.finalCta.subtitle1')}
             <br className="hidden md:block" />
-            para realizar o que você sempre teve na cabeça.
+            {t('csc.finalCta.subtitle2')}
           </p>
 
           <a
@@ -48,15 +50,15 @@ export const CSCFinalCTA = () => {
                      hover:bg-tech-olive/90 transition-all duration-300
                      shadow-[0_0_60px_rgba(141,199,94,0.3)] hover:shadow-[0_0_80px_rgba(141,199,94,0.4)]"
           >
-            <span>Candidatar-se à Turma Fundadora</span>
+            <span>{t('csc.finalCta.cta')}</span>
           </a>
 
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm font-mono-v2 text-text-muted">
-            <span>12 vagas</span>
+            <span>{t('csc.finalCta.meta.slots')}</span>
             <span className="text-tech-olive">•</span>
-            <span>6 meses</span>
+            <span>{t('csc.finalCta.meta.months')}</span>
             <span className="text-tech-olive">•</span>
-            <span>Início em breve</span>
+            <span>{t('csc.finalCta.meta.start')}</span>
           </div>
         </motion.div>
 
@@ -68,7 +70,7 @@ export const CSCFinalCTA = () => {
           className="mt-20"
         >
           <p className="text-xs font-mono-v2 text-text-muted/50 tracking-widest">
-            // CINEMA_SEM_CAMERAS_v1.0 • AI.TELIER • 2025
+            {t('csc.finalCta.footer')}
           </p>
         </motion.div>
       </div>

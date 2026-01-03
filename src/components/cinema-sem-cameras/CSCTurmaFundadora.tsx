@@ -1,34 +1,22 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTranslation } from "react-i18next";
 import { Users, Star, Lock, Zap } from "lucide-react";
+
+const benefitIcons = {
+  lifetime: Star,
+  exclusivity: Lock,
+  priority: Zap,
+  community: Users,
+};
 
 export const CSCTurmaFundadora = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('school');
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
 
-  const benefits = [
-    {
-      icon: Star,
-      title: "Acesso Vitalício",
-      description: "Todas as atualizações futuras do programa, para sempre.",
-    },
-    {
-      icon: Lock,
-      title: "Exclusividade",
-      description: "Apenas 12 pessoas. Atenção individual garantida.",
-    },
-    {
-      icon: Zap,
-      title: "Prioridade",
-      description: "Primeiro acesso a novas ferramentas e recursos do ai.telier.",
-    },
-    {
-      icon: Users,
-      title: "Comunidade Fundadora",
-      description: "Rede de contato com os primeiros cineastas IA do Brasil.",
-    },
-  ];
+  const benefitKeys = Object.keys(benefitIcons) as (keyof typeof benefitIcons)[];
 
   return (
     <section
@@ -49,14 +37,14 @@ export const CSCTurmaFundadora = () => {
           className="text-center mb-16"
         >
           <span className="text-xs font-mono-v2 text-text-muted tracking-widest block mb-4">
-            {">"} TURMA_FUNDADORA.exclusive
+            {t('csc.turmaFundadora.terminal')}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-ancestral-white mb-6">
-            A Primeira{" "}
-            <span className="text-tech-olive">Turma</span>
+            {t('csc.turmaFundadora.title1')}{" "}
+            <span className="text-tech-olive">{t('csc.turmaFundadora.title2')}</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            12 pessoas que vão inaugurar um novo movimento no cinema brasileiro.
+            {t('csc.turmaFundadora.subtitle')}
           </p>
         </motion.div>
 
@@ -80,20 +68,20 @@ export const CSCTurmaFundadora = () => {
             </span>
           </div>
           <p className="text-2xl md:text-3xl font-display text-ancestral-white mt-4">
-            vagas na turma fundadora
+            {t('csc.turmaFundadora.slotsLabel')}
           </p>
           <p className="text-text-muted mt-2">
-            6 meses de formação intensiva • 3h por semana ao vivo
+            {t('csc.turmaFundadora.details')}
           </p>
         </motion.div>
 
         {/* Benefits grid */}
         <div className="grid md:grid-cols-2 gap-6 mb-16">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
+          {benefitKeys.map((key, index) => {
+            const Icon = benefitIcons[key];
             return (
               <motion.div
-                key={benefit.title}
+                key={key}
                 initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
@@ -104,10 +92,10 @@ export const CSCTurmaFundadora = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-display font-bold text-ancestral-white mb-1 normal-case">
-                    {benefit.title}
+                    {t(`csc.turmaFundadora.benefits.${key}.title`)}
                   </h3>
                   <p className="text-sm text-text-muted">
-                    {benefit.description}
+                    {t(`csc.turmaFundadora.benefits.${key}.description`)}
                   </p>
                 </div>
               </motion.div>
@@ -123,14 +111,14 @@ export const CSCTurmaFundadora = () => {
           className="text-center p-8 border border-tech-olive/30 bg-tech-olive/5"
         >
           <h4 className="text-xl font-display font-bold text-ancestral-white mb-3 normal-case">
-            Processo Seletivo
+            {t('csc.turmaFundadora.process.title')}
           </h4>
           <p className="text-text-secondary max-w-xl mx-auto">
-            Não é sobre dinheiro. É sobre fit.
+            {t('csc.turmaFundadora.process.line1')}
             <br />
-            Buscamos pessoas com visão própria, disposição para experimentar,
+            {t('csc.turmaFundadora.process.line2')}
             <br />
-            e vontade real de criar cinema de um jeito novo.
+            {t('csc.turmaFundadora.process.line3')}
           </p>
         </motion.div>
       </div>

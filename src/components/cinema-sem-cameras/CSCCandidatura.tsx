@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 
 export const CSCCandidatura = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('school');
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -44,15 +46,15 @@ export const CSCCandidatura = () => {
           className="text-center mb-12"
         >
           <span className="text-xs font-mono-v2 text-text-muted tracking-widest block mb-4">
-            {">"} CANDIDATURA.apply
+            {t('csc.candidatura.terminal')}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-ancestral-white mb-6">
-            Candidatar-se
+            {t('csc.candidatura.title')}
           </h2>
           <p className="text-lg text-text-secondary max-w-xl mx-auto">
-            12 vagas. Um processo simples.
+            {t('csc.candidatura.subtitle1')}
             <br />
-            Conte-nos sobre você e por que quer fazer parte.
+            {t('csc.candidatura.subtitle2')}
           </p>
         </motion.div>
 
@@ -68,15 +70,15 @@ export const CSCCandidatura = () => {
               <Check className="w-8 h-8 text-ancestral-black" />
             </div>
             <h3 className="text-2xl font-display font-bold text-ancestral-white mb-4 normal-case">
-              Candidatura Recebida
+              {t('csc.candidatura.success.title')}
             </h3>
             <p className="text-text-secondary mb-6">
-              Obrigado por se candidatar à turma fundadora.
+              {t('csc.candidatura.success.line1')}
               <br />
-              Vamos analisar sua aplicação e entraremos em contato em breve.
+              {t('csc.candidatura.success.line2')}
             </p>
             <p className="text-sm text-text-muted font-mono-v2">
-              // Fique de olho no seu email
+              {t('csc.candidatura.success.note')}
             </p>
           </motion.div>
         ) : (
@@ -90,7 +92,7 @@ export const CSCCandidatura = () => {
             {/* Name */}
             <div>
               <label htmlFor="name" className="block text-sm font-mono-v2 text-text-muted mb-2 tracking-wider">
-                NOME COMPLETO
+                {t('csc.candidatura.form.name')}
               </label>
               <input
                 type="text"
@@ -102,14 +104,14 @@ export const CSCCandidatura = () => {
                 className="w-full px-4 py-3 bg-stone-dark border border-text-muted/30
                          text-ancestral-white placeholder:text-text-muted/50
                          focus:border-tech-olive focus:outline-none transition-colors"
-                placeholder="Seu nome"
+                placeholder={t('csc.candidatura.form.namePlaceholder')}
               />
             </div>
 
             {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-mono-v2 text-text-muted mb-2 tracking-wider">
-                EMAIL
+                {t('csc.candidatura.form.email')}
               </label>
               <input
                 type="email"
@@ -121,14 +123,14 @@ export const CSCCandidatura = () => {
                 className="w-full px-4 py-3 bg-stone-dark border border-text-muted/30
                          text-ancestral-white placeholder:text-text-muted/50
                          focus:border-tech-olive focus:outline-none transition-colors"
-                placeholder="seu@email.com"
+                placeholder={t('csc.candidatura.form.emailPlaceholder')}
               />
             </div>
 
             {/* Experience */}
             <div>
               <label htmlFor="experience" className="block text-sm font-mono-v2 text-text-muted mb-2 tracking-wider">
-                EXPERIÊNCIA COM CINEMA / IA
+                {t('csc.candidatura.form.experience')}
               </label>
               <input
                 type="text"
@@ -139,14 +141,14 @@ export const CSCCandidatura = () => {
                 className="w-full px-4 py-3 bg-stone-dark border border-text-muted/30
                          text-ancestral-white placeholder:text-text-muted/50
                          focus:border-tech-olive focus:outline-none transition-colors"
-                placeholder="Conte brevemente sua experiência (opcional)"
+                placeholder={t('csc.candidatura.form.experiencePlaceholder')}
               />
             </div>
 
             {/* Why */}
             <div>
               <label htmlFor="why" className="block text-sm font-mono-v2 text-text-muted mb-2 tracking-wider">
-                POR QUE VOCÊ QUER PARTICIPAR?
+                {t('csc.candidatura.form.why')}
               </label>
               <textarea
                 id="why"
@@ -158,7 +160,7 @@ export const CSCCandidatura = () => {
                 className="w-full px-4 py-3 bg-stone-dark border border-text-muted/30
                          text-ancestral-white placeholder:text-text-muted/50
                          focus:border-tech-olive focus:outline-none transition-colors resize-none"
-                placeholder="O que te atrai nessa formação? Que tipo de obra você gostaria de criar?"
+                placeholder={t('csc.candidatura.form.whyPlaceholder')}
               />
             </div>
 
@@ -170,13 +172,13 @@ export const CSCCandidatura = () => {
                        hover:bg-tech-olive/90 transition-all duration-300
                        shadow-[0_0_40px_rgba(141,199,94,0.2)] hover:shadow-[0_0_60px_rgba(141,199,94,0.3)]"
             >
-              <span>Enviar Candidatura</span>
+              <span>{t('csc.candidatura.form.submit')}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
 
             {/* Note */}
             <p className="text-center text-xs text-text-muted font-mono-v2">
-              // Analisamos cada candidatura individualmente
+              {t('csc.candidatura.form.note')}
             </p>
           </motion.form>
         )}
@@ -189,12 +191,12 @@ export const CSCCandidatura = () => {
           className="mt-12 text-center"
         >
           <p className="text-text-muted text-sm">
-            Dúvidas? Entre em contato:{" "}
+            {t('csc.candidatura.contact.text')}{" "}
             <a
-              href="mailto:contato@aitelier.com"
+              href={`mailto:${t('csc.candidatura.contact.email')}`}
               className="text-tech-olive hover:underline"
             >
-              contato@aitelier.com
+              {t('csc.candidatura.contact.email')}
             </a>
           </p>
         </motion.div>
