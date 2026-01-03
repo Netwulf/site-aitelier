@@ -62,7 +62,16 @@
     "activeBadge": "ATIVO",
     "comingSoonCount": "+{{count}} MENTES EM PREPARAÇÃO",
     "comingSoonTitle": "Em breve no ai.telier",
+    "voteHint": "Clique para votar em quem você quer ver primeiro",
     "exploreCta": "Explorar todas as mentes",
+    "vote": {
+      "question": "Quer conversar com essa mente?",
+      "button": "Quero essa UI!",
+      "thanks": "Voto registrado!",
+      "recorded": "Seu voto conta para a prioridade de criação.",
+      "alreadyVoted": "Você já votou nessa mente",
+      "info": "Seu voto influencia a ordem de criação das próximas UIs."
+    },
     "minds": {
       "david-lynch": {
         "subtitle": "Consciência & Criação",
