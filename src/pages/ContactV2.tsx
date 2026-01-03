@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Loader2, CheckCircle, ArrowRight } from "lucide-react";
+import { Loader2, CheckCircle, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 import { NavigationV2 } from "@/components/NavigationV2";
 import { FooterV2 } from "@/components/FooterV2";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
@@ -9,27 +10,28 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type ContactTopic = "studio" | "escola" | "newsletter" | null;
 
-const topics = [
-  {
-    id: "studio" as const,
-    label: "Studio",
-    description: "Quero contratar direção criativa",
-  },
-  {
-    id: "escola" as const,
-    label: "Escola",
-    description: "Quero saber sobre cursos",
-  },
-  {
-    id: "newsletter" as const,
-    label: "Newsletter",
-    description: "Quero acompanhar o ai.telier",
-  },
-];
-
 const ContactV2 = () => {
   useSmoothScroll();
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('contact');
+
+  const topics = [
+    {
+      id: "studio" as const,
+      label: t('topics.studio.label'),
+      description: t('topics.studio.description'),
+    },
+    {
+      id: "escola" as const,
+      label: t('topics.escola.label'),
+      description: t('topics.escola.description'),
+    },
+    {
+      id: "newsletter" as const,
+      label: t('topics.newsletter.label'),
+      description: t('topics.newsletter.description'),
+    },
+  ];
 
   const [selectedTopic, setSelectedTopic] = useState<ContactTopic>(null);
   const [email, setEmail] = useState("");
@@ -41,12 +43,12 @@ const ContactV2 = () => {
     e.preventDefault();
 
     if (!selectedTopic) {
-      toast.error("Selecione um assunto");
+      toast.error(t('validation.selectTopic'));
       return;
     }
 
     if (!email) {
-      toast.error("Preencha seu email");
+      toast.error(t('validation.fillEmail'));
       return;
     }
 
@@ -56,9 +58,9 @@ const ContactV2 = () => {
       // TODO: Integrate with backend/email service
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setIsSuccess(true);
-      toast.success("Mensagem enviada!");
+      toast.success(t('messages.success'));
     } catch (error) {
-      toast.error("Erro ao enviar. Tente novamente.");
+      toast.error(t('messages.error'));
     } finally {
       setIsLoading(false);
     }
@@ -84,10 +86,10 @@ const ContactV2 = () => {
             className="mb-12"
           >
             <h1 className="font-display text-4xl md:text-5xl text-ancestral-white mb-4">
-              Fale com a gente
+              {t('page.title')}
             </h1>
             <p className="text-lg text-text-muted">
-              Selecione o assunto e envie sua mensagem.
+              {t('page.subtitle')}
             </p>
           </motion.div>
 
@@ -100,16 +102,16 @@ const ContactV2 = () => {
             >
               <CheckCircle className="w-16 h-16 text-matrix-green mx-auto mb-6" />
               <h3 className="text-2xl font-display text-ancestral-white mb-2">
-                Mensagem enviada
+                {t('success.title')}
               </h3>
               <p className="text-text-muted mb-8">
-                Retornaremos em até 24 horas.
+                {t('success.subtitle')}
               </p>
               <button
                 onClick={resetForm}
                 className="font-mono-v2 text-sm text-matrix-green hover:text-ancestral-white transition-colors"
               >
-                [Enviar outra mensagem]
+                [{t('success.sendAnother')}]
               </button>
             </motion.div>
           ) : (
@@ -124,7 +126,7 @@ const ContactV2 = () => {
               {/* Topic Selection */}
               <div>
                 <label className="font-mono-v2 text-xs text-text-muted mb-4 block tracking-wider">
-                  ASSUNTO
+                  {t('labels.subject')}
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {topics.map((topic) => (
@@ -158,14 +160,14 @@ const ContactV2 = () => {
               {/* Email */}
               <div>
                 <label className="font-mono-v2 text-xs text-text-muted mb-2 block tracking-wider">
-                  SEU EMAIL
+                  {t('labels.yourEmail')}
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={isLoading}
-                  placeholder="seu@email.com"
+                  placeholder={t('placeholders.email')}
                   className="w-full px-4 py-4 bg-stone-dark border border-text-muted/20
                            text-ancestral-white placeholder:text-text-muted/50
                            focus:border-matrix-green focus:outline-none transition-colors
@@ -176,14 +178,14 @@ const ContactV2 = () => {
               {/* Message (optional) */}
               <div>
                 <label className="font-mono-v2 text-xs text-text-muted mb-2 block tracking-wider">
-                  MENSAGEM <span className="text-text-muted/50">(opcional)</span>
+                  {t('labels.message')} <span className="text-text-muted/50">{t('labels.optional')}</span>
                 </label>
                 <textarea
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   disabled={isLoading}
-                  placeholder="Conte um pouco sobre você..."
+                  placeholder={t('placeholders.message')}
                   className="w-full px-4 py-4 bg-stone-dark border border-text-muted/20
                            text-ancestral-white placeholder:text-text-muted/50
                            focus:border-matrix-green focus:outline-none transition-colors
@@ -203,11 +205,11 @@ const ContactV2 = () => {
                 {isLoading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin" />
-                    Enviando...
+                    {t('buttons.sending')}
                   </>
                 ) : (
                   <>
-                    Enviar mensagem
+                    {t('buttons.send')}
                     <ArrowRight className="w-5 h-5" />
                   </>
                 )}
@@ -215,7 +217,7 @@ const ContactV2 = () => {
 
               {/* Direct email fallback */}
               <p className="text-center text-sm text-text-muted">
-                Ou envie diretamente para{" "}
+                {t('directEmail')}{" "}
                 <a
                   href="mailto:contato@aitelier.com.br"
                   className="text-matrix-green hover:text-ancestral-white transition-colors"

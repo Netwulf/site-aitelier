@@ -1,8 +1,27 @@
 {
   "title": "SCHOOL",
-  "subtitle": "AI Formation",
+  "subtitle": "AI Training",
   "tagline": "Develop fluency in artificial intelligence",
   "description": "Our school doesn't teach how to use tools. It teaches how to think with them. Each course is a journey of discovery, where you develop your own creative language with AI.",
+  "hero": {
+    "badge": "Main Program",
+    "date": "March 2025",
+    "title1": "Cinema",
+    "title2": "without Cameras",
+    "subtitle": "Cinematic Direction for One Person Studios.",
+    "impact1": "It's not AI cinema. It's how to operate a",
+    "impact2": "high-level studio without a team",
+    "cta1": "Apply Now",
+    "cta2": "Learn About the Program",
+    "slots": "slots",
+    "months": "months",
+    "scroll": "EXPLORE"
+  },
+  "entry": {
+    "title": "Interested in joining the School?",
+    "subtitle": "Stay informed about upcoming cohorts and labs.",
+    "cta": "Join the waitlist"
+  },
   "fundamentos": {
     "title": "FUNDAMENTALS",
     "subtitle": "Vorkurs",

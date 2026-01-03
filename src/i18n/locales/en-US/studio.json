@@ -3,6 +3,12 @@
   "subtitle": "Audiovisual production",
   "tagline": "Where humans and AI co-create",
   "description": "The Studio is our audiovisual creation laboratory. Here, we develop projects that explore the boundaries between technology and art, using AI as a creative partner.",
+  "hero": {
+    "terminal": "WHERE_THE_FIELD_MEETS_THE_WORLD",
+    "title": "Studio",
+    "line1": "Where people become stories.",
+    "line2": "Brands that feel like films."
+  },
   "process": {
     "title": "PROCESS",
     "step1": {

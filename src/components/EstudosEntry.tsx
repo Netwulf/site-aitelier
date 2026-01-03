@@ -1,25 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const EstudosEntry = () => {
+  const { t } = useTranslation('school');
+  const { lang } = useParams<{ lang: string }>();
+  const currentLang = lang || 'pt';
+  const contactPath = currentLang === 'en' ? 'contact' : 'contato';
+
   return (
     <div className="py-16">
       <p className="text-xl text-ancestral-white mb-8">
-        Interessado em entrar na Escola?
+        {t('entry.title')}
       </p>
 
       <p className="text-text-secondary mb-8">
-        Mantenha-se informado sobre próximas turmas e laboratórios.
+        {t('entry.subtitle')}
       </p>
 
       <Link
-        to="/contato?from=escola"
+        to={`/${currentLang}/${contactPath}?from=escola`}
         className="inline-block px-8 py-4
                    border border-ancestral-white text-ancestral-white
                    hover:bg-ancestral-white hover:text-ancestral-black
                    transition-all duration-300
                    font-mono-v2 text-sm tracking-wide"
       >
-        [Entrar na lista de espera]
+        [{t('entry.cta')}]
       </Link>
     </div>
   );

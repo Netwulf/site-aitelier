@@ -1,6 +1,24 @@
 {
   "title": "CONTACT",
   "subtitle": "Get in touch with us",
+  "page": {
+    "title": "Get in touch",
+    "subtitle": "Select a topic and send your message."
+  },
+  "topics": {
+    "studio": {
+      "label": "Studio",
+      "description": "I want creative direction services"
+    },
+    "escola": {
+      "label": "School",
+      "description": "I want to learn about courses"
+    },
+    "newsletter": {
+      "label": "Newsletter",
+      "description": "I want to follow ai.telier"
+    }
+  },
   "form": {
     "name": "Name",
     "namePlaceholder": "Your name",
@@ -13,17 +31,39 @@
     "submit": "Send",
     "sending": "Sending..."
   },
+  "labels": {
+    "subject": "SUBJECT",
+    "yourEmail": "YOUR EMAIL",
+    "message": "MESSAGE",
+    "optional": "(optional)"
+  },
+  "placeholders": {
+    "email": "your@email.com",
+    "message": "Tell us about yourself..."
+  },
+  "buttons": {
+    "send": "Send message",
+    "sending": "Sending..."
+  },
   "validation": {
     "nameRequired": "Name is required",
     "emailRequired": "Email is required",
     "emailInvalid": "Invalid email",
     "messageRequired": "Message is required",
-    "messageTooShort": "Message too short"
+    "messageTooShort": "Message too short",
+    "selectTopic": "Please select a topic",
+    "fillEmail": "Please enter your email"
   },
   "messages": {
     "success": "Message sent successfully! We'll get back to you soon.",
     "error": "An error occurred while sending. Please try again."
   },
+  "success": {
+    "title": "Message sent",
+    "subtitle": "We'll get back to you within 24 hours.",
+    "sendAnother": "Send another message"
+  },
+  "directEmail": "Or email us directly at",
   "doors": {
     "title": "Choose your entry",
     "school": {

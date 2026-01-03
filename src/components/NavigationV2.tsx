@@ -12,10 +12,10 @@ export const NavigationV2 = () => {
   const currentLang = lang || 'pt';
 
   const navItems = [
-    { label: currentLang === 'en' ? "School" : "Escola", href: `/${currentLang}/${currentLang === 'en' ? 'school' : 'escola'}` },
-    { label: "Studio", href: `/${currentLang}/studio` },
+    { label: t('nav.school'), href: `/${currentLang}/${currentLang === 'en' ? 'school' : 'escola'}` },
+    { label: t('nav.studio'), href: `/${currentLang}/studio` },
     { label: "Playground", href: `/${currentLang}/playground` },
-    { label: currentLang === 'en' ? "Contact" : "Contato", href: `/${currentLang}/${currentLang === 'en' ? 'contact' : 'contato'}` },
+    { label: t('nav.contact'), href: `/${currentLang}/${currentLang === 'en' ? 'contact' : 'contato'}` },
   ];
 
   useEffect(() => {

@@ -3,6 +3,12 @@
   "subtitle": "Produção audiovisual",
   "tagline": "Onde humanos e IA co-criam",
   "description": "O Studio é nosso laboratório de criação audiovisual. Aqui, desenvolvemos projetos que exploram as fronteiras entre tecnologia e arte, usando IA como parceira criativa.",
+  "hero": {
+    "terminal": "ONDE_O_CAMPO_ENCONTRA_O_MUNDO",
+    "title": "Studio",
+    "line1": "Onde pessoas viram histórias.",
+    "line2": "Marcas que parecem filmes."
+  },
   "process": {
     "title": "PROCESSO",
     "step1": {

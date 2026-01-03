@@ -1,8 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, Users, ArrowRight, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Clock, Users, ArrowRight, X, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { supabase } from "@/integrations/supabase/client";
+import { Link, useParams } from "react-router-dom";
+
+// Courses with dedicated pages
+const COURSES_WITH_PAGES: Record<string, string> = {
+  "cinema-sem-cameras": "escola/cinema-sem-cameras",
+};
 
 // LocalStorage keys for auto-fill
 const STORAGE_KEY = "aitelier_waitlist_user";
@@ -320,6 +326,11 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const { lang } = useParams<{ lang: string }>();
+  const currentLang = lang || 'pt';
+
+  // Check if this course has a dedicated page
+  const dedicatedPage = course?.id ? COURSES_WITH_PAGES[course.id] : null;
 
   useEffect(() => {
     const savedUser = localStorage.getItem(STORAGE_KEY);
@@ -457,7 +468,31 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
 
                   <div className="mt-auto">
                     <AnimatePresence mode="wait">
-                      {!showForm && !submitted && (
+                      {/* Show link to dedicated page if available */}
+                      {dedicatedPage && (
+                        <motion.div
+                          key="dedicated-link"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className="space-y-3"
+                        >
+                          <Link
+                            to={`/${currentLang}/${dedicatedPage}`}
+                            onClick={onClose}
+                            className="w-full py-4 bg-matrix-green text-brutal-black font-bold text-sm uppercase tracking-wider hover:bg-brutal-white transition-colors flex items-center justify-center gap-2"
+                          >
+                            VER CURSO COMPLETO
+                            <ExternalLink className="w-4 h-4" />
+                          </Link>
+                          <p className="text-center text-xs text-brutal-white/50">
+                            Este curso tem uma página dedicada com todas as informações
+                          </p>
+                        </motion.div>
+                      )}
+
+                      {/* Show waitlist form for courses without dedicated page */}
+                      {!dedicatedPage && !showForm && !submitted && (
                         <motion.button
                           key="cta-button"
                           initial={{ opacity: 0 }}
@@ -471,7 +506,7 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
                         </motion.button>
                       )}
 
-                      {showForm && !submitted && (
+                      {!dedicatedPage && showForm && !submitted && (
                         <motion.div
                           key="form"
                           initial={{ opacity: 0, height: 0 }}
@@ -517,7 +552,7 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
                         </motion.div>
                       )}
 
-                      {submitted && (
+                      {!dedicatedPage && submitted && (
                         <motion.div
                           key="success"
                           initial={{ opacity: 0, scale: 0.9 }}

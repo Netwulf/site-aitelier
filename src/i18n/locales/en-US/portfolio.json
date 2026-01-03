@@ -18,14 +18,14 @@
       "type": "Afrofuturism - AI Art",
       "date": "July 2023",
       "location": "Midjourney",
-      "description": "Generative art project connected to a vast network of people focused on a regenerative and ancestral future. Children of all ethnicities with cyberpunk-ancestral aesthetics, where technology is deeply integrated with nature and cultural roots."
+      "description": "Generative art celebrating a regenerative, ancestral future. Children of all ethnicities in cyberpunk-ancestral aesthetics, where technology merges with nature and cultural roots."
     },
     "velocidades": {
       "title": "VeloCities",
       "type": "Cyberpunk Urbanism",
       "date": "May 2023",
       "location": "São Paulo",
-      "description": "Nighttime São Paulo in its Brazilian cyberpunk essence. Graffiti-covered alleys, subway, nightlife, skaters and street musicians. The movement and rhythm of great cities captured in neon and shadows."
+      "description": "São Paulo by night in its Brazilian cyberpunk essence. Graffiti alleys, subway life, skaters and street musicians. Urban rhythm captured in neon and shadows."
     },
     "raizes": {
       "title": "Roots",
@@ -38,14 +38,14 @@
       "title": "Egos",
       "type": "Worlds and Portals",
       "date": "August 2023",
-      "description": "Dimensional portals, futuristic cities and utopias where technology and nature coexist. The Dream World reveals its complexity from Neturnia, between magical fantasy and the horror of nightmares."
+      "description": "Dimensional portals, futuristic cities and utopias where technology and nature coexist. The Dream World reveals its complexity — between magical fantasy and nightmare horror."
     },
     "aguas": {
       "title": "Waters",
       "type": "Sacred Element",
       "date": "September 2023",
       "location": "Midjourney",
-      "description": "The water element in its sacred form. Reflections, ancestral memory, bioluminescent waterfalls. The energetic vibration of water as a portal of healing and connection."
+      "description": "Water in its sacred form. Reflections, ancestral memory, bioluminescent falls. The vibration of water as a portal for healing and connection."
     },
     "criaturas": {
       "title": "Creatures",
@@ -65,7 +65,7 @@
       "type": "Fragmented Digital Art",
       "date": "November 2023",
       "location": "Midjourney",
-      "description": "Ancestral-futuristic fusion in digital collages. Fragments of past and future meet in compositions that connect ancestral symbols with contemporary aesthetics."
+      "description": "Ancestral-futuristic fusion in digital form. Past and future fragments meet in compositions bridging ancestral symbols with contemporary aesthetics."
     },
     "tech-shaman": {
       "title": "Tech Shaman",
@@ -79,14 +79,14 @@
       "type": "First Experiments",
       "date": "2022",
       "location": "Midjourney / Stable Diffusion",
-      "description": "The first experiments with generative AI in 2022. Mythology, purple/green cyberpunk, exploration of possibilities. The beginning of a visual journey."
+      "description": "First experiments with generative AI in 2022. Mythology, purple-green cyberpunk, exploring possibilities. The beginning of a visual journey."
     },
     "futures": {
       "title": "Futures",
       "type": "Virtual Reality",
       "date": "2024",
       "location": "Midjourney",
-      "description": "Visions of tomorrow. Virtual reality, infinite cosmic libraries, immersive technology. Portals between worlds where knowledge floats like stars."
+      "description": "Visions of tomorrow. Virtual reality, infinite cosmic libraries, immersive tech. Portals between worlds where knowledge drifts like stars."
     }
   },
   "stats": {

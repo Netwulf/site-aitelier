@@ -3,14 +3,33 @@
   "subtitle": "Formação em IA",
   "tagline": "Desenvolva fluência em inteligência artificial",
   "description": "Nossa escola não ensina a usar ferramentas. Ensina a pensar com elas. Cada curso é uma jornada de descoberta, onde você desenvolve sua própria linguagem criativa com IA.",
+  "hero": {
+    "badge": "Formação Principal",
+    "date": "Março 2025",
+    "title1": "Cinema",
+    "title2": "sem Câmeras",
+    "subtitle": "Direção Cinematográfica para One Person Studios.",
+    "impact1": "Não é cinema com IA. É como operar um",
+    "impact2": "estúdio de alto nível sem equipe",
+    "cta1": "Quero me Candidatar",
+    "cta2": "Conhecer a Formação",
+    "slots": "vagas",
+    "months": "meses",
+    "scroll": "EXPLORAR"
+  },
+  "entry": {
+    "title": "Interessado em entrar na Escola?",
+    "subtitle": "Mantenha-se informado sobre próximas turmas e laboratórios.",
+    "cta": "Entrar na lista de espera"
+  },
   "fundamentos": {
     "title": "FUNDAMENTOS",
     "subtitle": "Vorkurs",
-    "description": "A base necessária para qualquer jornada com IA. Conceitos, mindset e primeiras práticas.",
+    "description": "A base necessária para qualquer jornada com IA. Conceitos, mentalidade e primeiras práticas.",
     "modules": {
       "mod1": "Introdução ao pensamento computacional",
       "mod2": "Prompt engineering essencial",
-      "mod3": "Fluxos de trabalho com IA",
+      "mod3": "Workflows de IA",
       "mod4": "Ética e limites"
     }
   },
@@ -29,7 +48,7 @@
       },
       "audio": {
         "title": "Áudio",
-        "description": "Música e design sonoro"
+        "description": "Música e sound design"
       },
       "codigo": {
         "title": "Código",

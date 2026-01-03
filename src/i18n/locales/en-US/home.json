@@ -66,7 +66,7 @@
     "exploreCta": "Explore all minds",
     "vote": {
       "question": "Want to talk to this mind?",
-      "button": "I want this UI!",
+      "button": "Vote for this mind!",
       "thanks": "Vote recorded!",
       "recorded": "Your vote counts towards creation priority.",
       "alreadyVoted": "You already voted for this mind",
@@ -86,8 +86,8 @@
         "description": "Author of Earthsea and The Left Hand of Darkness."
       },
       "tayna-puri": {
-        "subtitle": "AI.TELIER Creator",
-        "description": "Founder of ai.telier. Unites ancestry and AI to create the future."
+        "subtitle": "AI.TELIER Founder",
+        "description": "Founder of ai.telier. Bridges ancestry and AI to shape the future."
       }
     }
   },

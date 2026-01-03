@@ -1,6 +1,24 @@
 {
   "title": "CONTATO",
   "subtitle": "Entre em contato conosco",
+  "page": {
+    "title": "Fale com a gente",
+    "subtitle": "Selecione o assunto e envie sua mensagem."
+  },
+  "topics": {
+    "studio": {
+      "label": "Studio",
+      "description": "Quero contratar direção criativa"
+    },
+    "escola": {
+      "label": "Escola",
+      "description": "Quero saber sobre cursos"
+    },
+    "newsletter": {
+      "label": "Newsletter",
+      "description": "Quero acompanhar o ai.telier"
+    }
+  },
   "form": {
     "name": "Nome",
     "namePlaceholder": "Seu nome",
@@ -13,17 +31,39 @@
     "submit": "Enviar",
     "sending": "Enviando..."
   },
+  "labels": {
+    "subject": "ASSUNTO",
+    "yourEmail": "SEU EMAIL",
+    "message": "MENSAGEM",
+    "optional": "(opcional)"
+  },
+  "placeholders": {
+    "email": "seu@email.com",
+    "message": "Conte um pouco sobre você..."
+  },
+  "buttons": {
+    "send": "Enviar mensagem",
+    "sending": "Enviando..."
+  },
   "validation": {
     "nameRequired": "Nome é obrigatório",
     "emailRequired": "Email é obrigatório",
     "emailInvalid": "Email inválido",
     "messageRequired": "Mensagem é obrigatória",
-    "messageTooShort": "Mensagem muito curta"
+    "messageTooShort": "Mensagem muito curta",
+    "selectTopic": "Selecione um assunto",
+    "fillEmail": "Preencha seu email"
   },
   "messages": {
     "success": "Mensagem enviada com sucesso! Retornaremos em breve.",
     "error": "Ocorreu um erro ao enviar. Tente novamente."
   },
+  "success": {
+    "title": "Mensagem enviada",
+    "subtitle": "Retornaremos em até 24 horas.",
+    "sendAnother": "Enviar outra mensagem"
+  },
+  "directEmail": "Ou envie diretamente para",
   "doors": {
     "title": "Escolha sua entrada",
     "school": {

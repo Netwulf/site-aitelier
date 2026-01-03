@@ -1,73 +1,95 @@
 import { NavigationV2 } from "@/components/NavigationV2";
 import { FooterV2 } from "@/components/FooterV2";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { useScrollOptimization } from "@/hooks/useScrollOptimization";
+import VisualBreather from "@/components/VisualBreather";
 
-// Cinema sem Cameras Components
-import { CSCHero } from "@/components/cinema-sem-cameras/CSCHero";
-import { CSCRupture } from "@/components/cinema-sem-cameras/CSCRupture";
-import { CSCProblem } from "@/components/cinema-sem-cameras/CSCProblem";
-import { CSCCapabilities } from "@/components/cinema-sem-cameras/CSCCapabilities";
-import { CSCIdealFor } from "@/components/cinema-sem-cameras/CSCIdealFor";
-import { CSCMovements } from "@/components/cinema-sem-cameras/CSCMovements";
-import { CSCProfile } from "@/components/cinema-sem-cameras/CSCProfile";
-import { CSCInvestment } from "@/components/cinema-sem-cameras/CSCInvestment";
-import { CSCProcess } from "@/components/cinema-sem-cameras/CSCProcess";
+// Cinema sem Cameras V2 Components
+import {
+  CSCHeroV2,
+  CSCVirada,
+  CSCSyllabus,
+  CSCComoFunciona,
+  CSCTurmaFundadora,
+  CSCQuemDirige,
+  CSCCandidatura,
+  CSCFinalCTA,
+} from "@/components/cinema-sem-cameras";
+
+// Visual breather images
+import studioCreate from "@/assets/gallery/studio-create.png";
+import thresholdFigure from "@/assets/gallery/threshold-figure.png";
+import industrialLight from "@/assets/gallery/industrial-light.png";
 
 const CinemaSemCameras = () => {
   useSmoothScroll();
+  useScrollOptimization();
 
   return (
-    <div className="min-h-screen bg-ancestral-black">
+    <div className="min-h-screen bg-ancestral-black cursor-brutal">
+      {/* Background Effects Layer */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="organic-glow" style={{ top: '10%', left: '20%' }} />
+        <div className="mesh-gradient-1" />
+        <div className="mesh-gradient-2" />
+      </div>
+
       <NavigationV2 />
 
       <main>
-        {/* 1. Hero - Featured Course */}
-        <CSCHero />
+        {/* 1. Hero - Full-screen cinematic */}
+        <CSCHeroV2 />
 
-        {/* 2. Rupture - 3 negations + affirmation */}
-        <CSCRupture />
-
-        {/* Brutal Line Divider */}
+        {/* Divider */}
         <div className="brutal-line-glow" />
 
-        {/* 3. The Real Problem */}
-        <CSCProblem />
+        {/* 2. A Virada - Taynã's story */}
+        <CSCVirada />
 
-        {/* Brutal Line Divider */}
+        {/* Visual Breather 1 - Transition to Syllabus */}
+        <VisualBreather image={studioCreate} height="40vh" overlay="gradient" />
+
+        {/* Divider */}
         <div className="brutal-line-glow" />
 
-        {/* 4. What You'll Be Able To Do */}
-        <CSCCapabilities />
+        {/* 3. Syllabus - 6 pillars of cinema */}
+        <CSCSyllabus />
 
-        {/* Brutal Line Divider */}
+        {/* Divider */}
         <div className="brutal-line-glow" />
 
-        {/* 5. For Who / Not For */}
-        <CSCIdealFor />
+        {/* 4. Como Funciona - Methodology */}
+        <CSCComoFunciona />
 
-        {/* Brutal Line Divider */}
+        {/* Visual Breather 2 - Transition to Turma */}
+        <VisualBreather image={thresholdFigure} height="50vh" overlay="dark" />
+
+        {/* Divider */}
         <div className="brutal-line-glow" />
 
-        {/* 6. The 4 Movements */}
-        <CSCMovements />
+        {/* 5. Turma Fundadora - Exclusivity */}
+        <CSCTurmaFundadora />
 
-        {/* Brutal Line Divider */}
+        {/* Divider */}
         <div className="brutal-line-glow" />
 
-        {/* 7. Who Directs - Tay Profile */}
-        <CSCProfile />
+        {/* 6. Quem Dirige - Taynã's profile */}
+        <CSCQuemDirige />
 
-        {/* Brutal Line Divider */}
+        {/* Visual Breather 3 - Transition to CTA */}
+        <VisualBreather image={industrialLight} height="35vh" overlay="gradient" />
+
+        {/* Divider */}
         <div className="brutal-line-glow" />
 
-        {/* 8. Investment */}
-        <CSCInvestment />
+        {/* 7. Candidatura - Application form */}
+        <CSCCandidatura />
 
-        {/* Brutal Line Divider */}
+        {/* Divider */}
         <div className="brutal-line-glow" />
 
-        {/* 9. Process + Final CTA */}
-        <CSCProcess />
+        {/* 8. Final CTA */}
+        <CSCFinalCTA />
       </main>
 
       <FooterV2 />

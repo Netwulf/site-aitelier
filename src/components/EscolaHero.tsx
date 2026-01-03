@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ArrowRight } from "lucide-react";
 
 export const EscolaHero = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('school');
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
@@ -39,11 +41,11 @@ export const EscolaHero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <span className="font-mono-v2 text-xs text-matrix-green tracking-[0.3em] uppercase">
-              Formação Principal
+              {t('hero.badge')}
             </span>
             <span className="text-matrix-green/50">|</span>
             <span className="font-mono-v2 text-xs text-text-muted tracking-wider">
-              Março 2025
+              {t('hero.date')}
             </span>
           </motion.div>
 
@@ -54,9 +56,9 @@ export const EscolaHero = () => {
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Cinema
+            {t('hero.title1')}
             <br />
-            <span className="text-tech-olive">sem Câmeras</span>
+            <span className="text-tech-olive">{t('hero.title2')}</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -66,7 +68,7 @@ export const EscolaHero = () => {
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Direção Cinematográfica para One Person Studios.
+            {t('hero.subtitle')}
           </motion.p>
 
           {/* Impact phrase */}
@@ -76,8 +78,8 @@ export const EscolaHero = () => {
             animate={prefersReducedMotion ? {} : { opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Não é cinema com IA. É como operar um{" "}
-            <span className="text-ancestral-white">estúdio de alto nível sem equipe</span>.
+            {t('hero.impact1')}{" "}
+            <span className="text-ancestral-white">{t('hero.impact2')}</span>.
           </motion.p>
 
           {/* CTA */}
@@ -93,7 +95,7 @@ export const EscolaHero = () => {
                          bg-matrix-green text-ancestral-black font-bold uppercase tracking-wider
                          hover:bg-matrix-green/90 transition-all duration-300"
             >
-              <span>Quero me Candidatar</span>
+              <span>{t('hero.cta1')}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
@@ -102,7 +104,7 @@ export const EscolaHero = () => {
                          border-2 border-ancestral-white/30 text-ancestral-white font-medium
                          hover:border-matrix-green hover:text-matrix-green transition-all duration-300"
             >
-              Conhecer a Formação
+              {t('hero.cta2')}
             </a>
           </motion.div>
 
@@ -114,10 +116,10 @@ export const EscolaHero = () => {
             transition={{ duration: 0.6, delay: 1 }}
           >
             <div>
-              <span className="text-matrix-green">30-40</span> vagas
+              <span className="text-matrix-green">30-40</span> {t('hero.slots')}
             </div>
             <div>
-              <span className="text-matrix-green">6</span> meses
+              <span className="text-matrix-green">6</span> {t('hero.months')}
             </div>
             <div>
               <span className="text-matrix-green">R$ 8.000</span> ou 10x
@@ -142,7 +144,7 @@ export const EscolaHero = () => {
           }
           className="text-text-muted text-sm font-mono-v2 flex flex-col items-center gap-2"
         >
-          <span className="text-xs tracking-widest">EXPLORAR</span>
+          <span className="text-xs tracking-widest">{t('hero.scroll')}</span>
           <span>↓</span>
         </motion.div>
       </motion.div>

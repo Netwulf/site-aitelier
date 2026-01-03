@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { NavigationV2 } from "@/components/NavigationV2";
 import { FooterV2 } from "@/components/FooterV2";
 import { SectionContainer } from "@/components/SectionContainer";
@@ -15,6 +16,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 const StudioV2 = () => {
   useSmoothScroll();
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('studio');
 
   return (
     <div className="min-h-screen bg-ancestral-black">
@@ -30,15 +32,15 @@ const StudioV2 = () => {
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <p className="font-mono-v2 text-sm text-ancestral-amber mb-4 tracking-widest">
-                ONDE_O_CAMPO_ENCONTRA_O_MUNDO
+                {t('hero.terminal')}
               </p>
               <h1 className="font-display text-hero text-ancestral-white leading-none mb-8">
-                Studio
+                {t('hero.title')}
               </h1>
               <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mb-6 leading-relaxed">
-                Onde pessoas viram histórias.
+                {t('hero.line1')}
                 <br />
-                <span className="text-ancestral-white">Marcas que parecem filmes.</span>
+                <span className="text-ancestral-white">{t('hero.line2')}</span>
               </p>
             </motion.div>
           </div>
