@@ -114,11 +114,11 @@ export const CLONES: Record<string, CloneConfig> = {
   // ============================================
   "tayna-puri": {
     id: "tayna-puri",
-    name: "Tayna Puri",
-    title: "Tayna Puri",
-    subtitle: "Futuro Ancestral",
+    name: "Taynã Puri",
+    title: "Taynã Puri",
+    subtitle: "Criador do AI.TELIER",
     category: "UPLOADED INTELLIGENCE",
-    description: "Pensador brasileiro que une sabedoria ancestral com IA. Criador da filosofia Futuro Ancestral.",
+    description: "Fundador do AI.TELIER. Une ancestralidade e inteligência artificial para criar o futuro.",
     avatar: {
       type: "image",
       imageUrl: "/tayna-portraits/tayna-studio-contemplative.png",

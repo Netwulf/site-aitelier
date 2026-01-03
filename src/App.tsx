@@ -20,7 +20,6 @@ const IndexHorizontal = lazy(() => import("./pages/IndexHorizontal"));
 const IndexV2 = lazy(() => import("./pages/IndexV2"));
 
 // Lazy load other pages
-const Campo = lazy(() => import("./pages/Campo"));
 const Estudos = lazy(() => import("./pages/Estudos"));
 const CinemaSemCameras = lazy(() => import("./pages/CinemaSemCameras"));
 const StudioV2 = lazy(() => import("./pages/StudioV2"));
@@ -70,7 +69,6 @@ const App = () => (
                   <Route index element={<IndexV3 />} />
 
                   {/* Main pages - PT routes */}
-                  <Route path="atelier" element={<Campo />} />
                   <Route path="escola" element={<Estudos />} />
                   <Route path="escola/cinema-sem-cameras" element={<CinemaSemCameras />} />
                   <Route path="studio" element={<StudioV2 />} />
@@ -108,7 +106,6 @@ const App = () => (
                 </Route>
 
                 {/* Legacy routes without language prefix - redirect to PT */}
-                <Route path="/atelier" element={<Navigate to="/pt/atelier" replace />} />
                 <Route path="/escola" element={<Navigate to="/pt/escola" replace />} />
                 <Route path="/escola/*" element={<Navigate to="/pt/escola" replace />} />
                 <Route path="/studio" element={<Navigate to="/pt/studio" replace />} />

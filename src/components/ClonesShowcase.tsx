@@ -74,17 +74,17 @@ export const ClonesShowcase = () => {
           <div className="flex items-center justify-center gap-3 mb-6">
             <Sparkles className="w-5 h-5 text-tech-olive" />
             <span className="font-mono-v2 text-sm tracking-widest text-tech-olive">
-              {t('clones.sectionCode')}
+              {t('ui.sectionCode')}
             </span>
             <Sparkles className="w-5 h-5 text-tech-olive" />
           </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brutal-white leading-tight mb-4">
-            {t('clones.titlePlain')}
+            {t('ui.titlePlain')}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            {t('clones.subtitle')}
+            {t('ui.subtitle')}
             <br />
-            <span className="text-ancestral-amber">{t('clones.subtitleHighlight')}</span>
+            <span className="text-ancestral-amber">{t('ui.subtitleHighlight')}</span>
           </p>
         </motion.div>
 
@@ -121,7 +121,7 @@ export const ClonesShowcase = () => {
                   <div className="absolute top-4 left-4 flex items-center gap-2">
                     <span className="px-2 py-1 bg-tech-olive text-void-black text-[10px] font-mono-v2 tracking-wider flex items-center gap-1">
                       <span className="w-1.5 h-1.5 bg-void-black rounded-full animate-pulse" />
-                      {t('clones.activeBadge')}
+                      {t('ui.activeBadge')}
                     </span>
                   </div>
 
@@ -136,14 +136,14 @@ export const ClonesShowcase = () => {
                 {/* Info */}
                 <div className="p-5">
                   <p className="font-mono-v2 text-[10px] text-tech-olive tracking-widest mb-1">
-                    {t(`clones.minds.${cloneId}.subtitle`).toUpperCase()}
+                    {t(`ui.minds.${cloneId}.subtitle`).toUpperCase()}
                   </p>
                   <h3 className="font-display text-xl text-warm-ivory mb-2
                                group-hover:text-tech-olive transition-colors">
                     {cloneNames[cloneId]}
                   </h3>
                   <p className="text-sm text-warm-ivory/50 leading-relaxed">
-                    {t(`clones.minds.${cloneId}.description`)}
+                    {t(`ui.minds.${cloneId}.description`)}
                   </p>
                 </div>
 
@@ -165,10 +165,10 @@ export const ClonesShowcase = () => {
         >
           <div className="mb-8">
             <span className="font-mono-v2 text-xs tracking-widest text-ancestral-amber">
-              {t('clones.comingSoonCount', { count: comingSoonClones.length })}
+              {t('ui.comingSoonCount', { count: comingSoonClones.length })}
             </span>
             <h3 className="text-2xl md:text-3xl font-display text-warm-ivory mt-3">
-              {t('clones.comingSoonTitle')}
+              {t('ui.comingSoonTitle')}
             </h3>
           </div>
 
@@ -221,7 +221,7 @@ export const ClonesShowcase = () => {
                         transition-all duration-300 font-mono-v2 text-sm"
             >
               <Sparkles className="w-4 h-4" />
-              {t('clones.exploreCta')}
+              {t('ui.exploreCta')}
             </Link>
           </motion.div>
         </motion.div>

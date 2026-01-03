@@ -140,27 +140,29 @@ const PlaygroundTools = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d]">
-                      {/* Clone Avatar/Icon centered */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-20 h-20 rounded-full bg-white/5 border border-white/10
-                                      flex items-center justify-center text-tech-olive
-                                      group-hover:border-tech-olive/50 transition-colors">
-                          {clone.avatar.type === "icon" && CLONE_ICONS[clone.avatar.icon || "User"]}
-                          {clone.avatar.type === "image" && clone.avatar.imageUrl && (
-                            <img
-                              src={clone.avatar.imageUrl}
-                              alt={clone.name}
-                              className="w-full h-full object-cover rounded-full"
-                            />
-                          )}
+                    <div className="relative h-64 overflow-hidden">
+                      {/* Full-size image background */}
+                      {clone.avatar.type === "image" && clone.avatar.imageUrl ? (
+                        <img
+                          src={clone.avatar.imageUrl}
+                          alt={clone.name}
+                          className="w-full h-full object-cover object-top grayscale contrast-125
+                                   group-hover:grayscale-0 transition-all duration-500
+                                   group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] flex items-center justify-center">
+                          <div className="w-20 h-20 rounded-full bg-white/5 border border-white/10
+                                        flex items-center justify-center text-tech-olive">
+                            {clone.avatar.type === "icon" && CLONE_ICONS[clone.avatar.icon || "User"]}
+                          </div>
                         </div>
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
                       {/* Category Badge */}
                       <div className="absolute top-4 left-4 flex items-center gap-2">
                         <span className="px-2 py-1 bg-tech-olive text-void-black text-[10px] font-mono-v2 tracking-wider">
-                          {clone.category}
+                          MENTOR
                         </span>
                         <span className="px-2 py-1 bg-white/10 text-warm-ivory text-[10px] font-mono-v2 flex items-center gap-1">
                           <Sparkles className="w-3 h-3" /> AI
