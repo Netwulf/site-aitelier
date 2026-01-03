@@ -9,27 +9,69 @@
     "line1": "Where people become stories.",
     "line2": "Brands that feel like films."
   },
-  "process": {
-    "title": "PROCESS",
-    "step1": {
-      "title": "Conception",
-      "description": "Collaborative ideation between humans and AI"
-    },
-    "step2": {
-      "title": "Creation",
-      "description": "Production with generative AI tools"
-    },
-    "step3": {
-      "title": "Refinement",
-      "description": "Human artistic direction and curation"
-    }
-  },
   "services": {
     "title": "WHAT WE DO",
-    "item1": "AI-powered videos and animations",
-    "item2": "Computational photography",
-    "item3": "Immersive experiences",
-    "item4": "Artistic installations"
+    "subtitle1": "Every story demands a form.",
+    "subtitle2": "These are ours.",
+    "comment": "// The delivery isn't \"branding\". It's direction + work + system.",
+    "movements": {
+      "obra": {
+        "title": "WORK",
+        "subtitle": "Impact",
+        "items": [
+          {"title": "Manifesto Film", "tagline": "Story as cinema."},
+          {"title": "Archetypal Portrait", "tagline": "Deep portraiture."}
+        ]
+      },
+      "linguagem": {
+        "title": "LANGUAGE",
+        "subtitle": "Essence",
+        "items": [
+          {"title": "Storytelling & Narrative", "tagline": "Organized story."},
+          {"title": "Creative Direction", "tagline": "External eye with depth."}
+        ]
+      },
+      "sistema": {
+        "title": "SYSTEM",
+        "subtitle": "Continuity",
+        "items": [
+          {"title": "Brand OS", "tagline": "Brand operating system."},
+          {"title": "Platforms & Sites", "tagline": "Narrative digital presence."}
+        ]
+      }
+    },
+    "footer": {
+      "note1": "Not every project uses everything. Some need just a film. Others need the whole system.",
+      "note2": "We talk first.",
+      "comment": "// Content fades. Work remains."
+    }
+  },
+  "process": {
+    "title": "THE PROCESS",
+    "subtitle": "Three movements. One direction.",
+    "outputLabel": "Output:",
+    "steps": {
+      "step1": {
+        "title": "ARCHAEOLOGY",
+        "lines": ["We dig.", "Who you are. What you stand for.", "Why you matter.", "", "We don't invent stories.", "We reveal what already exists."],
+        "outputs": ["Narrative Identity", "Positioning", "Manifesto"]
+      },
+      "step2": {
+        "title": "DIRECTION",
+        "lines": ["We give shape to the invisible.", "How you're seen.", "How you leave a mark.", "", "Archetypal photography.", "Manifesto video.", "Coherent aesthetics."],
+        "outputs": ["Cinematic Presence"]
+      },
+      "step3": {
+        "title": "ACTIVATION",
+        "lines": ["We structure communication.", "Where and how you exist in the world.", "", "Narrative website.", "Content direction.", "Presentation materials."],
+        "outputs": ["Presence System"]
+      }
+    },
+    "footer": {
+      "line1": "Each project is unique.",
+      "line2": "Time and investment vary.",
+      "line3": "We talk first."
+    }
   },
   "cta": {
     "viewWork": "View work",

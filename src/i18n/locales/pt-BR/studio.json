@@ -9,27 +9,69 @@
     "line1": "Onde pessoas viram histórias.",
     "line2": "Marcas que parecem filmes."
   },
-  "process": {
-    "title": "PROCESSO",
-    "step1": {
-      "title": "Concepção",
-      "description": "Ideação colaborativa entre humanos e IA"
-    },
-    "step2": {
-      "title": "Criação",
-      "description": "Produção com ferramentas de IA generativa"
-    },
-    "step3": {
-      "title": "Refinamento",
-      "description": "Curadoria e direção artística humana"
-    }
-  },
   "services": {
     "title": "O QUE FAZEMOS",
-    "item1": "Vídeos e animações com IA",
-    "item2": "Fotografia computacional",
-    "item3": "Experiências imersivas",
-    "item4": "Instalações artísticas"
+    "subtitle1": "Cada história pede uma forma.",
+    "subtitle2": "Estas são as nossas.",
+    "comment": "// Aqui a entrega não é \"branding\". É direção + obra + sistema.",
+    "movements": {
+      "obra": {
+        "title": "OBRA",
+        "subtitle": "Impacto",
+        "items": [
+          {"title": "Filme-Manifesto", "tagline": "História como cinema."},
+          {"title": "Ensaio Arquetípico", "tagline": "Retrato profundo."}
+        ]
+      },
+      "linguagem": {
+        "title": "LINGUAGEM",
+        "subtitle": "Essência",
+        "items": [
+          {"title": "Storytelling & Narrativa", "tagline": "História organizada."},
+          {"title": "Direção Criativa", "tagline": "Olhar externo com profundidade."}
+        ]
+      },
+      "sistema": {
+        "title": "SISTEMA",
+        "subtitle": "Continuidade",
+        "items": [
+          {"title": "Brand OS", "tagline": "Sistema operacional da marca."},
+          {"title": "Plataformas & Sites", "tagline": "Presença digital narrativa."}
+        ]
+      }
+    },
+    "footer": {
+      "note1": "Nem todo projeto usa tudo. Alguns pedem só um filme. Outros pedem o sistema inteiro.",
+      "note2": "Conversamos antes.",
+      "comment": "// Conteúdo passa. Obra fica."
+    }
+  },
+  "process": {
+    "title": "O PROCESSO",
+    "subtitle": "Três movimentos. Uma direção.",
+    "outputLabel": "Saída:",
+    "steps": {
+      "step1": {
+        "title": "ARQUEOLOGIA",
+        "lines": ["Escavamos.", "Quem você é. O que você defende.", "Por que você importa.", "", "Não inventamos história.", "Revelamos a que já existe."],
+        "outputs": ["Identidade Narrativa", "Posicionamento", "Manifesto"]
+      },
+      "step2": {
+        "title": "DIREÇÃO",
+        "lines": ["Damos forma ao invisível.", "Como você é visto.", "Como você marca.", "", "Fotografia arquetípica.", "Vídeo-manifesto.", "Estética coerente."],
+        "outputs": ["Presença Cinematográfica"]
+      },
+      "step3": {
+        "title": "ATIVAÇÃO",
+        "lines": ["Estruturamos a comunicação.", "Onde e como você existe no mundo.", "", "Site narrativo.", "Direção de conteúdo.", "Materiais de apresentação."],
+        "outputs": ["Sistema de Presença"]
+      }
+    },
+    "footer": {
+      "line1": "Cada projeto é único.",
+      "line2": "Tempo e investimento variam.",
+      "line3": "Conversamos antes."
+    }
   },
   "cta": {
     "viewWork": "Ver trabalhos",
