@@ -1,49 +1,19 @@
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ArrowRight } from "lucide-react";
-
-const capabilities = [
-  {
-    number: "01",
-    title: "CRIAR",
-    description: "Produzir conteúdo com qualidade de studio. Vídeo, imagem, texto, código — sozinho.",
-  },
-  {
-    number: "02",
-    title: "ESTRUTURAR",
-    description: "Transformar conhecimento em produto. Cursos, mentorias, serviços, ativos digitais.",
-  },
-  {
-    number: "03",
-    title: "VENDER",
-    description: "Monetizar sem parecer vendedor. Narrativa que converte. Presença que atrai.",
-  },
-  {
-    number: "04",
-    title: "OPERAR",
-    description: "Rodar o negócio em 4h/dia. Sistemas que funcionam enquanto você cria.",
-  },
-];
-
-const oldStack = [
-  "Editor",
-  "Designer",
-  "Copywriter",
-  "Filmmaker",
-  "Social media",
-  "Dev",
-  "Estrategista",
-];
-
-const newStack = [
-  "Clareza",
-  "Sistema",
-  "Ferramentas certas",
-  "Você",
-];
+import { useTranslation } from "react-i18next";
 
 export const OnePersonStudioSection = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('school');
+
+  const capabilities = t('onePersonStudio.capabilities', { returnObjects: true }) as Array<{
+    number: string;
+    title: string;
+    description: string;
+  }>;
+  const beforeItems = t('onePersonStudio.before.items', { returnObjects: true }) as string[];
+  const afterItems = t('onePersonStudio.after.items', { returnObjects: true }) as string[];
 
   return (
     <section className="py-24 md:py-32 bg-stone-dark relative overflow-hidden">
@@ -59,19 +29,19 @@ export const OnePersonStudioSection = () => {
           className="mb-16"
         >
           <div className="code-text text-xs mb-6 text-matrix-green">
-            &gt; ONE_PERSON_STUDIO.manifest
+            {t('onePersonStudio.terminal')}
           </div>
 
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-ancestral-white leading-[0.95] mb-6">
-            O studio completo
+            {t('onePersonStudio.title1')}
             <br />
-            <span className="text-tech-olive">cabe em uma pessoa.</span>
+            <span className="text-tech-olive">{t('onePersonStudio.title2')}</span>
           </h2>
 
           <p className="text-xl md:text-2xl text-text-secondary max-w-2xl">
-            A IA não substituiu criadores.
+            {t('onePersonStudio.subtitle1')}
             <br />
-            <span className="text-ancestral-white">Substituiu equipes.</span>
+            <span className="text-ancestral-white">{t('onePersonStudio.subtitle2')}</span>
           </p>
         </motion.div>
 
@@ -86,13 +56,13 @@ export const OnePersonStudioSection = () => {
           {/* Before */}
           <div className="p-8 md:p-10 border border-text-muted/30 bg-ancestral-black/50 rounded-sm">
             <div className="font-mono-v2 text-sm text-text-muted mb-4 tracking-wider uppercase">
-              Antes
+              {t('onePersonStudio.before.label')}
             </div>
             <p className="text-xl md:text-2xl text-ancestral-white font-medium mb-8">
-              Você precisava de:
+              {t('onePersonStudio.before.title')}
             </p>
             <div className="space-y-4">
-              {oldStack.map((item, i) => (
+              {beforeItems.map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <span className="text-text-muted text-lg">—</span>
                   <span className="text-lg text-text-muted">{item}</span>
@@ -104,13 +74,13 @@ export const OnePersonStudioSection = () => {
           {/* After */}
           <div className="p-8 md:p-10 border-2 border-matrix-green bg-matrix-green/10 rounded-sm">
             <div className="font-mono-v2 text-sm text-matrix-green mb-4 tracking-wider uppercase">
-              Agora
+              {t('onePersonStudio.after.label')}
             </div>
             <p className="text-xl md:text-2xl text-ancestral-white font-medium mb-8">
-              Você precisa de:
+              {t('onePersonStudio.after.title')}
             </p>
             <div className="space-y-4">
-              {newStack.map((item, i) => (
+              {afterItems.map((item, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <span className="text-matrix-green text-lg">→</span>
                   <span className="text-lg text-ancestral-white font-medium">{item}</span>
@@ -131,7 +101,7 @@ export const OnePersonStudioSection = () => {
           className="mb-16"
         >
           <div className="code-text text-xs text-text-muted mb-8">
-            O QUE ENSINAMOS
+            {t('onePersonStudio.whatWeTeach')}
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -166,16 +136,16 @@ export const OnePersonStudioSection = () => {
           className="text-center"
         >
           <p className="text-xl md:text-2xl text-text-secondary mb-8">
-            "Não formamos funcionários.
+            "{t('onePersonStudio.bottomQuote1')}
             <br />
-            <span className="text-ancestral-white">Formamos studios de uma pessoa só."</span>
+            <span className="text-ancestral-white">{t('onePersonStudio.bottomQuote2')}"</span>
           </p>
 
           <a
             href="#cursos"
             className="inline-flex items-center gap-3 px-8 py-4 border-2 border-matrix-green text-matrix-green font-mono-v2 text-sm uppercase tracking-wider hover:bg-matrix-green hover:text-brutal-black transition-all"
           >
-            <span>Ver cursos</span>
+            <span>{t('onePersonStudio.cta')}</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </motion.div>

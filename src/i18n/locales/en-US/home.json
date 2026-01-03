@@ -129,5 +129,144 @@
     "explore": "Explore",
     "viewWork": "View work",
     "learnMore": "Learn more"
+  },
+  "manifestoV2": {
+    "title": "MANIFESTO",
+    "opening": {
+      "line1": "We are not an agency.",
+      "line2": "We are not a school.",
+      "line3": "We are not a studio in the common sense."
+    },
+    "declaration": "We are",
+    "description": {
+      "line1": "A place where art, technology and identity",
+      "line2": "reorganize for a new time.",
+      "line3": "Where founders learn to direct themselves like films.",
+      "line4": "Where creators discover their own language.",
+      "line5": "Where the invisible takes form."
+    },
+    "method": {
+      "line1": "We treat each brand as a work.",
+      "line2": "Each person as a universe.",
+      "line3": "Each project as an atelier of investigation."
+    },
+    "truth": {
+      "line1": "The soul already exists before the logo.",
+      "line2": "Our job is to reveal it."
+    },
+    "closing": {
+      "line1": "Make the unconscious conscious.",
+      "line2": "Make the invisible, visible.",
+      "line3": "Become the brand."
+    }
+  },
+  "selectedWork": {
+    "sectionCode": "SELECTED_WORK",
+    "title": "Who trusted us",
+    "subtitle1": "They all grew because they created a narrative + a category + a system.",
+    "subtitle2": "Not because they were the best.",
+    "subtitle3": "Because they were the only ones.",
+    "bottomNote": "Click on each case to see details",
+    "cases": {
+      "alan-nicolas": {
+        "name": "Alan Nicolas",
+        "field": "AI & Education",
+        "description": "Academia Lendária: 262K followers, $40M revenue",
+        "tags": ["Identity", "System"],
+        "fullDescription": "Alan Nicolas is one of Brazil's top AI specialists. Creator of Academia Lendária, he transformed his technical expertise into a powerful personal brand generating over $40M in revenue. His growth from 6K to 262K followers demonstrates the power of authentic narrative combined with scalable systems.",
+        "achievements": [
+          "From 6K to 262K followers in less than 2 years",
+          "5,000+ students at Academia Lendária",
+          "$40M in personal revenue",
+          "Students earning 6 figures in 4 months with AI",
+          "National reference in applied artificial intelligence"
+        ],
+        "quote": "Mastering the technique isn't enough. You need to create a narrative that makes people want to learn from you."
+      },
+      "alexandra-loras": {
+        "name": "Alexandra Loras",
+        "field": "Diversity & Impact",
+        "description": "Former French Consul, Shark Tank, 20+ awards",
+        "tags": ["Narrative", "Positioning"],
+        "fullDescription": "Alexandra Loras is a former French Consul in Brazil and today one of the most influential voices in diversity and high impact. Her participation as a Shark on Shark Tank Brazil consolidated her position as a reference in purpose-driven investments. With over 20 international awards, she proves that social impact and business success go together.",
+        "achievements": [
+          "Shark on Shark Tank Brazil",
+          "Former French Consul in Brazil",
+          "20+ international awards",
+          "20,000+ people impacted globally",
+          "Featured in Forbes and major international outlets"
+        ],
+        "quote": "Diversity isn't just an agenda. It's business strategy."
+      },
+      "davi-ribas": {
+        "name": "Davi Ribas",
+        "field": "Movement Branding",
+        "description": "ETER Co, 154K followers, international consultant",
+        "tags": ["Movement", "Brand"],
+        "fullDescription": "Davi Ribas is the creator of 'Movement Is The New Branding'. Founder of ETER Co, he developed a revolutionary methodology where movement replaces product as the center of the brand. With 154K followers and work as an international consultant, he helps companies earn millions building causes, not just products.",
+        "achievements": [
+          "Creator of ETER Co",
+          "154K engaged followers",
+          "International branding consultant",
+          "Methodology: movement > product",
+          "Partner companies earn millions with cause"
+        ],
+        "quote": "Products win for a while. Movements win forever."
+      },
+      "edgar-ueda": {
+        "name": "Edgar Ueda",
+        "field": "Real Estate",
+        "description": "Neximob: $1.2B in sales, 18,500+ properties",
+        "tags": ["System", "Scale"],
+        "fullDescription": "Edgar Ueda is CEO of Neximob, one of Brazil's largest real estate networks. With a unique system of real estate intelligence and national expansion, he built an empire of $1.2 billion in sales. His story is proof that scale and quality can coexist when there's a system behind it.",
+        "achievements": [
+          "CEO of Neximob",
+          "$1.2 billion in accumulated sales",
+          "18,500+ properties sold",
+          "Presence in 70+ cities",
+          "3x TEDx Speaker + bestselling author"
+        ],
+        "quote": "System is what transforms individual talent into collective results."
+      },
+      "rafa-medeiros": {
+        "name": "Rafa Medeiros",
+        "field": "Enneagram & Business",
+        "description": "TEDx Speaker, 15,000+ professionals trained",
+        "tags": ["Influence", "Method"],
+        "fullDescription": "Rafa Medeiros is an Enneagram specialist applied to business, trained in California. As a TEDx Speaker, she has trained over 15,000 professionals in her methodology that combines self-knowledge with business performance. Her premium clients report doubling revenue after applying her method.",
+        "achievements": [
+          "TEDx Speaker",
+          "15,000+ professionals trained",
+          "California certified",
+          "Method: Enneagram + business",
+          "Clients report 2x revenue"
+        ],
+        "quote": "When you understand who you are, the market starts to understand too."
+      }
+    }
+  },
+  "pillars": {
+    "terminal": "> PILLARS.LOAD",
+    "title1": "THE THREE",
+    "title2": "PILLARS",
+    "subtitle": "The Bauhaus of the AI Era — where you learn to unite technology, art and consciousness",
+    "quote": "Think like an artist, create like an engineer",
+    "items": {
+      "ia": {
+        "title": "AI",
+        "description": "Technical mastery of artificial creation tools",
+        "tools": ["ChatGPT, Gemini, Claude", "Midjourney, Veo, Suno", "HeyGen, Automations", "Custom agents"]
+      },
+      "arte": {
+        "title": "ART",
+        "description": "Development of aesthetics, style and authorial language",
+        "tools": ["Personal cosmology", "Irreplaceable expression", "Philosophy of creation", "Aesthetics as strategy"]
+      },
+      "negocio": {
+        "title": "BUSINESS",
+        "description": "Transformation of creation into financial freedom",
+        "tools": ["One Person Business", "Expression monetization", "Digital products", "Living community"]
+      }
+    }
   }
 }

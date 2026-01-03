@@ -129,5 +129,144 @@
     "explore": "Explorar",
     "viewWork": "Ver trabalhos",
     "learnMore": "Saiba mais"
+  },
+  "manifestoV2": {
+    "title": "MANIFESTO",
+    "opening": {
+      "line1": "Não somos agência.",
+      "line2": "Não somos escola.",
+      "line3": "Não somos estúdio no sentido comum."
+    },
+    "declaration": "Somos o",
+    "description": {
+      "line1": "Um lugar onde arte, tecnologia e identidade",
+      "line2": "se reorganizam para um tempo novo.",
+      "line3": "Onde founders aprendem a se dirigir como filmes.",
+      "line4": "Onde creators descobrem linguagem própria.",
+      "line5": "Onde o invisível ganha forma."
+    },
+    "method": {
+      "line1": "Tratamos cada marca como obra.",
+      "line2": "Cada pessoa como universo.",
+      "line3": "Cada projeto como atelier de investigação."
+    },
+    "truth": {
+      "line1": "A alma já existe antes do logotipo.",
+      "line2": "Nosso trabalho é revelá-la."
+    },
+    "closing": {
+      "line1": "Faça do inconsciente consciente.",
+      "line2": "Torne o invisível, visível.",
+      "line3": "Torne-se a marca."
+    }
+  },
+  "selectedWork": {
+    "sectionCode": "SELECTED_WORK",
+    "title": "Quem já confiou",
+    "subtitle1": "Todos eles cresceram porque criaram uma narrativa + uma categoria + um sistema.",
+    "subtitle2": "Não porque eram os melhores.",
+    "subtitle3": "Porque eram os únicos.",
+    "bottomNote": "Clique em cada case para ver detalhes",
+    "cases": {
+      "alan-nicolas": {
+        "name": "Alan Nicolas",
+        "field": "IA & Educação",
+        "description": "Academia Lendária: 262K seguidores, R$200M faturamento",
+        "tags": ["Identidade", "Sistema"],
+        "fullDescription": "Alan Nicolas é um dos maiores especialistas em IA do Brasil. Criador da Academia Lendária, ele transformou sua expertise técnica em uma marca pessoal poderosa que gera mais de R$200M em faturamento. Seu crescimento de 6K para 262K seguidores demonstra o poder de uma narrativa autêntica combinada com sistemas escaláveis.",
+        "achievements": [
+          "De 6K para 262K seguidores em menos de 2 anos",
+          "5.000+ alunos na Academia Lendária",
+          "R$200M em faturamento pessoal",
+          "Alunos faturando 6 dígitos em 4 meses com IA",
+          "Referência nacional em inteligência artificial aplicada"
+        ],
+        "quote": "Não basta dominar a técnica. Você precisa criar uma narrativa que faça as pessoas quererem aprender com você."
+      },
+      "alexandra-loras": {
+        "name": "Alexandra Loras",
+        "field": "Diversidade & Impacto",
+        "description": "Ex-Consulesa da França, Shark Tank, 20+ prêmios",
+        "tags": ["Narrativa", "Posicionamento"],
+        "fullDescription": "Alexandra Loras é ex-consulesa da França no Brasil e hoje é uma das vozes mais influentes em diversidade e alto impacto. Sua participação como Shark no Shark Tank Brasil consolidou sua posição como referência em investimentos com propósito. Com mais de 20 prêmios internacionais, ela prova que impacto social e sucesso empresarial caminham juntos.",
+        "achievements": [
+          "Shark do Shark Tank Brasil",
+          "Ex-Consulesa da França no Brasil",
+          "20+ prêmios internacionais",
+          "20.000+ pessoas impactadas globalmente",
+          "Presença na Forbes e principais veículos internacionais"
+        ],
+        "quote": "Diversidade não é só pauta. É estratégia de negócio."
+      },
+      "davi-ribas": {
+        "name": "Davi Ribas",
+        "field": "Movement Branding",
+        "description": "ETER Co, 154K seguidores, consultor internacional",
+        "tags": ["Movimento", "Marca"],
+        "fullDescription": "Davi Ribas é o criador do conceito 'Movement Is The New Branding'. Fundador da ETER Co, ele desenvolveu uma metodologia revolucionária onde o movimento substitui o produto como centro da marca. Com 154K seguidores e atuação como consultor internacional, ele ajuda empresas a faturar milhões construindo causas, não apenas produtos.",
+        "achievements": [
+          "Criador da ETER Co",
+          "154K seguidores engajados",
+          "Consultor internacional em branding",
+          "Metodologia: movimento > produto",
+          "Empresas parceiras faturam milhões com causa"
+        ],
+        "quote": "Produtos vencem por um tempo. Movimentos vencem para sempre."
+      },
+      "edgar-ueda": {
+        "name": "Edgar Ueda",
+        "field": "Mercado Imobiliário",
+        "description": "Neximob: R$5.7B em vendas, 18.500+ imóveis",
+        "tags": ["Sistema", "Escala"],
+        "fullDescription": "Edgar Ueda é CEO da Neximob, uma das maiores redes imobiliárias do Brasil. Com um sistema único de inteligência imobiliária e expansão nacional, ele construiu um império de R$5.7 bilhões em vendas. Sua história é prova de que escala e qualidade podem coexistir quando há sistema por trás.",
+        "achievements": [
+          "CEO da Neximob",
+          "R$5.7 bilhões em vendas acumuladas",
+          "18.500+ imóveis comercializados",
+          "Presença em 70+ cidades",
+          "3x TEDx Speaker + autor best-seller"
+        ],
+        "quote": "Sistema é o que transforma talento individual em resultado coletivo."
+      },
+      "rafa-medeiros": {
+        "name": "Rafa Medeiros",
+        "field": "Eneagrama & Negócios",
+        "description": "TEDx Speaker, 15.000+ profissionais treinados",
+        "tags": ["Influência", "Método"],
+        "fullDescription": "Rafa Medeiros é especialista em Eneagrama aplicado a negócios, com formação na Califórnia. Como TEDx Speaker, ela já treinou mais de 15.000 profissionais em sua metodologia que combina autoconhecimento com performance empresarial. Seus clientes premium relatam dobrar o faturamento após aplicar seu método.",
+        "achievements": [
+          "TEDx Speaker",
+          "15.000+ profissionais treinados",
+          "Especialização na Califórnia",
+          "Método: Eneagrama + negócios",
+          "Clientes relatam 2x faturamento"
+        ],
+        "quote": "Quando você entende quem você é, o mercado passa a entender também."
+      }
+    }
+  },
+  "pillars": {
+    "terminal": "> PILLARS.LOAD",
+    "title1": "OS TRÊS",
+    "title2": "PILARES",
+    "subtitle": "A Bauhaus da Era da IA — onde você aprende a unir tecnologia, arte e consciência",
+    "quote": "Pensar como artista, criar como engenheiro",
+    "items": {
+      "ia": {
+        "title": "IA",
+        "description": "Domínio técnico das ferramentas de criação artificial",
+        "tools": ["ChatGPT, Gemini, Claude", "Midjourney, Veo, Suno", "HeyGen, Automações", "Agentes customizados"]
+      },
+      "arte": {
+        "title": "ARTE",
+        "description": "Desenvolvimento de estética, estilo e linguagem autoral",
+        "tools": ["Cosmologia pessoal", "Expressão insubstituível", "Filosofia da criação", "Estética como estratégia"]
+      },
+      "negocio": {
+        "title": "NEGÓCIO",
+        "description": "Transformação de criação em liberdade financeira",
+        "tools": ["One Person Business", "Monetização de expressão", "Produtos digitais", "Comunidade viva"]
+      }
+    }
   }
 }

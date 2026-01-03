@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Clock, Users, ArrowRight, X, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { supabase } from "@/integrations/supabase/client";
 import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Courses with dedicated pages
 const COURSES_WITH_PAGES: Record<string, string> = {
@@ -12,6 +13,51 @@ const COURSES_WITH_PAGES: Record<string, string> = {
 
 // LocalStorage keys for auto-fill
 const STORAGE_KEY = "aitelier_waitlist_user";
+
+// Course images mapping
+const courseImages: Record<string, string> = {
+  "zero-one": "/courses/zero-one.png",
+  "artists-journey": "/courses/artists-journey.png",
+  "solo-biz": "/courses/solo-biz.png",
+  "produto-zero": "/courses/produto-zero.png",
+  "narrativa-venda": "/courses/narrativa-venda.png",
+  "studio-os": "/courses/studio-os.png",
+  "presenca-monetizada": "/courses/presenca-monetizada.png",
+  "storycraft": "/courses/storycraft.png",
+  "doc-real": "/courses/doc-real.png",
+  "cinema-sem-cameras": "/courses/cinema-sem-cameras.png",
+  "retrato-arquetipico": "/courses/retrato-arquetipico.png",
+  "motion-lab": "/courses/motion-lab.png",
+  "post-vision": "/courses/post-vision.png",
+  "vibe-code": "/courses/vibe-code.png",
+  "digital-presence": "/courses/digital-presence.png",
+  "soundscape": "/courses/soundscape.png",
+  "ai-artist": "/courses/ai-artist.png",
+};
+
+// Course-category mapping
+const courseCategoryMap: Record<string, string> = {
+  "zero-one": "fundacao",
+  "artists-journey": "fundacao",
+  "solo-biz": "one-person-studio",
+  "produto-zero": "one-person-studio",
+  "narrativa-venda": "one-person-studio",
+  "studio-os": "one-person-studio",
+  "presenca-monetizada": "one-person-studio",
+  "storycraft": "narrativa",
+  "doc-real": "narrativa",
+  "cinema-sem-cameras": "producao-visual",
+  "retrato-arquetipico": "producao-visual",
+  "motion-lab": "producao-visual",
+  "post-vision": "producao-visual",
+  "vibe-code": "tech",
+  "digital-presence": "tech",
+  "soundscape": "audio",
+  "ai-artist": "formacao-completa",
+};
+
+const courseIds = Object.keys(courseImages);
+const categoryIds = ["one-person-studio", "fundacao", "narrativa", "producao-visual", "tech", "audio", "formacao-completa"];
 
 interface Course {
   id: string;
@@ -28,298 +74,21 @@ interface Course {
   comingSoon?: boolean;
 }
 
-// All courses organized by category
-const allCourses: Course[] = [
-  // FUNDAÇÃO
-  {
-    id: "zero-one",
-    title: "ZERO→ONE",
-    subtitle: "Matéria e Forma",
-    description: "O curso base. Pensamento de arte, storytelling fundamental, criação consciente.",
-    longDescription: "A fundação para qualquer pessoa que queira criar. Do vazio à forma, do pensamento à matéria. Este curso é o ponto de partida — onde você aprende a linguagem universal da criação antes de escolher seu instrumento. Filosofia, estética, narrativa e consciência criativa.",
-    image: "/courses/zero-one.png",
-    duration: "12 semanas",
-    level: "Fundação",
-    tag: "BASE",
-    category: "fundacao",
-    topics: ["Filosofia da criação", "Pensamento visual", "Storytelling base", "Estética consciente", "Processo criativo"],
-  },
-  {
-    id: "artists-journey",
-    title: "JORNADA DO ARTISTA",
-    subtitle: "Criatividade como Caminho",
-    description: "Desbloqueie sua criatividade. Do medo à expressão.",
-    longDescription: "Antes de criar, é preciso se libertar. Este curso é uma jornada interna — do bloqueio criativo à expressão autêntica. Processo, ritual, prática. Transforme medo em combustível.",
-    image: "/courses/artists-journey.png",
-    duration: "12 semanas",
-    level: "Todos os níveis",
-    tag: "PROCESSO",
-    category: "fundacao",
-    topics: ["Bloqueio criativo", "Ritual e prática", "Medo e expressão", "Processo autoral", "Identidade artística"],
-  },
-
-  // ONE PERSON STUDIO (NOVOS)
-  {
-    id: "solo-biz",
-    title: "SOLO.BIZ",
-    subtitle: "Negócio de Uma Pessoa",
-    description: "Estruture seu negócio solo. Oferta, preço, entrega, sistema.",
-    longDescription: "O negócio completo que roda com você. Aprenda a estruturar oferta, definir preço, entregar valor e criar sistemas que funcionam enquanto você descansa. Não é sobre escalar — é sobre lucrar com leveza.",
-    image: "/courses/solo-biz.png",
-    duration: "8 semanas",
-    level: "Todos os níveis",
-    tag: "NEGÓCIOS",
-    category: "one-person-studio",
-    topics: ["Oferta clara", "Precificação", "Entrega", "Sistemas", "Operação solo"],
-  },
-  {
-    id: "produto-zero",
-    title: "PRODUTO ZERO",
-    subtitle: "Do Conhecimento ao Produto",
-    description: "Transforme o que você sabe em algo vendável.",
-    longDescription: "Você já sabe algo valioso. Agora falta empacotar. Aprenda a transformar conhecimento tácito em curso, mentoria, consultoria ou produto digital. Do conceito ao MVP vendendo.",
-    image: "/courses/produto-zero.png",
-    duration: "6 semanas",
-    level: "Iniciante",
-    tag: "NEGÓCIOS",
-    category: "one-person-studio",
-    topics: ["Extração de conhecimento", "Estrutura de produto", "MVP rápido", "Validação", "Lançamento"],
-  },
-  {
-    id: "narrativa-venda",
-    title: "NARRATIVA DE VENDA",
-    subtitle: "Vender sem Performance",
-    description: "Storyselling. Copy autoral. Conversão por conexão.",
-    longDescription: "Vender não precisa ser constrangedor. Aprenda storyselling — a arte de vender contando histórias. Copy que soa como você. Conversão que vem de conexão, não de pressão.",
-    image: "/courses/narrativa-venda.png",
-    duration: "6 semanas",
-    level: "Intermediário",
-    tag: "NEGÓCIOS",
-    category: "one-person-studio",
-    topics: ["Storyselling", "Copy autoral", "Funil narrativo", "Conversão", "Autenticidade"],
-  },
-  {
-    id: "studio-os",
-    title: "STUDIO OS",
-    subtitle: "Sistema Operacional Criativo",
-    description: "Seu stack de IA para produção completa.",
-    longDescription: "Monte o sistema que faz você produzir como um studio inteiro. Ferramentas certas, fluxos otimizados, automações inteligentes. Seu sistema operacional de criação com IA.",
-    image: "/courses/studio-os.png",
-    duration: "4 semanas",
-    level: "Todos os níveis",
-    tag: "NEGÓCIOS",
-    category: "one-person-studio",
-    topics: ["Stack de ferramentas", "Fluxos de produção", "Automação", "Templates", "Integração IA"],
-  },
-  {
-    id: "presenca-monetizada",
-    title: "PRESENÇA MONETIZADA",
-    subtitle: "Audiência → Receita",
-    description: "De seguidores a clientes. Funil natural.",
-    longDescription: "Audiência sem receita é hobby. Aprenda a converter presença em dinheiro de forma natural. Funil que funciona, sem táticas sujas. Relacionamento que vende.",
-    image: "/courses/presenca-monetizada.png",
-    duration: "6 semanas",
-    level: "Intermediário",
-    tag: "NEGÓCIOS",
-    category: "one-person-studio",
-    topics: ["Funil natural", "Conversão orgânica", "Relacionamento", "Ofertas", "Monetização"],
-  },
-
-  // STORYTELLING & NARRATIVA
-  {
-    id: "storycraft",
-    title: "STORYCRAFT",
-    subtitle: "Narrativa como Arma",
-    description: "Domine a arte do storytelling. Estrutura, arco, tensão, catarse.",
-    longDescription: "Storytelling não é técnica — é poder. Aprenda a construir narrativas que transformam, que movem, que ficam. Da estrutura clássica às rupturas contemporâneas. Arco de personagem, tensão, ritmo, catarse. Conte histórias que mudam quem ouve.",
-    image: "/courses/storycraft.png",
-    duration: "8 semanas",
-    level: "Intermediário",
-    tag: "STORYTELLING",
-    category: "narrativa",
-    topics: ["Estrutura narrativa", "Arco de personagem", "Tensão e ritmo", "Diálogo", "Catarse"],
-  },
-  {
-    id: "doc-real",
-    title: "DOC.REAL",
-    subtitle: "Documentário Contemporâneo",
-    description: "Capture a realidade com olhar autoral.",
-    longDescription: "Documentário é testemunho. Aprenda a capturar a realidade com olhar autoral, ético e transformador. Da pesquisa à edição, da entrevista à narrativa. Documente para mudar.",
-    image: "/courses/doc-real.png",
-    duration: "10 semanas",
-    level: "Avançado",
-    tag: "DOC",
-    category: "narrativa",
-    topics: ["Pesquisa e pré-produção", "Entrevista", "Ética documental", "Narrativa do real", "Edição autoral"],
-  },
-
-  // PRODUÇÃO VISUAL
-  {
-    id: "cinema-sem-cameras",
-    title: "CINEMA SEM CÂMERAS",
-    subtitle: "Filme 100% IA",
-    description: "Produza filmes completos sem equipamento. Direção com IA.",
-    longDescription: "O futuro do cinema não precisa de câmeras. Aprenda a dirigir, produzir e finalizar filmes completos usando apenas inteligência artificial. Cinematografia, direção de arte, edição — tudo sem equipamento físico. Visão pura.",
-    image: "/courses/cinema-sem-cameras.png",
-    duration: "10 semanas",
-    level: "Intermediário",
-    tag: "CINEMA",
-    category: "producao-visual",
-    topics: ["Direção com IA", "Cinematografia virtual", "Storyboard", "Edição AI-first", "Pós-produção"],
-  },
-  {
-    id: "retrato-arquetipico",
-    title: "RETRATO ARQUETÍPICO",
-    subtitle: "Fotografia & Identidade",
-    description: "Criação de retratos com profundidade simbólica.",
-    longDescription: "Retrato não é captura — é revelação. Aprenda a criar imagens que mostram a essência, não apenas a superfície. Luz, composição, direção e simbolismo. Fotografia como espelho da alma.",
-    image: "/courses/retrato-arquetipico.png",
-    duration: "6 semanas",
-    level: "Todos os níveis",
-    tag: "FOTO",
-    category: "producao-visual",
-    topics: ["Direção de retrato", "Iluminação simbólica", "Composição arquetípica", "Edição expressiva", "Identidade visual"],
-  },
-  {
-    id: "motion-lab",
-    title: "MOTION LAB",
-    subtitle: "Animação com IA",
-    description: "Do estático ao movimento. Animação e motion graphics.",
-    longDescription: "Movimento é vida. Aprenda a animar usando inteligência artificial — do estático ao dinâmico, do frame ao fluxo. Motion graphics, animação de personagem, transições. Dê vida ao que estava parado.",
-    image: "/courses/motion-lab.png",
-    duration: "8 semanas",
-    level: "Intermediário",
-    tag: "ANIMAÇÃO",
-    category: "producao-visual",
-    topics: ["Fundamentos de animação", "Motion graphics", "Animação com IA", "Transições criativas", "Loops e ciclos"],
-  },
-  {
-    id: "post-vision",
-    title: "POST.VISION",
-    subtitle: "Edição & VFX com IA",
-    description: "Pós-produção revolucionária. Edição, color, VFX.",
-    longDescription: "A mágica acontece na pós. Aprenda edição, color grading e VFX usando inteligência artificial. Transforme material bruto em obra finalizada. Do corte à correção de cor, do efeito à entrega.",
-    image: "/courses/post-vision.png",
-    duration: "8 semanas",
-    level: "Intermediário",
-    tag: "PÓS",
-    category: "producao-visual",
-    topics: ["Edição com IA", "Color grading", "VFX básico", "Composição", "Finalização"],
-  },
-
-  // TECNOLOGIA & CÓDIGO
-  {
-    id: "vibe-code",
-    title: "VIBE.CODE",
-    subtitle: "Programação Criativa",
-    description: "Code como expressão artística. Vibe coding, prototipagem rápida.",
-    longDescription: "Programação não é só lógica — é criação. Aprenda vibe coding: a arte de construir ferramentas, experiências e protótipos usando código como meio expressivo. Sem terror, sem complexidade desnecessária. Código que cria código.",
-    image: "/courses/vibe-code.png",
-    duration: "8 semanas",
-    level: "Iniciante",
-    tag: "CODE",
-    category: "tech",
-    topics: ["Fundamentos criativos", "Vibe coding", "Prototipagem rápida", "Automação criativa", "IA como copiloto"],
-  },
-  {
-    id: "digital-presence",
-    title: "PRESENÇA DIGITAL",
-    subtitle: "Sites & Apresentações",
-    description: "Crie sites narrativos e apresentações que parecem filmes.",
-    longDescription: "Sua presença digital é seu território. Aprenda a criar sites, landing pages e apresentações que não só informam — emocionam. Design como narrativa. Web como palco. Slides como cenas.",
-    image: "/courses/digital-presence.png",
-    duration: "6 semanas",
-    level: "Iniciante",
-    tag: "WEB",
-    category: "tech",
-    topics: ["Design narrativo", "Sites com IA", "Apresentações cinematográficas", "UX emocional", "Portfólios vivos"],
-  },
-
-  // ÁUDIO
-  {
-    id: "soundscape",
-    title: "SOUNDSCAPE",
-    subtitle: "Música & Trilha com IA",
-    description: "Criação de trilhas sonoras, música ambiente, sound design.",
-    longDescription: "O som é a narrativa invisível. Aprenda a criar trilhas sonoras, música ambiente e sound design usando inteligência artificial. Do silêncio à emoção, do ruído à harmonia. Transforme atmosferas com som.",
-    image: "/courses/soundscape.png",
-    duration: "6 semanas",
-    level: "Todos os níveis",
-    tag: "ÁUDIO",
-    category: "audio",
-    topics: ["Composição com IA", "Sound design", "Trilha sonora", "Música ambiente", "Mixagem básica"],
-  },
-
-  // FORMAÇÃO COMPLETA
-  {
-    id: "ai-artist",
-    title: "AI ARTIST",
-    subtitle: "Formação Completa",
-    description: "Programa intensivo de arte com IA. Da ideia à obra.",
-    longDescription: "A formação completa para o artista do futuro. Um programa intensivo que atravessa todas as disciplinas — imagem, som, movimento, código, narrativa. Do conceito à obra finalizada. Torne-se um artista completo da era IA.",
-    image: "/courses/ai-artist.png",
-    duration: "16 semanas",
-    level: "Intensivo",
-    tag: "FORMAÇÃO",
-    category: "formacao-completa",
-    topics: ["Todas as disciplinas", "Projeto integrador", "Mentoria individual", "Portfólio profissional", "Certificação"],
-  },
-];
-
-// Category definitions
-const categories = [
-  {
-    id: "one-person-studio",
-    title: "ONE PERSON STUDIO",
-    subtitle: "Monte seu negócio autônomo",
-    color: "matrix-green",
-  },
-  {
-    id: "fundacao",
-    title: "FUNDAÇÃO",
-    subtitle: "Comece por aqui",
-    color: "ancestral-amber",
-  },
-  {
-    id: "narrativa",
-    title: "STORYTELLING & NARRATIVA",
-    subtitle: "A arte de contar histórias",
-    color: "tech-olive",
-  },
-  {
-    id: "producao-visual",
-    title: "PRODUÇÃO VISUAL",
-    subtitle: "Cinema, foto, motion, pós",
-    color: "ancestral-white",
-  },
-  {
-    id: "tech",
-    title: "TECNOLOGIA & CÓDIGO",
-    subtitle: "Ferramentas e presença digital",
-    color: "matrix-green",
-  },
-  {
-    id: "audio",
-    title: "ÁUDIO & MÚSICA",
-    subtitle: "A narrativa invisível",
-    color: "tech-olive",
-  },
-  {
-    id: "formacao-completa",
-    title: "FORMAÇÃO COMPLETA",
-    subtitle: "O programa intensivo",
-    color: "ancestral-amber",
-  },
-];
+interface Category {
+  id: string;
+  title: string;
+  subtitle: string;
+}
 
 // Course Modal Component
 interface CourseModalProps {
   course: Course | null;
   isOpen: boolean;
   onClose: () => void;
+  t: (key: string, options?: Record<string, unknown>) => string;
 }
 
-const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
+const CourseModal = ({ course, isOpen, onClose, t }: CourseModalProps) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [showForm, setShowForm] = useState(false);
@@ -374,7 +143,7 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
       setSubmitted(true);
     } catch (err) {
       console.error("Error saving to waitlist:", err);
-      setError("Erro ao salvar. Tente novamente.");
+      setError(t('coursesGallery.modal.errorSave'));
     } finally {
       setIsSubmitting(false);
     }
@@ -482,11 +251,11 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
                             onClick={onClose}
                             className="w-full py-4 bg-matrix-green text-brutal-black font-bold text-sm uppercase tracking-wider hover:bg-brutal-white transition-colors flex items-center justify-center gap-2"
                           >
-                            VER CURSO COMPLETO
+                            {t('coursesGallery.modal.viewFullCourse')}
                             <ExternalLink className="w-4 h-4" />
                           </Link>
                           <p className="text-center text-xs text-brutal-white/50">
-                            Este curso tem uma página dedicada com todas as informações
+                            {t('coursesGallery.modal.dedicatedPageNote')}
                           </p>
                         </motion.div>
                       )}
@@ -501,7 +270,7 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
                           onClick={() => setShowForm(true)}
                           className="w-full py-4 bg-matrix-green text-brutal-black font-bold text-sm uppercase tracking-wider hover:bg-brutal-white transition-colors flex items-center justify-center gap-2"
                         >
-                          ENTRAR NA LISTA DE ESPERA
+                          {t('coursesGallery.modal.joinWaitlist')}
                           <ArrowRight className="w-4 h-4" />
                         </motion.button>
                       )}
@@ -516,7 +285,7 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
                         >
                           <h3 className="text-sm font-bold text-matrix-green mb-3 flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-matrix-green rounded-full animate-pulse" />
-                            LISTA DE ESPERA
+                            {t('coursesGallery.modal.waitlistTitle')}
                           </h3>
                           <form onSubmit={handleSubmit} className="space-y-3">
                             <input
@@ -525,7 +294,7 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
                               onChange={(e) => setName(e.target.value)}
                               required
                               disabled={isSubmitting}
-                              placeholder="Seu nome"
+                              placeholder={t('coursesGallery.modal.namePlaceholder')}
                               className="w-full px-3 py-2.5 bg-brutal-black border border-concrete-border text-brutal-white placeholder:text-brutal-white/30 text-sm focus:border-matrix-green focus:outline-none disabled:opacity-50"
                             />
                             <input
@@ -534,7 +303,7 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
                               onChange={(e) => setPhone(e.target.value)}
                               required
                               disabled={isSubmitting}
-                              placeholder="WhatsApp (00) 00000-0000"
+                              placeholder={t('coursesGallery.modal.phonePlaceholder')}
                               className="w-full px-3 py-2.5 bg-brutal-black border border-concrete-border text-brutal-white placeholder:text-brutal-white/30 text-sm focus:border-matrix-green focus:outline-none disabled:opacity-50"
                             />
                             {error && (
@@ -545,7 +314,7 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
                               disabled={isSubmitting}
                               className="w-full py-3 bg-matrix-green text-brutal-black font-bold text-sm uppercase tracking-wider hover:bg-brutal-white transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                              {isSubmitting ? "ENVIANDO..." : "ENVIAR"}
+                              {isSubmitting ? t('coursesGallery.modal.submitting') : t('coursesGallery.modal.submit')}
                               {!isSubmitting && <ArrowRight className="w-4 h-4" />}
                             </button>
                           </form>
@@ -563,10 +332,10 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
                             <span className="text-matrix-green text-xl">✓</span>
                           </div>
                           <h3 className="text-base font-bold text-brutal-white mb-1">
-                            Você está na lista!
+                            {t('coursesGallery.modal.successTitle')}
                           </h3>
                           <p className="text-xs text-brutal-white/60">
-                            Avisaremos quando <span className="text-matrix-green">{course.title}</span> abrir.
+                            {t('coursesGallery.modal.successMessage', { course: course.title })}
                           </p>
                         </motion.div>
                       )}
@@ -584,12 +353,13 @@ const CourseModal = ({ course, isOpen, onClose }: CourseModalProps) => {
 
 // Category Row Component (Netflix style)
 interface CategoryRowProps {
-  category: typeof categories[0];
+  category: Category;
   courses: Course[];
   onCourseClick: (course: Course) => void;
+  t: (key: string, options?: Record<string, unknown>) => string;
 }
 
-const CategoryRow = ({ category, courses, onCourseClick }: CategoryRowProps) => {
+const CategoryRow = ({ category, courses, onCourseClick, t }: CategoryRowProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -718,7 +488,7 @@ const CategoryRow = ({ category, courses, onCourseClick }: CategoryRowProps) => 
               {/* Hover CTA */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-brutal-black/40">
                 <span className="code-text text-sm text-matrix-green border border-matrix-green px-4 py-2 bg-brutal-black/80">
-                  VER DETALHES
+                  {t('coursesGallery.viewDetails')}
                 </span>
               </div>
             </div>
@@ -733,6 +503,33 @@ const CategoryRow = ({ category, courses, onCourseClick }: CategoryRowProps) => 
 export const CoursesNetflixGallery = () => {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation('school');
+
+  // Build courses array from translations
+  const allCourses: Course[] = useMemo(() => {
+    return courseIds.map((id) => ({
+      id,
+      title: t(`coursesGallery.courses.${id}.title`),
+      subtitle: t(`coursesGallery.courses.${id}.subtitle`),
+      description: t(`coursesGallery.courses.${id}.description`),
+      longDescription: t(`coursesGallery.courses.${id}.longDescription`),
+      image: courseImages[id],
+      duration: t(`coursesGallery.courses.${id}.duration`),
+      level: t(`coursesGallery.courses.${id}.level`),
+      tag: t(`coursesGallery.courses.${id}.tag`),
+      category: courseCategoryMap[id],
+      topics: t(`coursesGallery.courses.${id}.topics`, { returnObjects: true }) as string[],
+    }));
+  }, [t]);
+
+  // Build categories array from translations
+  const categories: Category[] = useMemo(() => {
+    return categoryIds.map((id) => ({
+      id,
+      title: t(`coursesGallery.categories.${id}.title`),
+      subtitle: t(`coursesGallery.categories.${id}.subtitle`),
+    }));
+  }, [t]);
 
   const openCourse = (course: Course) => {
     setSelectedCourse(course);
@@ -750,14 +547,14 @@ export const CoursesNetflixGallery = () => {
         {/* Header */}
         <div className="max-w-[1600px] mx-auto px-6 mb-16">
           <div className="flex items-center gap-4 mb-6">
-            <span className="code-text text-sm text-matrix-green">CATÁLOGO</span>
+            <span className="code-text text-sm text-matrix-green">{t('coursesGallery.header')}</span>
             <div className="h-px bg-matrix-green/50 flex-1" />
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-brutal-white uppercase tracking-tighter mb-4">
-            Cursos
+            {t('coursesGallery.title')}
           </h2>
           <p className="text-xl text-brutal-white/70 max-w-2xl">
-            Cada curso é uma jornada. Cada jornada, uma transformação.
+            {t('coursesGallery.subtitle')}
           </p>
         </div>
 
@@ -773,6 +570,7 @@ export const CoursesNetflixGallery = () => {
                 category={category}
                 courses={categoryCourses}
                 onCourseClick={openCourse}
+                t={t}
               />
             );
           })}
@@ -781,7 +579,7 @@ export const CoursesNetflixGallery = () => {
         {/* Bottom Note */}
         <div className="max-w-[1600px] mx-auto px-6 mt-16 text-center">
           <p className="code-text text-sm text-brutal-white/50">
-            // cada curso é uma porta. cada porta, um mundo.
+            {t('coursesGallery.bottomNote')}
           </p>
         </div>
       </section>
@@ -790,6 +588,7 @@ export const CoursesNetflixGallery = () => {
         course={selectedCourse}
         isOpen={isModalOpen}
         onClose={closeModal}
+        t={t}
       />
     </>
   );

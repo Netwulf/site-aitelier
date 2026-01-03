@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTranslation } from "react-i18next";
 
 export const ManifestoV2 = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('home');
 
   return (
     <motion.div
@@ -13,34 +15,34 @@ export const ManifestoV2 = () => {
       className="max-w-3xl"
     >
       <h2 className="font-mono-v2 text-sm tracking-widest text-text-muted mb-12">
-        MANIFESTO
+        {t('manifestoV2.title')}
       </h2>
 
       <div className="space-y-8 text-xl md:text-2xl leading-relaxed">
         {/* Opening declaration */}
         <div className="space-y-2 text-ancestral-white font-display">
-          <p>Não somos agência.</p>
-          <p>Não somos escola.</p>
-          <p>Não somos estúdio no sentido comum.</p>
+          <p>{t('manifestoV2.opening.line1')}</p>
+          <p>{t('manifestoV2.opening.line2')}</p>
+          <p>{t('manifestoV2.opening.line3')}</p>
         </div>
 
         <p className="text-3xl md:text-4xl text-ancestral-white font-display">
-          Somos o <span className="text-ancestral-amber">ai.telier</span>.
+          {t('manifestoV2.declaration')} <span className="text-ancestral-amber">ai.telier</span>.
         </p>
 
         {/* Description */}
         <div className="space-y-4 text-text-secondary">
           <p>
-            Um lugar onde arte, tecnologia e identidade
+            {t('manifestoV2.description.line1')}
             <br />
-            se reorganizam para um tempo novo.
+            {t('manifestoV2.description.line2')}
           </p>
           <p>
-            Onde founders aprendem a se dirigir como filmes.
+            {t('manifestoV2.description.line3')}
             <br />
-            Onde creators descobrem linguagem própria.
+            {t('manifestoV2.description.line4')}
             <br />
-            Onde o invisível ganha forma.
+            {t('manifestoV2.description.line5')}
           </p>
         </div>
 
@@ -49,25 +51,25 @@ export const ManifestoV2 = () => {
           className="py-8 border-y border-text-muted/20 space-y-4
                         text-ancestral-white"
         >
-          <p>Tratamos cada marca como obra.</p>
-          <p>Cada pessoa como universo.</p>
-          <p>Cada projeto como atelier de investigação.</p>
+          <p>{t('manifestoV2.method.line1')}</p>
+          <p>{t('manifestoV2.method.line2')}</p>
+          <p>{t('manifestoV2.method.line3')}</p>
         </div>
 
         {/* Core truth */}
         <p className="text-2xl text-ancestral-white font-display">
-          A alma já existe antes do logotipo.
+          {t('manifestoV2.truth.line1')}
           <br />
           <span className="text-ancestral-amber">
-            Nosso trabalho é revelá-la.
+            {t('manifestoV2.truth.line2')}
           </span>
         </p>
 
         {/* Closing */}
         <div className="pt-8 space-y-2 text-lg text-text-secondary">
-          <p>Faça do inconsciente consciente.</p>
-          <p>Torne o invisível, visível.</p>
-          <p className="text-ancestral-white">Torne-se a marca.</p>
+          <p>{t('manifestoV2.closing.line1')}</p>
+          <p>{t('manifestoV2.closing.line2')}</p>
+          <p className="text-ancestral-white">{t('manifestoV2.closing.line3')}</p>
         </div>
       </div>
     </motion.div>

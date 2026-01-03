@@ -60,5 +60,270 @@
     "exploreCourses": "Explore courses",
     "joinWaitlist": "Join waitlist",
     "learnMore": "Learn more"
+  },
+  "onePersonStudio": {
+    "terminal": "> ONE_PERSON_STUDIO.manifest",
+    "title1": "The complete studio",
+    "title2": "fits in one person.",
+    "subtitle1": "AI didn't replace creators.",
+    "subtitle2": "It replaced teams.",
+    "before": {
+      "label": "Before",
+      "title": "You needed:",
+      "items": ["Editor", "Designer", "Copywriter", "Filmmaker", "Social media", "Dev", "Strategist"]
+    },
+    "after": {
+      "label": "Now",
+      "title": "You need:",
+      "items": ["Clarity", "System", "Right tools", "You"]
+    },
+    "whatWeTeach": "WHAT WE TEACH",
+    "capabilities": [
+      {
+        "number": "01",
+        "title": "CREATE",
+        "description": "Produce studio-quality content. Video, image, text, code — solo."
+      },
+      {
+        "number": "02",
+        "title": "STRUCTURE",
+        "description": "Transform knowledge into product. Courses, mentoring, services, digital assets."
+      },
+      {
+        "number": "03",
+        "title": "SELL",
+        "description": "Monetize without being salesy. Narrative that converts. Presence that attracts."
+      },
+      {
+        "number": "04",
+        "title": "OPERATE",
+        "description": "Run the business in 4h/day. Systems that work while you create."
+      }
+    ],
+    "bottomQuote1": "We don't train employees.",
+    "bottomQuote2": "We train one-person studios.",
+    "cta": "View courses"
+  },
+  "coursesGallery": {
+    "header": "CATALOG",
+    "title": "Courses",
+    "subtitle": "Each course is a journey. Each journey, a transformation.",
+    "bottomNote": "// each course is a door. each door, a world.",
+    "viewDetails": "VIEW DETAILS",
+    "modal": {
+      "viewFullCourse": "VIEW FULL COURSE",
+      "dedicatedPageNote": "This course has a dedicated page with all information",
+      "joinWaitlist": "JOIN THE WAITLIST",
+      "waitlistTitle": "WAITLIST",
+      "namePlaceholder": "Your name",
+      "phonePlaceholder": "WhatsApp (00) 00000-0000",
+      "submit": "SUBMIT",
+      "submitting": "SUBMITTING...",
+      "errorSave": "Error saving. Try again.",
+      "successTitle": "You're on the list!",
+      "successMessage": "We'll notify you when {{course}} opens."
+    },
+    "categories": {
+      "one-person-studio": {
+        "title": "ONE PERSON STUDIO",
+        "subtitle": "Build your autonomous business"
+      },
+      "fundacao": {
+        "title": "FOUNDATION",
+        "subtitle": "Start here"
+      },
+      "narrativa": {
+        "title": "STORYTELLING & NARRATIVE",
+        "subtitle": "The art of telling stories"
+      },
+      "producao-visual": {
+        "title": "VISUAL PRODUCTION",
+        "subtitle": "Cinema, photo, motion, post"
+      },
+      "tech": {
+        "title": "TECHNOLOGY & CODE",
+        "subtitle": "Tools and digital presence"
+      },
+      "audio": {
+        "title": "AUDIO & MUSIC",
+        "subtitle": "The invisible narrative"
+      },
+      "formacao-completa": {
+        "title": "COMPLETE PROGRAM",
+        "subtitle": "The intensive program"
+      }
+    },
+    "courses": {
+      "zero-one": {
+        "title": "ZERO→ONE",
+        "subtitle": "Matter and Form",
+        "description": "The base course. Art thinking, fundamental storytelling, conscious creation.",
+        "longDescription": "The foundation for anyone who wants to create. From void to form, from thought to matter. This course is the starting point — where you learn the universal language of creation before choosing your instrument. Philosophy, aesthetics, narrative and creative consciousness.",
+        "duration": "12 weeks",
+        "level": "Foundation",
+        "tag": "BASE",
+        "topics": ["Philosophy of creation", "Visual thinking", "Base storytelling", "Conscious aesthetics", "Creative process"]
+      },
+      "artists-journey": {
+        "title": "ARTIST'S JOURNEY",
+        "subtitle": "Creativity as Path",
+        "description": "Unlock your creativity. From fear to expression.",
+        "longDescription": "Before creating, you need to free yourself. This course is an inner journey — from creative block to authentic expression. Process, ritual, practice. Transform fear into fuel.",
+        "duration": "12 weeks",
+        "level": "All levels",
+        "tag": "PROCESS",
+        "topics": ["Creative block", "Ritual and practice", "Fear and expression", "Authorial process", "Artistic identity"]
+      },
+      "solo-biz": {
+        "title": "SOLO.BIZ",
+        "subtitle": "One-Person Business",
+        "description": "Structure your solo business. Offer, pricing, delivery, system.",
+        "longDescription": "The complete business that runs with you. Learn to structure offers, set pricing, deliver value and create systems that work while you rest. It's not about scaling — it's about profiting with ease.",
+        "duration": "8 weeks",
+        "level": "All levels",
+        "tag": "BUSINESS",
+        "topics": ["Clear offer", "Pricing", "Delivery", "Systems", "Solo operation"]
+      },
+      "produto-zero": {
+        "title": "PRODUCT ZERO",
+        "subtitle": "From Knowledge to Product",
+        "description": "Transform what you know into something sellable.",
+        "longDescription": "You already know something valuable. Now you need to package it. Learn to transform tacit knowledge into courses, mentoring, consulting or digital products. From concept to selling MVP.",
+        "duration": "6 weeks",
+        "level": "Beginner",
+        "tag": "BUSINESS",
+        "topics": ["Knowledge extraction", "Product structure", "Fast MVP", "Validation", "Launch"]
+      },
+      "narrativa-venda": {
+        "title": "SALES NARRATIVE",
+        "subtitle": "Sell Without Performing",
+        "description": "Storyselling. Authorial copy. Conversion through connection.",
+        "longDescription": "Selling doesn't have to be awkward. Learn storyselling — the art of selling through stories. Copy that sounds like you. Conversion that comes from connection, not pressure.",
+        "duration": "6 weeks",
+        "level": "Intermediate",
+        "tag": "BUSINESS",
+        "topics": ["Storyselling", "Authorial copy", "Narrative funnel", "Conversion", "Authenticity"]
+      },
+      "studio-os": {
+        "title": "STUDIO OS",
+        "subtitle": "Creative Operating System",
+        "description": "Your AI stack for complete production.",
+        "longDescription": "Build the system that makes you produce like an entire studio. Right tools, optimized flows, smart automations. Your creation operating system with AI.",
+        "duration": "4 weeks",
+        "level": "All levels",
+        "tag": "BUSINESS",
+        "topics": ["Tool stack", "Production flows", "Automation", "Templates", "AI integration"]
+      },
+      "presenca-monetizada": {
+        "title": "MONETIZED PRESENCE",
+        "subtitle": "Audience → Revenue",
+        "description": "From followers to clients. Natural funnel.",
+        "longDescription": "Audience without revenue is a hobby. Learn to convert presence into money naturally. Funnel that works, without dirty tactics. Relationship that sells.",
+        "duration": "6 weeks",
+        "level": "Intermediate",
+        "tag": "BUSINESS",
+        "topics": ["Natural funnel", "Organic conversion", "Relationship", "Offers", "Monetization"]
+      },
+      "storycraft": {
+        "title": "STORYCRAFT",
+        "subtitle": "Narrative as Weapon",
+        "description": "Master the art of storytelling. Structure, arc, tension, catharsis.",
+        "longDescription": "Storytelling isn't technique — it's power. Learn to build narratives that transform, that move, that stay. From classic structure to contemporary ruptures. Character arc, tension, rhythm, catharsis. Tell stories that change the listener.",
+        "duration": "8 weeks",
+        "level": "Intermediate",
+        "tag": "STORYTELLING",
+        "topics": ["Narrative structure", "Character arc", "Tension and rhythm", "Dialogue", "Catharsis"]
+      },
+      "doc-real": {
+        "title": "DOC.REAL",
+        "subtitle": "Contemporary Documentary",
+        "description": "Capture reality with authorial vision.",
+        "longDescription": "Documentary is testimony. Learn to capture reality with authorial, ethical and transformative vision. From research to editing, from interview to narrative. Document to change.",
+        "duration": "10 weeks",
+        "level": "Advanced",
+        "tag": "DOC",
+        "topics": ["Research and pre-production", "Interview", "Documentary ethics", "Real narrative", "Authorial editing"]
+      },
+      "cinema-sem-cameras": {
+        "title": "CINEMA WITHOUT CAMERAS",
+        "subtitle": "100% AI Film",
+        "description": "Produce complete films without equipment. Direction with AI.",
+        "longDescription": "The future of cinema doesn't need cameras. Learn to direct, produce and finish complete films using only artificial intelligence. Cinematography, art direction, editing — all without physical equipment. Pure vision.",
+        "duration": "10 weeks",
+        "level": "Intermediate",
+        "tag": "CINEMA",
+        "topics": ["Direction with AI", "Virtual cinematography", "Storyboard", "AI-first editing", "Post-production"]
+      },
+      "retrato-arquetipico": {
+        "title": "ARCHETYPAL PORTRAIT",
+        "subtitle": "Photography & Identity",
+        "description": "Create portraits with symbolic depth.",
+        "longDescription": "Portrait isn't capture — it's revelation. Learn to create images that show the essence, not just the surface. Light, composition, direction and symbolism. Photography as mirror of the soul.",
+        "duration": "6 weeks",
+        "level": "All levels",
+        "tag": "PHOTO",
+        "topics": ["Portrait direction", "Symbolic lighting", "Archetypal composition", "Expressive editing", "Visual identity"]
+      },
+      "motion-lab": {
+        "title": "MOTION LAB",
+        "subtitle": "Animation with AI",
+        "description": "From static to movement. Animation and motion graphics.",
+        "longDescription": "Movement is life. Learn to animate using artificial intelligence — from static to dynamic, from frame to flow. Motion graphics, character animation, transitions. Give life to what was still.",
+        "duration": "8 weeks",
+        "level": "Intermediate",
+        "tag": "ANIMATION",
+        "topics": ["Animation fundamentals", "Motion graphics", "Animation with AI", "Creative transitions", "Loops and cycles"]
+      },
+      "post-vision": {
+        "title": "POST.VISION",
+        "subtitle": "Editing & VFX with AI",
+        "description": "Revolutionary post-production. Editing, color, VFX.",
+        "longDescription": "The magic happens in post. Learn editing, color grading and VFX using artificial intelligence. Transform raw material into finished work. From cut to color correction, from effect to delivery.",
+        "duration": "8 weeks",
+        "level": "Intermediate",
+        "tag": "POST",
+        "topics": ["Editing with AI", "Color grading", "Basic VFX", "Compositing", "Finishing"]
+      },
+      "vibe-code": {
+        "title": "VIBE.CODE",
+        "subtitle": "Creative Programming",
+        "description": "Code as artistic expression. Vibe coding, rapid prototyping.",
+        "longDescription": "Programming isn't just logic — it's creation. Learn vibe coding: the art of building tools, experiences and prototypes using code as expressive medium. No terror, no unnecessary complexity. Code that creates code.",
+        "duration": "8 weeks",
+        "level": "Beginner",
+        "tag": "CODE",
+        "topics": ["Creative fundamentals", "Vibe coding", "Rapid prototyping", "Creative automation", "AI as copilot"]
+      },
+      "digital-presence": {
+        "title": "DIGITAL PRESENCE",
+        "subtitle": "Sites & Presentations",
+        "description": "Create narrative sites and presentations that look like films.",
+        "longDescription": "Your digital presence is your territory. Learn to create sites, landing pages and presentations that don't just inform — they move. Design as narrative. Web as stage. Slides as scenes.",
+        "duration": "6 weeks",
+        "level": "Beginner",
+        "tag": "WEB",
+        "topics": ["Narrative design", "Sites with AI", "Cinematic presentations", "Emotional UX", "Living portfolios"]
+      },
+      "soundscape": {
+        "title": "SOUNDSCAPE",
+        "subtitle": "Music & Soundtrack with AI",
+        "description": "Creation of soundtracks, ambient music, sound design.",
+        "longDescription": "Sound is the invisible narrative. Learn to create soundtracks, ambient music and sound design using artificial intelligence. From silence to emotion, from noise to harmony. Transform atmospheres with sound.",
+        "duration": "6 weeks",
+        "level": "All levels",
+        "tag": "AUDIO",
+        "topics": ["Composition with AI", "Sound design", "Soundtrack", "Ambient music", "Basic mixing"]
+      },
+      "ai-artist": {
+        "title": "AI ARTIST",
+        "subtitle": "Complete Program",
+        "description": "Intensive art program with AI. From idea to work.",
+        "longDescription": "The complete training for the artist of the future. An intensive program that crosses all disciplines — image, sound, movement, code, narrative. From concept to finished work. Become a complete artist of the AI era.",
+        "duration": "16 weeks",
+        "level": "Intensive",
+        "tag": "PROGRAM",
+        "topics": ["All disciplines", "Integrative project", "Individual mentoring", "Professional portfolio", "Certification"]
+      }
+    }
   }
 }

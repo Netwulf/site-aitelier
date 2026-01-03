@@ -1,105 +1,43 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useInViewOptimized } from "@/hooks/useInViewOptimized";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { fadeInUpSimple, staggerContainerPremium, cardLift, imageZoom } from "@/utils/motionVariants";
 import CaseModal, { CaseData } from "./CaseModal";
+import { useTranslation } from "react-i18next";
 
-// Cases data - informações completas
-const cases: CaseData[] = [
-  {
-    name: "Alan Nicolas",
-    field: "IA & Educação",
-    description: "Academia Lendária: 262K seguidores, R$200M faturamento",
-    image: "/cases/alan-nicolas.jpg",
-    tags: ["Identidade", "Sistema"],
-    fullDescription:
-      "Alan Nicolas é um dos maiores especialistas em IA do Brasil. Criador da Academia Lendária, ele transformou sua expertise técnica em uma marca pessoal poderosa que gera mais de R$200M em faturamento. Seu crescimento de 6K para 262K seguidores demonstra o poder de uma narrativa autêntica combinada com sistemas escaláveis.",
-    achievements: [
-      "De 6K para 262K seguidores em menos de 2 anos",
-      "5.000+ alunos na Academia Lendária",
-      "R$200M em faturamento pessoal",
-      "Alunos faturando 6 dígitos em 4 meses com IA",
-      "Referência nacional em inteligência artificial aplicada",
-    ],
-    quote: "Não basta dominar a técnica. Você precisa criar uma narrativa que faça as pessoas quererem aprender com você.",
-  },
-  {
-    name: "Alexandra Loras",
-    field: "Diversidade & Impacto",
-    description: "Ex-Consulesa da França, Shark Tank, 20+ prêmios",
-    image: "/cases/alexandra-loras.webp",
-    tags: ["Narrativa", "Posicionamento"],
-    fullDescription:
-      "Alexandra Loras é ex-consulesa da França no Brasil e hoje é uma das vozes mais influentes em diversidade e alto impacto. Sua participação como Shark no Shark Tank Brasil consolidou sua posição como referência em investimentos com propósito. Com mais de 20 prêmios internacionais, ela prova que impacto social e sucesso empresarial caminham juntos.",
-    achievements: [
-      "Shark do Shark Tank Brasil",
-      "Ex-Consulesa da França no Brasil",
-      "20+ prêmios internacionais",
-      "20.000+ pessoas impactadas globalmente",
-      "Presença na Forbes e principais veículos internacionais",
-    ],
-    quote: "Diversidade não é só pauta. É estratégia de negócio.",
-  },
-  {
-    name: "Davi Ribas",
-    field: "Movement Branding",
-    description: "ETER Co, 154K seguidores, consultor internacional",
-    image: "/cases/davi-ribas.png",
-    tags: ["Movimento", "Marca"],
-    fullDescription:
-      "Davi Ribas é o criador do conceito 'Movement Is The New Branding'. Fundador da ETER Co, ele desenvolveu uma metodologia revolucionária onde o movimento substitui o produto como centro da marca. Com 154K seguidores e atuação como consultor internacional, ele ajuda empresas a faturar milhões construindo causas, não apenas produtos.",
-    achievements: [
-      "Criador da ETER Co",
-      "154K seguidores engajados",
-      "Consultor internacional em branding",
-      "Metodologia: movimento > produto",
-      "Empresas parceiras faturam milhões com causa",
-    ],
-    quote: "Produtos vencem por um tempo. Movimentos vencem para sempre.",
-  },
-  {
-    name: "Edgar Ueda",
-    field: "Mercado Imobiliário",
-    description: "Neximob: R$5.7B em vendas, 18.500+ imóveis",
-    image: "/cases/edgar-ueda.png",
-    tags: ["Sistema", "Escala"],
-    fullDescription:
-      "Edgar Ueda é CEO da Neximob, uma das maiores redes imobiliárias do Brasil. Com um sistema único de inteligência imobiliária e expansão nacional, ele construiu um império de R$5.7 bilhões em vendas. Sua história é prova de que escala e qualidade podem coexistir quando há sistema por trás.",
-    achievements: [
-      "CEO da Neximob",
-      "R$5.7 bilhões em vendas acumuladas",
-      "18.500+ imóveis comercializados",
-      "Presença em 70+ cidades",
-      "3x TEDx Speaker + autor best-seller",
-    ],
-    quote: "Sistema é o que transforma talento individual em resultado coletivo.",
-  },
-  {
-    name: "Rafa Medeiros",
-    field: "Eneagrama & Negócios",
-    description: "TEDx Speaker, 15.000+ profissionais treinados",
-    image: "/cases/rafa-medeiros.jpg",
-    tags: ["Influência", "Método"],
-    fullDescription:
-      "Rafa Medeiros é especialista em Eneagrama aplicado a negócios, com formação na Califórnia. Como TEDx Speaker, ela já treinou mais de 15.000 profissionais em sua metodologia que combina autoconhecimento com performance empresarial. Seus clientes premium relatam dobrar o faturamento após aplicar seu método.",
-    achievements: [
-      "TEDx Speaker",
-      "15.000+ profissionais treinados",
-      "Especialização na Califórnia",
-      "Método: Eneagrama + negócios",
-      "Clientes relatam 2x faturamento",
-    ],
-    quote: "Quando você entende quem você é, o mercado passa a entender também.",
-  },
-];
+// Case images mapping
+const caseImages: Record<string, string> = {
+  "alan-nicolas": "/cases/alan-nicolas.jpg",
+  "alexandra-loras": "/cases/alexandra-loras.webp",
+  "davi-ribas": "/cases/davi-ribas.png",
+  "edgar-ueda": "/cases/edgar-ueda.png",
+  "rafa-medeiros": "/cases/rafa-medeiros.jpg",
+};
+
+const caseKeys = ["alan-nicolas", "alexandra-loras", "davi-ribas", "edgar-ueda", "rafa-medeiros"] as const;
 
 const SelectedWork = () => {
   const { ref, isInView } = useInViewOptimized({ once: true });
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('home');
   const [selectedCase, setSelectedCase] = useState<CaseData | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Build cases array from translations
+  const cases: CaseData[] = useMemo(() => {
+    return caseKeys.map((key) => ({
+      name: t(`selectedWork.cases.${key}.name`),
+      field: t(`selectedWork.cases.${key}.field`),
+      description: t(`selectedWork.cases.${key}.description`),
+      image: caseImages[key],
+      tags: t(`selectedWork.cases.${key}.tags`, { returnObjects: true }) as string[],
+      fullDescription: t(`selectedWork.cases.${key}.fullDescription`),
+      achievements: t(`selectedWork.cases.${key}.achievements`, { returnObjects: true }) as string[],
+      quote: t(`selectedWork.cases.${key}.quote`),
+    }));
+  }, [t]);
 
   const openCase = (caseData: CaseData) => {
     setSelectedCase(caseData);
@@ -130,15 +68,15 @@ const SelectedWork = () => {
           {/* Header */}
           <motion.div variants={fadeInUpSimple} className="mb-16">
             <div className="flex items-center gap-4 mb-6">
-              <span className="code-text text-sm text-matrix-green">SELECTED_WORK</span>
+              <span className="code-text text-sm text-matrix-green">{t('selectedWork.sectionCode')}</span>
               <div className="h-px bg-concrete-border flex-1" />
             </div>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-brutal-white uppercase tracking-tighter">
-              Quem já confiou
+              {t('selectedWork.title')}
             </h2>
             <p className="text-brutal-white/60 mt-4 max-w-2xl">
-              Todos eles cresceram porque criaram uma narrativa + uma categoria + um sistema.
-              Não porque eram os melhores. <span className="text-brutal-white">Porque eram os únicos.</span>
+              {t('selectedWork.subtitle1')}
+              {' '}{t('selectedWork.subtitle2')} <span className="text-brutal-white">{t('selectedWork.subtitle3')}</span>
             </p>
           </motion.div>
 
@@ -310,7 +248,7 @@ const SelectedWork = () => {
           {/* View all link */}
           <motion.div variants={fadeInUpSimple} className="mt-12 text-center">
             <p className="code-text text-sm text-brutal-white/50 uppercase tracking-widest">
-              Clique em cada case para ver detalhes
+              {t('selectedWork.bottomNote')}
             </p>
           </motion.div>
         </motion.div>
