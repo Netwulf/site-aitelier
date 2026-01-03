@@ -2,10 +2,16 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { ArrowRight } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
 
 export const EscolaHero = () => {
   const prefersReducedMotion = useReducedMotion();
   const { t } = useTranslation('school');
+  const { lang } = useParams<{ lang: string }>();
+  const currentLang = lang || 'pt';
+
+  // Link to Cinema Sem Câmeras dedicated page
+  const courseLink = `/${currentLang}/${currentLang === 'en' ? 'school/cinema-without-cameras' : 'escola/cinema-sem-cameras'}`;
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
@@ -89,23 +95,23 @@ export const EscolaHero = () => {
             animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <a
-              href="#candidatura"
+            <Link
+              to={courseLink}
               className="group inline-flex items-center justify-center gap-3 px-8 py-4
                          bg-matrix-green text-ancestral-black font-bold uppercase tracking-wider
                          hover:bg-matrix-green/90 transition-all duration-300"
             >
               <span>{t('hero.cta1')}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="#sobre"
+            </Link>
+            <Link
+              to={courseLink}
               className="inline-flex items-center justify-center gap-2 px-8 py-4
                          border-2 border-ancestral-white/30 text-ancestral-white font-medium
                          hover:border-matrix-green hover:text-matrix-green transition-all duration-300"
             >
               {t('hero.cta2')}
-            </a>
+            </Link>
           </motion.div>
 
           {/* Meta info */}
@@ -116,13 +122,13 @@ export const EscolaHero = () => {
             transition={{ duration: 0.6, delay: 1 }}
           >
             <div>
-              <span className="text-matrix-green">30-40</span> {t('hero.slots')}
+              <span className="text-matrix-green">12</span> {t('hero.slots')}
             </div>
             <div>
               <span className="text-matrix-green">6</span> {t('hero.months')}
             </div>
             <div>
-              <span className="text-matrix-green">R$ 8.000</span> ou 10x
+              <span className="text-matrix-green">3h</span>/semana ao vivo
             </div>
           </motion.div>
         </div>
