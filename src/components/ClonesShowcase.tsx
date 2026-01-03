@@ -1,39 +1,28 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Sparkles, MessageCircle } from "lucide-react";
 
-// Active clones with full chat capability
-const activeClones = [
-  {
-    id: "david-lynch",
-    name: "David Lynch",
-    subtitle: "Master of Consciousness",
-    image: "/clones/david-lynch-aitelier.png",
-    description: "Cineasta visionário. Criador de Twin Peaks e Mulholland Drive.",
-  },
-  {
-    id: "neil-gaiman",
-    name: "Neil Gaiman",
-    subtitle: "Master Storyteller",
-    image: "/clones/neil-gaiman-aitelier.png",
-    description: "Mestre das histórias. Autor de Sandman e American Gods.",
-  },
-  {
-    id: "ursula-le-guin",
-    name: "Ursula K. Le Guin",
-    subtitle: "Master of Worlds",
-    image: "/clones/ursula-le-guin-aitelier.png",
-    description: "Mestra da ficção científica. Autora de Earthsea.",
-  },
-  {
-    id: "tayna-puri",
-    name: "Taynã Puri",
-    subtitle: "Futuro Ancestral",
-    image: "/tayna-portraits/tayna-studio-contemplative.png",
-    description: "Pensador brasileiro. Criador da filosofia Futuro Ancestral.",
-  },
-];
+// Clone IDs for dynamic data
+const cloneIds = ["david-lynch", "neil-gaiman", "ursula-le-guin", "tayna-puri"];
+
+// Clone images mapping
+const cloneImages: Record<string, string> = {
+  "david-lynch": "/clones/david-lynch-aitelier.png",
+  "neil-gaiman": "/clones/neil-gaiman-aitelier.png",
+  "ursula-le-guin": "/clones/ursula-le-guin-aitelier.png",
+  "tayna-puri": "/tayna-portraits/tayna-studio-contemplative.png",
+};
+
+// Clone names (these don't need translation)
+const cloneNames: Record<string, string> = {
+  "david-lynch": "David Lynch",
+  "neil-gaiman": "Neil Gaiman",
+  "ursula-le-guin": "Ursula K. Le Guin",
+  "tayna-puri": "Taynã Puri",
+};
 
 // Coming soon clones - 30+ minds being prepared
 const comingSoonClones = [
@@ -65,6 +54,8 @@ const comingSoonClones = [
 
 export const ClonesShowcase = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('home');
+  const { shortCode } = useLanguage();
 
   return (
     <section className="py-24 md:py-32 px-4 md:px-8 bg-brutal-black relative overflow-hidden">
@@ -83,32 +74,32 @@ export const ClonesShowcase = () => {
           <div className="flex items-center justify-center gap-3 mb-6">
             <Sparkles className="w-5 h-5 text-tech-olive" />
             <span className="font-mono-v2 text-sm tracking-widest text-tech-olive">
-              UPLOADED_INTELLIGENCE
+              {t('clones.sectionCode')}
             </span>
             <Sparkles className="w-5 h-5 text-tech-olive" />
           </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brutal-white leading-tight mb-4">
-            Converse com <span className="text-tech-olive">mentes</span> que mudaram o mundo
+            {t('clones.titlePlain')}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Clones cognitivos treinados com décadas de pensamento, filosofia e sabedoria.
+            {t('clones.subtitle')}
             <br />
-            <span className="text-ancestral-amber">Cada conversa é uma mentoria.</span>
+            <span className="text-ancestral-amber">{t('clones.subtitleHighlight')}</span>
           </p>
         </motion.div>
 
         {/* Active Clones Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {activeClones.map((clone, index) => (
+          {cloneIds.map((cloneId, index) => (
             <motion.div
-              key={clone.id}
+              key={cloneId}
               initial={prefersReducedMotion ? {} : { opacity: 0, y: 30 }}
               whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
               <Link
-                to={`/chat/${clone.id}`}
+                to={`/${shortCode}/chat/${cloneId}`}
                 className="group block relative overflow-hidden border border-white/10
                           bg-gradient-to-b from-white/5 to-transparent
                           hover:border-tech-olive/50 transition-all duration-500"
@@ -116,8 +107,8 @@ export const ClonesShowcase = () => {
                 {/* Image */}
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img
-                    src={clone.image}
-                    alt={clone.name}
+                    src={cloneImages[cloneId]}
+                    alt={cloneNames[cloneId]}
                     className="w-full h-full object-cover object-top
                               grayscale group-hover:grayscale-0
                               transition-all duration-700
@@ -130,7 +121,7 @@ export const ClonesShowcase = () => {
                   <div className="absolute top-4 left-4 flex items-center gap-2">
                     <span className="px-2 py-1 bg-tech-olive text-void-black text-[10px] font-mono-v2 tracking-wider flex items-center gap-1">
                       <span className="w-1.5 h-1.5 bg-void-black rounded-full animate-pulse" />
-                      ATIVO
+                      {t('clones.activeBadge')}
                     </span>
                   </div>
 
@@ -145,14 +136,14 @@ export const ClonesShowcase = () => {
                 {/* Info */}
                 <div className="p-5">
                   <p className="font-mono-v2 text-[10px] text-tech-olive tracking-widest mb-1">
-                    {clone.subtitle.toUpperCase()}
+                    {t(`clones.minds.${cloneId}.subtitle`).toUpperCase()}
                   </p>
                   <h3 className="font-display text-xl text-warm-ivory mb-2
                                group-hover:text-tech-olive transition-colors">
-                    {clone.name}
+                    {cloneNames[cloneId]}
                   </h3>
                   <p className="text-sm text-warm-ivory/50 leading-relaxed">
-                    {clone.description}
+                    {t(`clones.minds.${cloneId}.description`)}
                   </p>
                 </div>
 
@@ -174,10 +165,10 @@ export const ClonesShowcase = () => {
         >
           <div className="mb-8">
             <span className="font-mono-v2 text-xs tracking-widest text-ancestral-amber">
-              +{comingSoonClones.length} MENTES EM PREPARAÇÃO
+              {t('clones.comingSoonCount', { count: comingSoonClones.length })}
             </span>
             <h3 className="text-2xl md:text-3xl font-display text-warm-ivory mt-3">
-              Em breve no ai.telier
+              {t('clones.comingSoonTitle')}
             </h3>
           </div>
 
@@ -223,14 +214,14 @@ export const ClonesShowcase = () => {
             className="mt-12"
           >
             <Link
-              to="/playground"
+              to={`/${shortCode}/playground`}
               className="inline-flex items-center gap-2 px-6 py-3
                         border border-tech-olive text-tech-olive
                         hover:bg-tech-olive hover:text-void-black
                         transition-all duration-300 font-mono-v2 text-sm"
             >
               <Sparkles className="w-4 h-4" />
-              Explorar todos os clones
+              {t('clones.exploreCta')}
             </Link>
           </motion.div>
         </motion.div>

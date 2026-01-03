@@ -1,0 +1,96 @@
+{
+  "title": "ARQUIVO",
+  "subtitle": "Memória visual",
+  "description": "Documentação visual de nossa trajetória criativa com IA",
+  "categories": {
+    "all": "Todos",
+    "artes-visuais": "Artes Visuais",
+    "historias": "Histórias"
+  },
+  "filters": {
+    "year": "Ano",
+    "category": "Categoria",
+    "all": "Todos"
+  },
+  "projects": {
+    "criancas-futuro": {
+      "title": "Crianças do Futuro",
+      "type": "Afrofuturismo - AI Art",
+      "date": "Julho de 2023",
+      "location": "Midjourney",
+      "description": "Projeto de arte generativa conectado a uma grande rede de pessoas focadas em um futuro regenerativo e ancestral. Crianças de todas as etnias com estética cyberpunk-ancestral, onde a tecnologia é profundamente integrada à natureza e às raízes culturais."
+    },
+    "velocidades": {
+      "title": "VeloCidades",
+      "type": "Urbanismo Cyberpunk",
+      "date": "Maio de 2023",
+      "location": "São Paulo",
+      "description": "São Paulo noturno em sua essência cyberpunk brasileira. Becos com grafite, metrô, vida noturna, skatistas e músicos de rua. O movimento e ritmo das grandes cidades capturado em neon e sombras."
+    },
+    "raizes": {
+      "title": "Raízes",
+      "type": "Danças Artificiais",
+      "date": "Abril de 2023",
+      "location": "Midjourney",
+      "description": "Dança, movimento corporal, ancestralidade e performance. Corpos em movimento expressivo capturados em estudo de imagens fotográficas com IA generativa."
+    },
+    "egos": {
+      "title": "Egos",
+      "type": "Mundos e Portais",
+      "date": "Agosto de 2023",
+      "description": "Portais dimensionais, cidades futuristas e utopias onde tecnologia e natureza coexistem. O Mundo dos Sonhos se mostra na sua complexidade a partir de Neturnia, entre a fantasia mágica e o horror dos pesadelos."
+    },
+    "aguas": {
+      "title": "Águas",
+      "type": "Elemento Sagrado",
+      "date": "Setembro de 2023",
+      "location": "Midjourney",
+      "description": "O elemento água em sua forma sagrada. Reflexos, memória ancestral, cachoeiras de luz bioluminescente. A vibração energética da água como portal de cura e conexão."
+    },
+    "criaturas": {
+      "title": "Criaturas",
+      "type": "Seres Fantásticos",
+      "date": "Outubro de 2023",
+      "description": "Seres alienígenas, changelings e criaturas fantásticas de outros mundos. Entidades que habitam o limiar entre o humano e o sobrenatural."
+    },
+    "guerreiras": {
+      "title": "Guerreiras",
+      "type": "Mulheres Indígenas",
+      "date": "Setembro de 2023",
+      "location": "Marcha das Mulheres Indígenas",
+      "description": "Mulheres indígenas guerreiras em toda sua força e resistência. Arte criada em conexão com a Marcha das Mulheres Indígenas - ancestralidade feminina em luta."
+    },
+    "colagens": {
+      "title": "Colagens Ancestrais",
+      "type": "Arte Digital Fragmentada",
+      "date": "Novembro de 2023",
+      "location": "Midjourney",
+      "description": "Fusão ancestral-futurista em colagens digitais. Fragmentos de passado e futuro se encontram em composições que conectam símbolos ancestrais com estética contemporânea."
+    },
+    "tech-shaman": {
+      "title": "Tech Shaman",
+      "type": "Deserto Místico",
+      "date": "2024",
+      "location": "Midjourney",
+      "description": "O universo visual Tech Shaman. Deserto místico, santuários futuristas, geometria sagrada. Onde código antigo encontra tecnologia do futuro em paisagens de contemplação."
+    },
+    "origens": {
+      "title": "Origens",
+      "type": "Primeiros Experimentos",
+      "date": "2022",
+      "location": "Midjourney / Stable Diffusion",
+      "description": "Os primeiros experimentos com IA generativa em 2022. Mitologia, cyberpunk roxo/verde, exploração de possibilidades. O início de uma jornada visual."
+    },
+    "futures": {
+      "title": "Futuros",
+      "type": "Realidade Virtual",
+      "date": "2024",
+      "location": "Midjourney",
+      "description": "Visões do amanhã. Realidade virtual, bibliotecas cósmicas infinitas, tecnologia imersiva. Portais entre mundos onde o conhecimento flutua como estrelas."
+    }
+  },
+  "stats": {
+    "projects": "{{count}} projetos",
+    "images": "{{count}} imagens"
+  }
+}

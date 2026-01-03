@@ -1,17 +1,23 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useParams, Link } from "react-router-dom";
 import { navLinkHover, underlineExpand, staggerContainerPremium, fadeInUpSimple } from "@/utils/motionVariants";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
-// Story 3.1: Navigation with premium hover effects
+// Story 3.1: Navigation with premium hover effects + i18n
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation('common');
+  const { lang } = useParams<{ lang: string }>();
+  const currentLang = lang || 'pt';
 
   const menuItems = [
-    { label: "WORK", href: "/#work" },
-    { label: "STUDIO", href: "/studio" },
-    { label: "JOURNAL", href: "/journal" },
-    { label: "CONTACT", href: "/contact" },
+    { label: t('nav.work'), href: `/${currentLang}/#work` },
+    { label: t('nav.studio'), href: `/${currentLang}/studio` },
+    { label: t('nav.journal'), href: `/${currentLang}/journal` },
+    { label: t('nav.contact'), href: `/${currentLang}/contato` },
   ];
 
   return (
@@ -19,19 +25,19 @@ const Navigation = () => {
       <div className="brutal-container max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo - magnetic hover effect */}
-          <motion.a
-            href="/"
-            className="flex items-center"
+          <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", damping: 20, stiffness: 400 }}
           >
-            <img
-              src="/logo-aitelier.png"
-              alt="AI.TELIER"
-              className="h-12 w-auto"
-            />
-          </motion.a>
+            <Link to={`/${currentLang}/`} className="flex items-center">
+              <img
+                src="/logo-aitelier.png"
+                alt="AI.TELIER"
+                className="h-12 w-auto"
+              />
+            </Link>
+          </motion.div>
 
           {/* Desktop menu - Story 3.1: Premium nav hovers */}
           <motion.div
@@ -43,6 +49,10 @@ const Navigation = () => {
             {menuItems.map((item, index) => (
               <NavLink key={item.label} item={item} index={index} />
             ))}
+
+            {/* Language Toggle */}
+            <LanguageToggle className="ml-4" />
+
             <motion.div
               className="code-text text-xs opacity-50"
               initial={{ opacity: 0 }}
@@ -116,6 +126,15 @@ const Navigation = () => {
                     {item.label}
                   </motion.a>
                 ))}
+
+                {/* Mobile Language Toggle */}
+                <motion.div
+                  className="pt-4 px-2 border-t border-concrete-border/50 mt-4"
+                  variants={fadeInUpSimple}
+                >
+                  <LanguageToggle />
+                </motion.div>
+
                 <motion.div
                   className="code-text text-xs opacity-50 pt-4 px-2"
                   variants={fadeInUpSimple}

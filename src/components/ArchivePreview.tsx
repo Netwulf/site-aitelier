@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { SectionContainer } from "./SectionContainer";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { getFeaturedImages } from "@/data/galleryData";
@@ -9,15 +10,16 @@ const featuredImages = getFeaturedImages();
 
 export const ArchivePreview = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('home');
 
   return (
     <SectionContainer number={4}>
       <div className="flex justify-between items-end mb-8">
         <div>
           <h2 className="font-mono-v2 text-sm tracking-widest text-text-muted mb-2">
-            GALERIA
+            {t('archive.title')}
           </h2>
-          <p className="text-lg text-text-secondary">Obras, Cinema e Imagem</p>
+          <p className="text-lg text-text-secondary">{t('archive.subtitle')}</p>
         </div>
         <Link
           to="/galeria"
@@ -25,7 +27,7 @@ export const ArchivePreview = () => {
           className="text-base text-ancestral-amber hover:text-ancestral-white
                       transition-colors font-mono-v2"
         >
-          [Ver Galeria] →
+          {t('archive.cta')}
         </Link>
       </div>
 

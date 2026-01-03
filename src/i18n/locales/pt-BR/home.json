@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "brand": "AI.TELIER",
+    "title": "Escola de <1>arte</1> para a era da IA.",
+    "titlePlain": "Escola de arte para a era da IA.",
+    "subtitle": "Onde Criadores de Mundos se Encontram.",
+    "tagline": "// O futuro é ancestral.",
+    "scroll": "SCROLL"
+  },
+  "rupture": {
+    "terminal": "> RUPTURE_ANALYSIS.exe",
+    "title": "Vivemos uma ruptura comparável à invenção da escrita.",
+    "paragraph1": "A IA automatiza o que era técnico.",
+    "paragraph2": "O que resta é o que sempre foi essencial:",
+    "essence": "visão, linguagem, presença, alma.",
+    "conclusion1": "Isso não se aprende em tutoriais.",
+    "conclusion2": "Se forma como",
+    "conclusion3": "Se organiza como",
+    "school": "escola",
+    "atelier": "atelier",
+    "manifesto": "Menos operadores.",
+    "manifestoHighlight": "Mais autores.",
+    "codeComment": "// CONSCIOUSNESS_SHIFT_DETECTED"
+  },
+  "triptych": {
+    "sectionCode": "O_ATELIER",
+    "sectionTitle": "Torne o inconsciente",
+    "sectionTitleHighlight": "consciente.",
+    "items": {
+      "escola": {
+        "title": "ESCOLA",
+        "tags": ["Cursos", "Laboratórios", "Formações"],
+        "description": "Formação de autores e One-Person Studios.",
+        "cta": "Entrar na Escola"
+      },
+      "studio": {
+        "title": "STUDIO",
+        "tags": ["Filmes", "Narrativas", "Presença"],
+        "description": "Direção criativa para founders e marcas pessoais.",
+        "cta": "Conversar com o Studio"
+      },
+      "playground": {
+        "title": "PLAYGROUND",
+        "tags": ["Obras", "Ferramentas", "Experimentos"],
+        "description": "Espaço público para experienciar, testar, imergir.",
+        "cta": "Explorar o Playground"
+      }
+    }
+  },
+  "manifesto": {
+    "quote1": "Onde pessoas viram autores.",
+    "quote2": "Onde ideias viram obras.",
+    "tagline": "Nem tudo que importa é visível —",
+    "taglineHighlight": " mas tudo pode ser criado."
+  },
+  "clones": {
+    "sectionCode": "UPLOADED_INTELLIGENCE",
+    "title": "Converse com <1>mentes</1> que mudaram o mundo",
+    "titlePlain": "Converse com mentes que mudaram o mundo",
+    "subtitle": "Clones cognitivos treinados com décadas de pensamento, filosofia e sabedoria.",
+    "subtitleHighlight": "Cada conversa é uma mentoria.",
+    "activeBadge": "ATIVO",
+    "comingSoonCount": "+{{count}} MENTES EM PREPARAÇÃO",
+    "comingSoonTitle": "Em breve no ai.telier",
+    "exploreCta": "Explorar todos os clones",
+    "minds": {
+      "david-lynch": {
+        "subtitle": "Master of Consciousness",
+        "description": "Cineasta visionário. Criador de Twin Peaks e Mulholland Drive."
+      },
+      "neil-gaiman": {
+        "subtitle": "Master Storyteller",
+        "description": "Mestre das histórias. Autor de Sandman e American Gods."
+      },
+      "ursula-le-guin": {
+        "subtitle": "Master of Worlds",
+        "description": "Mestra da ficção científica. Autora de Earthsea."
+      },
+      "tayna-puri": {
+        "subtitle": "Futuro Ancestral",
+        "description": "Pensador brasileiro. Criador da filosofia Futuro Ancestral."
+      }
+    }
+  },
+  "futuroAncestral": {
+    "terminal": "> FUTURO_ANCESTRAL.manifest",
+    "title": "FUTURO ANCESTRAL",
+    "line1": "Usamos tecnologia do futuro",
+    "line2": "para revelar verdades que sempre existiram.",
+    "ia": "IA",
+    "iaLine": "é nossa câmera.",
+    "storytelling": "Storytelling",
+    "storytellingLine": "é nosso roteiro.",
+    "you": "Você",
+    "youLine": "é a direção.",
+    "tool1": "A ferramenta serve ao humano",
+    "tool2": "de forma tão natural que parece ancestral.",
+    "comparison": "Como fogo. Como escrita. Como linguagem.",
+    "codeComment": "// ANCIENT_WISDOM_PROTOCOL_ACTIVE"
+  },
+  "entry": {
+    "terminal": "> ENTRY_GATE.awaiting",
+    "line1": "Nem todo mundo entra.",
+    "line2": "Nem toda obra precisa existir.",
+    "line3": "Mas se você chegou até aqui,",
+    "line4": "talvez seja hora de",
+    "talk": "conversar",
+    "cta": "[Entrar no ai.telier]",
+    "codeComment": "// GATEWAY_PROTOCOL_LISTENING"
+  },
+  "archive": {
+    "title": "GALERIA",
+    "subtitle": "Obras, Cinema e Imagem",
+    "cta": "[Ver Galeria] →"
+  },
+  "cta": {
+    "enter": "Entrar",
+    "explore": "Explorar",
+    "viewWork": "Ver trabalhos",
+    "learnMore": "Saiba mais"
+  }
+}

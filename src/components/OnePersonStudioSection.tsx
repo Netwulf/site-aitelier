@@ -81,39 +81,39 @@ export const OnePersonStudioSection = () => {
           whileInView={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="grid md:grid-cols-2 gap-8 mb-20"
+          className="grid md:grid-cols-2 gap-6 md:gap-8 mb-20"
         >
           {/* Before */}
-          <div className="p-8 border border-text-muted/20 bg-ancestral-black/50">
-            <div className="code-text text-xs text-text-muted mb-6">
-              // ANTES
+          <div className="p-8 md:p-10 border border-text-muted/30 bg-ancestral-black/50 rounded-sm">
+            <div className="font-mono-v2 text-sm text-text-muted mb-4 tracking-wider uppercase">
+              Antes
             </div>
-            <p className="text-lg text-text-secondary mb-6">
+            <p className="text-xl md:text-2xl text-ancestral-white font-medium mb-8">
               Você precisava de:
             </p>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {oldStack.map((item, i) => (
-                <div key={i} className="flex items-center gap-3 text-text-muted">
-                  <span className="text-red-500/60">→</span>
-                  <span className="line-through opacity-60">{item}</span>
+                <div key={i} className="flex items-center gap-4">
+                  <span className="text-text-muted text-lg">—</span>
+                  <span className="text-lg text-text-muted">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* After */}
-          <div className="p-8 border-2 border-matrix-green bg-matrix-green/5">
-            <div className="code-text text-xs text-matrix-green mb-6">
-              // AGORA
+          <div className="p-8 md:p-10 border-2 border-matrix-green bg-matrix-green/10 rounded-sm">
+            <div className="font-mono-v2 text-sm text-matrix-green mb-4 tracking-wider uppercase">
+              Agora
             </div>
-            <p className="text-lg text-ancestral-white mb-6">
+            <p className="text-xl md:text-2xl text-ancestral-white font-medium mb-8">
               Você precisa de:
             </p>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {newStack.map((item, i) => (
-                <div key={i} className="flex items-center gap-3 text-ancestral-white">
-                  <span className="text-matrix-green">→</span>
-                  <span className="font-medium">{item}</span>
+                <div key={i} className="flex items-center gap-4">
+                  <span className="text-matrix-green text-lg">→</span>
+                  <span className="text-lg text-ancestral-white font-medium">{item}</span>
                 </div>
               ))}
             </div>

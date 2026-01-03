@@ -1,0 +1,96 @@
+{
+  "title": "ARCHIVE",
+  "subtitle": "Visual memory",
+  "description": "Visual documentation of our creative journey with AI",
+  "categories": {
+    "all": "All",
+    "artes-visuais": "Visual Arts",
+    "historias": "Stories"
+  },
+  "filters": {
+    "year": "Year",
+    "category": "Category",
+    "all": "All"
+  },
+  "projects": {
+    "criancas-futuro": {
+      "title": "Children of the Future",
+      "type": "Afrofuturism - AI Art",
+      "date": "July 2023",
+      "location": "Midjourney",
+      "description": "Generative art project connected to a vast network of people focused on a regenerative and ancestral future. Children of all ethnicities with cyberpunk-ancestral aesthetics, where technology is deeply integrated with nature and cultural roots."
+    },
+    "velocidades": {
+      "title": "VeloCities",
+      "type": "Cyberpunk Urbanism",
+      "date": "May 2023",
+      "location": "São Paulo",
+      "description": "Nighttime São Paulo in its Brazilian cyberpunk essence. Graffiti-covered alleys, subway, nightlife, skaters and street musicians. The movement and rhythm of great cities captured in neon and shadows."
+    },
+    "raizes": {
+      "title": "Roots",
+      "type": "Artificial Dances",
+      "date": "April 2023",
+      "location": "Midjourney",
+      "description": "Dance, body movement, ancestry and performance. Bodies in expressive motion captured through photographic image studies with generative AI."
+    },
+    "egos": {
+      "title": "Egos",
+      "type": "Worlds and Portals",
+      "date": "August 2023",
+      "description": "Dimensional portals, futuristic cities and utopias where technology and nature coexist. The Dream World reveals its complexity from Neturnia, between magical fantasy and the horror of nightmares."
+    },
+    "aguas": {
+      "title": "Waters",
+      "type": "Sacred Element",
+      "date": "September 2023",
+      "location": "Midjourney",
+      "description": "The water element in its sacred form. Reflections, ancestral memory, bioluminescent waterfalls. The energetic vibration of water as a portal of healing and connection."
+    },
+    "criaturas": {
+      "title": "Creatures",
+      "type": "Fantastic Beings",
+      "date": "October 2023",
+      "description": "Alien beings, changelings and fantastic creatures from other worlds. Entities that inhabit the threshold between human and supernatural."
+    },
+    "guerreiras": {
+      "title": "Warriors",
+      "type": "Indigenous Women",
+      "date": "September 2023",
+      "location": "Indigenous Women's March",
+      "description": "Indigenous warrior women in all their strength and resistance. Art created in connection with the Indigenous Women's March - feminine ancestry in struggle."
+    },
+    "colagens": {
+      "title": "Ancestral Collages",
+      "type": "Fragmented Digital Art",
+      "date": "November 2023",
+      "location": "Midjourney",
+      "description": "Ancestral-futuristic fusion in digital collages. Fragments of past and future meet in compositions that connect ancestral symbols with contemporary aesthetics."
+    },
+    "tech-shaman": {
+      "title": "Tech Shaman",
+      "type": "Mystical Desert",
+      "date": "2024",
+      "location": "Midjourney",
+      "description": "The Tech Shaman visual universe. Mystical desert, futuristic sanctuaries, sacred geometry. Where ancient code meets future technology in landscapes of contemplation."
+    },
+    "origens": {
+      "title": "Origins",
+      "type": "First Experiments",
+      "date": "2022",
+      "location": "Midjourney / Stable Diffusion",
+      "description": "The first experiments with generative AI in 2022. Mythology, purple/green cyberpunk, exploration of possibilities. The beginning of a visual journey."
+    },
+    "futures": {
+      "title": "Futures",
+      "type": "Virtual Reality",
+      "date": "2024",
+      "location": "Midjourney",
+      "description": "Visions of tomorrow. Virtual reality, infinite cosmic libraries, immersive technology. Portals between worlds where knowledge floats like stars."
+    }
+  },
+  "stats": {
+    "projects": "{{count}} projects",
+    "images": "{{count}} images"
+  }
+}

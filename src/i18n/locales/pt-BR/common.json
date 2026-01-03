@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "work": "WORK",
+    "studio": "STUDIO",
+    "journal": "JOURNAL",
+    "contact": "CONTATO",
+    "atelier": "ATELIER",
+    "school": "ESCOLA",
+    "archive": "ARQUIVO"
+  },
+  "footer": {
+    "newsletter": "Newsletter",
+    "subscribe": "Inscrever",
+    "subscribePlaceholder": "seu@email.com",
+    "rights": "Todos os direitos reservados",
+    "contact": "Contato",
+    "followUs": "Siga-nos"
+  },
+  "buttons": {
+    "send": "Enviar",
+    "sending": "Enviando...",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "learnMore": "Saiba mais",
+    "viewAll": "Ver todos",
+    "explore": "Explorar"
+  },
+  "messages": {
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Ocorreu um erro. Tente novamente.",
+    "required": "Este campo é obrigatório",
+    "invalidEmail": "Email inválido",
+    "loading": "Carregando..."
+  },
+  "language": {
+    "switchTo": "Mudar para {{lang}}",
+    "current": "Idioma atual: {{lang}}",
+    "portuguese": "Português",
+    "english": "English"
+  }
+}

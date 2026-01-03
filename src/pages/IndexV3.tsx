@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { NavigationV2 } from "@/components/NavigationV2";
 import { HeroV2 } from "@/components/HeroV2";
 import { RuptureSection } from "@/components/RuptureSection";
@@ -22,33 +23,34 @@ import Partners from "@/components/Partners";
 import breatherThreshold from "@/assets/gallery/breather-threshold.png";
 import concreteVoid from "@/assets/gallery/concrete-void.png";
 
-const triptychItems = [
-  {
-    title: "ESCOLA",
-    tags: ["Cursos", "Laboratórios", "Formações"],
-    description: "Formação de autores e One-Person Studios.",
-    href: "/escola",
-    cta: "Entrar na Escola",
-  },
-  {
-    title: "STUDIO",
-    tags: ["Filmes", "Narrativas", "Presença"],
-    description: "Direção criativa para founders e marcas pessoais.",
-    href: "/studio",
-    cta: "Conversar com o Studio",
-  },
-  {
-    title: "PLAYGROUND",
-    tags: ["Obras", "Ferramentas", "Experimentos"],
-    description: "Espaço público para experienciar, testar, imergir.",
-    href: "/playground",
-    cta: "Explorar o Playground",
-  },
-];
-
 const IndexV3 = () => {
   useSmoothScroll();
   useScrollOptimization();
+  const { t } = useTranslation('home');
+
+  const triptychItems = [
+    {
+      title: t('triptych.items.escola.title'),
+      tags: t('triptych.items.escola.tags', { returnObjects: true }) as string[],
+      description: t('triptych.items.escola.description'),
+      href: "/escola",
+      cta: t('triptych.items.escola.cta'),
+    },
+    {
+      title: t('triptych.items.studio.title'),
+      tags: t('triptych.items.studio.tags', { returnObjects: true }) as string[],
+      description: t('triptych.items.studio.description'),
+      href: "/studio",
+      cta: t('triptych.items.studio.cta'),
+    },
+    {
+      title: t('triptych.items.playground.title'),
+      tags: t('triptych.items.playground.tags', { returnObjects: true }) as string[],
+      description: t('triptych.items.playground.description'),
+      href: "/playground",
+      cta: t('triptych.items.playground.cta'),
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-void-black cursor-brutal relative">
@@ -83,11 +85,11 @@ const IndexV3 = () => {
             {/* Section Header */}
             <div className="mb-16">
               <div className="flex items-center gap-4 mb-6">
-                <span className="code-text text-sm text-matrix-green">O_ATELIER</span>
+                <span className="code-text text-sm text-matrix-green">{t('triptych.sectionCode')}</span>
                 <div className="h-px bg-matrix-green/50 flex-1" />
               </div>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brutal-white leading-tight">
-                Torne o inconsciente <span className="text-matrix-green">consciente.</span>
+                {t('triptych.sectionTitle')} <span className="text-matrix-green">{t('triptych.sectionTitleHighlight')}</span>
               </h2>
             </div>
 

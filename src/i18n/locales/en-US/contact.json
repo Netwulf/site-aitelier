@@ -1,0 +1,42 @@
+{
+  "title": "CONTACT",
+  "subtitle": "Get in touch with us",
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "What is it about?",
+    "message": "Message",
+    "messagePlaceholder": "Your message...",
+    "submit": "Send",
+    "sending": "Sending..."
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email",
+    "messageRequired": "Message is required",
+    "messageTooShort": "Message too short"
+  },
+  "messages": {
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "error": "An error occurred while sending. Please try again."
+  },
+  "doors": {
+    "title": "Choose your entry",
+    "school": {
+      "title": "SCHOOL",
+      "description": "Interest in courses and training"
+    },
+    "studio": {
+      "title": "STUDIO",
+      "description": "Projects and collaborations"
+    },
+    "general": {
+      "title": "GENERAL",
+      "description": "Other conversations"
+    }
+  }
+}

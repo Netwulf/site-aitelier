@@ -1,246 +1,231 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Mail, Loader2, CheckCircle, ArrowRight } from "lucide-react";
+import { toast } from "sonner";
 import { NavigationV2 } from "@/components/NavigationV2";
 import { FooterV2 } from "@/components/FooterV2";
-import { SectionContainer } from "@/components/SectionContainer";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import {
-  staggerContainer,
-  staggerItem,
-} from "@/utils/motionVariantsV2";
 
-interface EntryDoor {
-  id: string;
-  title: string;
-  description: string;
-  cta: string;
-  href: string;
-  type: "link" | "form";
-}
+type ContactTopic = "studio" | "escola" | "newsletter" | null;
 
-const entryDoors: EntryDoor[] = [
+const topics = [
   {
-    id: "estudos",
-    title: "ESTUDOS",
-    description: "Quero aprender a linguagem",
-    cta: "Entrar na lista de espera",
-    href: "#estudos-form",
-    type: "form",
+    id: "studio" as const,
+    label: "Studio",
+    description: "Quero contratar direção criativa",
   },
   {
-    id: "studio",
-    title: "STUDIO",
-    description: "Quero trabalhar com vocês",
-    cta: "Iniciar conversa",
-    href: "#studio-form",
-    type: "form",
+    id: "escola" as const,
+    label: "Escola",
+    description: "Quero saber sobre cursos",
   },
   {
-    id: "conselheiros",
-    title: "CONSELHEIROS",
-    description: "Quero acessar as mentes",
-    cta: "Conhecer os conselheiros",
-    href: "/atelier#conselheiros",
-    type: "link",
-  },
-  {
-    id: "newsletter",
-    title: "APENAS ACOMPANHAR",
-    description: "Quero receber os ensaios",
-    cta: "Entrar para a newsletter",
-    href: "#newsletter-form",
-    type: "form",
+    id: "newsletter" as const,
+    label: "Newsletter",
+    description: "Quero acompanhar o ai.telier",
   },
 ];
-
-const EntryDoorCard = ({ door }: { door: EntryDoor }) => {
-  const prefersReducedMotion = useReducedMotion();
-
-  const handleClick = () => {
-    if (door.type === "form") {
-      document.querySelector(door.href)?.scrollIntoView({
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-      });
-    }
-  };
-
-  return (
-    <motion.div
-      variants={prefersReducedMotion ? {} : staggerItem}
-      className="p-8 border border-[#666666]/20
-                 hover:border-[#666666]/40 transition-colors
-                 bg-stone-dark/30"
-    >
-      <h3 className="font-mono-v2 text-sm tracking-widest text-[#666666] mb-4">
-        {door.title}
-      </h3>
-
-      <p className="text-lg text-ancestral-white mb-6">{door.description}</p>
-
-      {door.type === "link" ? (
-        <Link
-          to={door.href}
-          className="inline-block text-sm font-mono-v2 text-ancestral-amber
-                     hover:text-ancestral-white transition-colors"
-        >
-          [{door.cta}] →
-        </Link>
-      ) : (
-        <button
-          onClick={handleClick}
-          className="text-sm font-mono-v2 text-ancestral-amber
-                     hover:text-ancestral-white transition-colors"
-        >
-          [{door.cta}]
-        </button>
-      )}
-    </motion.div>
-  );
-};
 
 const ContactV2 = () => {
   useSmoothScroll();
   const prefersReducedMotion = useReducedMotion();
 
+  const [selectedTopic, setSelectedTopic] = useState<ContactTopic>(null);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!selectedTopic) {
+      toast.error("Selecione um assunto");
+      return;
+    }
+
+    if (!email) {
+      toast.error("Preencha seu email");
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      // TODO: Integrate with backend/email service
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setIsSuccess(true);
+      toast.success("Mensagem enviada!");
+    } catch (error) {
+      toast.error("Erro ao enviar. Tente novamente.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const resetForm = () => {
+    setSelectedTopic(null);
+    setEmail("");
+    setMessage("");
+    setIsSuccess(false);
+  };
+
   return (
     <div className="min-h-screen bg-ancestral-black">
       <NavigationV2 />
 
-      <main>
-        {/* Hero */}
-        <section className="pt-32 pb-8 px-6">
-          <div className="max-w-[1400px] mx-auto">
-            <motion.h1
+      <main className="pt-32 pb-24 px-6">
+        <div className="max-w-2xl mx-auto">
+          {/* Header */}
+          <motion.div
+            initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+            animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
+            className="mb-12"
+          >
+            <h1 className="font-display text-4xl md:text-5xl text-ancestral-white mb-4">
+              Fale com a gente
+            </h1>
+            <p className="text-lg text-text-muted">
+              Selecione o assunto e envie sua mensagem.
+            </p>
+          </motion.div>
+
+          {isSuccess ? (
+            /* Success State */
+            <motion.div
+              initial={prefersReducedMotion ? {} : { opacity: 0, scale: 0.95 }}
+              animate={prefersReducedMotion ? {} : { opacity: 1, scale: 1 }}
+              className="p-12 border border-matrix-green/30 bg-matrix-green/5 text-center"
+            >
+              <CheckCircle className="w-16 h-16 text-matrix-green mx-auto mb-6" />
+              <h3 className="text-2xl font-display text-ancestral-white mb-2">
+                Mensagem enviada
+              </h3>
+              <p className="text-text-muted mb-8">
+                Retornaremos em até 24 horas.
+              </p>
+              <button
+                onClick={resetForm}
+                className="font-mono-v2 text-sm text-matrix-green hover:text-ancestral-white transition-colors"
+              >
+                [Enviar outra mensagem]
+              </button>
+            </motion.div>
+          ) : (
+            /* Form */
+            <motion.form
               initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
               animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
-              className="font-display text-display-1 text-ancestral-white mb-8"
+              transition={{ delay: 0.1 }}
+              onSubmit={handleSubmit}
+              className="space-y-8"
             >
-              Entrar no ai.telier
-            </motion.h1>
+              {/* Topic Selection */}
+              <div>
+                <label className="font-mono-v2 text-xs text-text-muted mb-4 block tracking-wider">
+                  ASSUNTO
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {topics.map((topic) => (
+                    <button
+                      key={topic.id}
+                      type="button"
+                      onClick={() => setSelectedTopic(topic.id)}
+                      className={`p-4 border-2 text-left transition-all ${
+                        selectedTopic === topic.id
+                          ? "border-matrix-green bg-matrix-green/10"
+                          : "border-text-muted/20 hover:border-text-muted/40"
+                      }`}
+                    >
+                      <span
+                        className={`block font-medium mb-1 ${
+                          selectedTopic === topic.id
+                            ? "text-matrix-green"
+                            : "text-ancestral-white"
+                        }`}
+                      >
+                        {topic.label}
+                      </span>
+                      <span className="text-sm text-text-muted">
+                        {topic.description}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
 
-            <motion.div
-              initial={prefersReducedMotion ? {} : { opacity: 0 }}
-              animate={prefersReducedMotion ? {} : { opacity: 1 }}
-              transition={prefersReducedMotion ? {} : { delay: 0.2 }}
-              className="max-w-xl space-y-4 text-lg"
-            >
-              <p className="text-[#a0a0a0]">
-                AI.TELIER não é para todo mundo.
-                <br />E não deveria ser.
-              </p>
-              <p className="text-ancestral-white">
-                Se você chegou até aqui,
-                <br />
-                uma dessas portas pode fazer sentido:
-              </p>
-            </motion.div>
-          </div>
-        </section>
+              {/* Email */}
+              <div>
+                <label className="font-mono-v2 text-xs text-text-muted mb-2 block tracking-wider">
+                  SEU EMAIL
+                </label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isLoading}
+                  placeholder="seu@email.com"
+                  className="w-full px-4 py-4 bg-stone-dark border border-text-muted/20
+                           text-ancestral-white placeholder:text-text-muted/50
+                           focus:border-matrix-green focus:outline-none transition-colors
+                           disabled:opacity-50"
+                />
+              </div>
 
-        {/* Entry Doors */}
-        <SectionContainer>
-          <motion.div
-            variants={prefersReducedMotion ? {} : staggerContainer}
-            initial={prefersReducedMotion ? {} : "hidden"}
-            animate={prefersReducedMotion ? {} : "visible"}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl"
-          >
-            {entryDoors.map((door) => (
-              <EntryDoorCard key={door.id} door={door} />
-            ))}
-          </motion.div>
-        </SectionContainer>
+              {/* Message (optional) */}
+              <div>
+                <label className="font-mono-v2 text-xs text-text-muted mb-2 block tracking-wider">
+                  MENSAGEM <span className="text-text-muted/50">(opcional)</span>
+                </label>
+                <textarea
+                  rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  disabled={isLoading}
+                  placeholder="Conte um pouco sobre você..."
+                  className="w-full px-4 py-4 bg-stone-dark border border-text-muted/20
+                           text-ancestral-white placeholder:text-text-muted/50
+                           focus:border-matrix-green focus:outline-none transition-colors
+                           resize-none disabled:opacity-50"
+                />
+              </div>
 
-        {/* Forms */}
-        <SectionContainer>
-          {/* Studio Form */}
-          <div id="studio-form" className="py-16 border-t border-[#666666]/20">
-            <h3 className="font-mono-v2 text-sm text-[#666666] mb-8">STUDIO</h3>
-            <div className="max-w-xl space-y-6">
-              <p className="text-[#a0a0a0]">
-                Envie uma mensagem contando sobre você e seu projeto.
-              </p>
-              <a
-                href="mailto:studio@ai.telier?subject=Interesse%20no%20Studio"
-                className="inline-block px-6 py-3 border border-ancestral-white
-                         text-ancestral-white hover:bg-ancestral-white
-                         hover:text-ancestral-black transition-all
-                         font-mono-v2 text-sm"
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={isLoading || !selectedTopic || !email}
+                className="w-full px-8 py-4 bg-matrix-green text-ancestral-black font-bold
+                         uppercase tracking-wider flex items-center justify-center gap-3
+                         hover:bg-matrix-green/90 transition-all
+                         disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                [Enviar email]
-              </a>
-            </div>
-          </div>
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    Enviar mensagem
+                    <ArrowRight className="w-5 h-5" />
+                  </>
+                )}
+              </button>
 
-          {/* Estudos Form */}
-          <div id="estudos-form" className="py-16 border-t border-[#666666]/20">
-            <h3 className="font-mono-v2 text-sm text-[#666666] mb-8">
-              ESTUDOS
-            </h3>
-            <div className="max-w-xl space-y-6">
-              <p className="text-[#a0a0a0]">
-                Entre na lista para ser avisado sobre próximas turmas.
+              {/* Direct email fallback */}
+              <p className="text-center text-sm text-text-muted">
+                Ou envie diretamente para{" "}
+                <a
+                  href="mailto:contato@aitelier.com.br"
+                  className="text-matrix-green hover:text-ancestral-white transition-colors"
+                >
+                  contato@aitelier.com.br
+                </a>
               </p>
-              <a
-                href="mailto:estudos@ai.telier?subject=Lista%20de%20Espera%20-%20Estudos"
-                className="inline-block px-6 py-3 border border-ancestral-white
-                         text-ancestral-white hover:bg-ancestral-white
-                         hover:text-ancestral-black transition-all
-                         font-mono-v2 text-sm"
-              >
-                [Entrar na lista]
-              </a>
-            </div>
-          </div>
-
-          {/* Newsletter Form */}
-          <div
-            id="newsletter-form"
-            className="py-16 border-t border-[#666666]/20"
-          >
-            <h3 className="font-mono-v2 text-sm text-[#666666] mb-8">
-              NEWSLETTER
-            </h3>
-            <div className="max-w-xl space-y-6">
-              <p className="text-[#a0a0a0]">
-                Receba ensaios e pensamentos do ai.telier.
-              </p>
-              <a
-                href="mailto:newsletter@ai.telier?subject=Inscrição%20na%20Newsletter"
-                className="inline-block px-6 py-3 border border-ancestral-white
-                         text-ancestral-white hover:bg-ancestral-white
-                         hover:text-ancestral-black transition-all
-                         font-mono-v2 text-sm"
-              >
-                [Assinar]
-              </a>
-            </div>
-          </div>
-        </SectionContainer>
-
-        {/* Contact Info */}
-        <SectionContainer className="py-16">
-          <div
-            className="flex flex-col md:flex-row gap-8 text-[#666666]
-                          font-mono-v2 text-sm"
-          >
-            <a
-              href="mailto:contato@ai.telier"
-              className="hover:text-ancestral-white transition-colors"
-            >
-              contato@ai.telier
-            </a>
-            <a
-              href="https://instagram.com/ai.telier"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-ancestral-white transition-colors"
-            >
-              @ai.telier
-            </a>
-          </div>
-        </SectionContainer>
+            </motion.form>
+          )}
+        </div>
       </main>
 
       <FooterV2 />

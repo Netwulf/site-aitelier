@@ -1,0 +1,45 @@
+{
+  "title": "ESCOLA",
+  "subtitle": "Formação em IA",
+  "tagline": "Desenvolva fluência em inteligência artificial",
+  "description": "Nossa escola não ensina a usar ferramentas. Ensina a pensar com elas. Cada curso é uma jornada de descoberta, onde você desenvolve sua própria linguagem criativa com IA.",
+  "fundamentos": {
+    "title": "FUNDAMENTOS",
+    "subtitle": "Vorkurs",
+    "description": "A base necessária para qualquer jornada com IA. Conceitos, mindset e primeiras práticas.",
+    "modules": {
+      "mod1": "Introdução ao pensamento computacional",
+      "mod2": "Prompt engineering essencial",
+      "mod3": "Fluxos de trabalho com IA",
+      "mod4": "Ética e limites"
+    }
+  },
+  "laboratorios": {
+    "title": "LABORATÓRIOS",
+    "subtitle": "Especialização",
+    "description": "Imersões práticas em áreas específicas. Escolha sua trilha.",
+    "tracks": {
+      "visual": {
+        "title": "Visual",
+        "description": "Imagem, vídeo e arte generativa"
+      },
+      "texto": {
+        "title": "Texto",
+        "description": "Escrita criativa e estratégica"
+      },
+      "audio": {
+        "title": "Áudio",
+        "description": "Música e design sonoro"
+      },
+      "codigo": {
+        "title": "Código",
+        "description": "Programação assistida por IA"
+      }
+    }
+  },
+  "cta": {
+    "exploreCourses": "Explorar cursos",
+    "joinWaitlist": "Entrar na lista de espera",
+    "learnMore": "Saiba mais"
+  }
+}

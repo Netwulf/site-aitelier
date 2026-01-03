@@ -1,0 +1,45 @@
+{
+  "title": "SCHOOL",
+  "subtitle": "AI Formation",
+  "tagline": "Develop fluency in artificial intelligence",
+  "description": "Our school doesn't teach how to use tools. It teaches how to think with them. Each course is a journey of discovery, where you develop your own creative language with AI.",
+  "fundamentos": {
+    "title": "FUNDAMENTALS",
+    "subtitle": "Vorkurs",
+    "description": "The necessary foundation for any journey with AI. Concepts, mindset, and first practices.",
+    "modules": {
+      "mod1": "Introduction to computational thinking",
+      "mod2": "Essential prompt engineering",
+      "mod3": "AI workflows",
+      "mod4": "Ethics and boundaries"
+    }
+  },
+  "laboratorios": {
+    "title": "LABORATORIES",
+    "subtitle": "Specialization",
+    "description": "Practical immersions in specific areas. Choose your track.",
+    "tracks": {
+      "visual": {
+        "title": "Visual",
+        "description": "Image, video, and generative art"
+      },
+      "texto": {
+        "title": "Text",
+        "description": "Creative and strategic writing"
+      },
+      "audio": {
+        "title": "Audio",
+        "description": "Music and sound design"
+      },
+      "codigo": {
+        "title": "Code",
+        "description": "AI-assisted programming"
+      }
+    }
+  },
+  "cta": {
+    "exploreCourses": "Explore courses",
+    "joinWaitlist": "Join waitlist",
+    "learnMore": "Learn more"
+  }
+}

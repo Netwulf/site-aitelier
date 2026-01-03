@@ -1,0 +1,32 @@
+{
+  "title": "STUDIO",
+  "subtitle": "Produção audiovisual",
+  "tagline": "Onde humanos e IA co-criam",
+  "description": "O Studio é nosso laboratório de criação audiovisual. Aqui, desenvolvemos projetos que exploram as fronteiras entre tecnologia e arte, usando IA como parceira criativa.",
+  "process": {
+    "title": "PROCESSO",
+    "step1": {
+      "title": "Concepção",
+      "description": "Ideação colaborativa entre humanos e IA"
+    },
+    "step2": {
+      "title": "Criação",
+      "description": "Produção com ferramentas de IA generativa"
+    },
+    "step3": {
+      "title": "Refinamento",
+      "description": "Curadoria e direção artística humana"
+    }
+  },
+  "services": {
+    "title": "O QUE FAZEMOS",
+    "item1": "Vídeos e animações com IA",
+    "item2": "Fotografia computacional",
+    "item3": "Experiências imersivas",
+    "item4": "Instalações artísticas"
+  },
+  "cta": {
+    "viewWork": "Ver trabalhos",
+    "startProject": "Iniciar projeto"
+  }
+}

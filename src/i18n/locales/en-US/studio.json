@@ -1,0 +1,32 @@
+{
+  "title": "STUDIO",
+  "subtitle": "Audiovisual production",
+  "tagline": "Where humans and AI co-create",
+  "description": "The Studio is our audiovisual creation laboratory. Here, we develop projects that explore the boundaries between technology and art, using AI as a creative partner.",
+  "process": {
+    "title": "PROCESS",
+    "step1": {
+      "title": "Conception",
+      "description": "Collaborative ideation between humans and AI"
+    },
+    "step2": {
+      "title": "Creation",
+      "description": "Production with generative AI tools"
+    },
+    "step3": {
+      "title": "Refinement",
+      "description": "Human artistic direction and curation"
+    }
+  },
+  "services": {
+    "title": "WHAT WE DO",
+    "item1": "AI-powered videos and animations",
+    "item2": "Computational photography",
+    "item3": "Immersive experiences",
+    "item4": "Artistic installations"
+  },
+  "cta": {
+    "viewWork": "View work",
+    "startProject": "Start project"
+  }
+}

@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
-
-const navItems = [
-  { label: "ai.telier", href: "/atelier" },
-  { label: "Escola", href: "/escola" },
-  { label: "Studio", href: "/studio" },
-  { label: "Playground", href: "/playground" },
-];
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 export const NavigationV2 = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation('common');
+  const { lang } = useParams<{ lang: string }>();
+  const currentLang = lang || 'pt';
+
+  const navItems = [
+    { label: "ai.telier", href: `/${currentLang}/atelier` },
+    { label: currentLang === 'en' ? "School" : "Escola", href: `/${currentLang}/${currentLang === 'en' ? 'school' : 'escola'}` },
+    { label: "Studio", href: `/${currentLang}/studio` },
+    { label: "Playground", href: `/${currentLang}/playground` },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 100);
@@ -32,7 +37,7 @@ export const NavigationV2 = () => {
         className="max-w-[1400px] mx-auto px-6 py-4
                       flex justify-between items-center"
       >
-        <Link to="/" className="flex items-center gap-2">
+        <Link to={`/${currentLang}/`} className="flex items-center gap-2">
           <img
             src="/logo-aitelier.png"
             alt="AI.TELIER"
@@ -51,6 +56,9 @@ export const NavigationV2 = () => {
               {item.label}
             </Link>
           ))}
+
+          {/* Language Toggle */}
+          <LanguageToggle className="ml-4" />
         </div>
 
         {/* Mobile menu button */}
@@ -59,7 +67,7 @@ export const NavigationV2 = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <span className="font-mono-v2 text-sm">
-            {mobileMenuOpen ? "[Fechar]" : "[Menu]"}
+            {mobileMenuOpen ? "[X]" : "[Menu]"}
           </span>
         </button>
       </nav>
@@ -79,6 +87,11 @@ export const NavigationV2 = () => {
                 {item.label}
               </Link>
             ))}
+
+            {/* Mobile Language Toggle */}
+            <div className="pt-4 border-t border-text-muted/10">
+              <LanguageToggle />
+            </div>
           </div>
         </div>
       )}

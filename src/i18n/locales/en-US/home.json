@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "brand": "AI.TELIER",
+    "title": "Art <1>school</1> for the AI era.",
+    "titlePlain": "Art school for the AI era.",
+    "subtitle": "Where World Creators Meet.",
+    "tagline": "// The future is ancestral.",
+    "scroll": "SCROLL"
+  },
+  "rupture": {
+    "terminal": "> RUPTURE_ANALYSIS.exe",
+    "title": "We are living a rupture comparable to the invention of writing.",
+    "paragraph1": "AI automates what was technical.",
+    "paragraph2": "What remains is what has always been essential:",
+    "essence": "vision, language, presence, soul.",
+    "conclusion1": "This is not learned in tutorials.",
+    "conclusion2": "It is formed as a",
+    "conclusion3": "It is organized as an",
+    "school": "school",
+    "atelier": "atelier",
+    "manifesto": "Fewer operators.",
+    "manifestoHighlight": "More authors.",
+    "codeComment": "// CONSCIOUSNESS_SHIFT_DETECTED"
+  },
+  "triptych": {
+    "sectionCode": "THE_ATELIER",
+    "sectionTitle": "Make the unconscious",
+    "sectionTitleHighlight": "conscious.",
+    "items": {
+      "escola": {
+        "title": "SCHOOL",
+        "tags": ["Courses", "Labs", "Programs"],
+        "description": "Training authors and One-Person Studios.",
+        "cta": "Enter the School"
+      },
+      "studio": {
+        "title": "STUDIO",
+        "tags": ["Films", "Narratives", "Presence"],
+        "description": "Creative direction for founders and personal brands.",
+        "cta": "Talk to the Studio"
+      },
+      "playground": {
+        "title": "PLAYGROUND",
+        "tags": ["Works", "Tools", "Experiments"],
+        "description": "Public space to experience, test, immerse.",
+        "cta": "Explore the Playground"
+      }
+    }
+  },
+  "manifesto": {
+    "quote1": "Where people become authors.",
+    "quote2": "Where ideas become works.",
+    "tagline": "Not everything that matters is visible —",
+    "taglineHighlight": " but everything can be created."
+  },
+  "clones": {
+    "sectionCode": "UPLOADED_INTELLIGENCE",
+    "title": "Talk to <1>minds</1> that changed the world",
+    "titlePlain": "Talk to minds that changed the world",
+    "subtitle": "Cognitive clones trained with decades of thought, philosophy and wisdom.",
+    "subtitleHighlight": "Every conversation is a mentorship.",
+    "activeBadge": "ACTIVE",
+    "comingSoonCount": "+{{count}} MINDS IN PREPARATION",
+    "comingSoonTitle": "Coming soon to ai.telier",
+    "exploreCta": "Explore all clones",
+    "minds": {
+      "david-lynch": {
+        "subtitle": "Master of Consciousness",
+        "description": "Visionary filmmaker. Creator of Twin Peaks and Mulholland Drive."
+      },
+      "neil-gaiman": {
+        "subtitle": "Master Storyteller",
+        "description": "Master of stories. Author of Sandman and American Gods."
+      },
+      "ursula-le-guin": {
+        "subtitle": "Master of Worlds",
+        "description": "Master of science fiction. Author of Earthsea."
+      },
+      "tayna-puri": {
+        "subtitle": "Ancestral Future",
+        "description": "Brazilian thinker. Creator of the Ancestral Future philosophy."
+      }
+    }
+  },
+  "futuroAncestral": {
+    "terminal": "> FUTURO_ANCESTRAL.manifest",
+    "title": "ANCESTRAL FUTURE",
+    "line1": "We use technology from the future",
+    "line2": "to reveal truths that have always existed.",
+    "ia": "AI",
+    "iaLine": "is our camera.",
+    "storytelling": "Storytelling",
+    "storytellingLine": "is our script.",
+    "you": "You",
+    "youLine": "are the direction.",
+    "tool1": "The tool serves the human",
+    "tool2": "so naturally it feels ancestral.",
+    "comparison": "Like fire. Like writing. Like language.",
+    "codeComment": "// ANCIENT_WISDOM_PROTOCOL_ACTIVE"
+  },
+  "entry": {
+    "terminal": "> ENTRY_GATE.awaiting",
+    "line1": "Not everyone enters.",
+    "line2": "Not every work needs to exist.",
+    "line3": "But if you've come this far,",
+    "line4": "perhaps it's time to",
+    "talk": "talk",
+    "cta": "[Enter ai.telier]",
+    "codeComment": "// GATEWAY_PROTOCOL_LISTENING"
+  },
+  "archive": {
+    "title": "GALLERY",
+    "subtitle": "Works, Cinema and Image",
+    "cta": "[View Gallery] →"
+  },
+  "cta": {
+    "enter": "Enter",
+    "explore": "Explore",
+    "viewWork": "View work",
+    "learnMore": "Learn more"
+  }
+}

@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { SectionContainer } from "./SectionContainer";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export const FuturoAncestralSection = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('home');
 
   return (
     <section className="py-section bg-stone-dark relative">
@@ -20,14 +22,14 @@ export const FuturoAncestralSection = () => {
         >
           {/* Terminal header */}
           <div className="code-text text-xs mb-4 terminal-flicker text-matrix-green">
-            &gt; FUTURO_ANCESTRAL.manifest
+            {t('futuroAncestral.terminal')}
           </div>
 
           <h2
             className="font-mono-v2 text-sm tracking-widest
                         text-tech-olive mb-12"
           >
-            FUTURO ANCESTRAL
+            {t('futuroAncestral.title')}
           </h2>
 
           <div className="w-24 h-px bg-matrix-green mx-auto mb-12" />
@@ -37,37 +39,37 @@ export const FuturoAncestralSection = () => {
               className="text-2xl md:text-3xl font-display text-ancestral-white
                           leading-relaxed"
             >
-              Usamos tecnologia do futuro
+              {t('futuroAncestral.line1')}
               <br />
-              para revelar verdades que sempre existiram.
+              {t('futuroAncestral.line2')}
             </p>
 
             <div className="py-8 border-y border-matrix-green/20 brutal-container">
               <p className="text-lg text-text-secondary leading-loose">
-                <span className="code-text text-matrix-green">IA</span> é nossa câmera.
+                <span className="code-text text-matrix-green">{t('futuroAncestral.ia')}</span> {t('futuroAncestral.iaLine')}
                 <br />
-                <span className="code-text text-matrix-green">Storytelling</span> é nosso roteiro.
+                <span className="code-text text-matrix-green">{t('futuroAncestral.storytelling')}</span> {t('futuroAncestral.storytellingLine')}
                 <br />
-                <span className="code-text text-ancestral-white">Você</span> é a direção.
+                <span className="code-text text-ancestral-white">{t('futuroAncestral.you')}</span> {t('futuroAncestral.youLine')}
               </p>
             </div>
 
             <p className="text-xl text-ancestral-white leading-relaxed">
-              A ferramenta serve ao humano
+              {t('futuroAncestral.tool1')}
               <br />
-              de forma tão natural que parece ancestral.
+              {t('futuroAncestral.tool2')}
             </p>
 
             <div className="w-32 h-px bg-matrix-green mx-auto my-8" />
 
             <p className="text-lg text-tech-olive font-display">
-              Como fogo. Como escrita. Como linguagem.
+              {t('futuroAncestral.comparison')}
             </p>
           </div>
 
           {/* Code annotation */}
           <div className="mt-12 code-text text-xs text-matrix-green/30">
-            // ANCIENT_WISDOM_PROTOCOL_ACTIVE
+            {t('futuroAncestral.codeComment')}
           </div>
         </motion.div>
       </SectionContainer>

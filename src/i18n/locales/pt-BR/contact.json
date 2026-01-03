@@ -1,0 +1,42 @@
+{
+  "title": "CONTATO",
+  "subtitle": "Entre em contato conosco",
+  "form": {
+    "name": "Nome",
+    "namePlaceholder": "Seu nome",
+    "email": "Email",
+    "emailPlaceholder": "seu@email.com",
+    "subject": "Assunto",
+    "subjectPlaceholder": "Do que se trata?",
+    "message": "Mensagem",
+    "messagePlaceholder": "Sua mensagem...",
+    "submit": "Enviar",
+    "sending": "Enviando..."
+  },
+  "validation": {
+    "nameRequired": "Nome é obrigatório",
+    "emailRequired": "Email é obrigatório",
+    "emailInvalid": "Email inválido",
+    "messageRequired": "Mensagem é obrigatória",
+    "messageTooShort": "Mensagem muito curta"
+  },
+  "messages": {
+    "success": "Mensagem enviada com sucesso! Retornaremos em breve.",
+    "error": "Ocorreu um erro ao enviar. Tente novamente."
+  },
+  "doors": {
+    "title": "Escolha sua entrada",
+    "school": {
+      "title": "ESCOLA",
+      "description": "Interesse em cursos e formações"
+    },
+    "studio": {
+      "title": "STUDIO",
+      "description": "Projetos e colaborações"
+    },
+    "general": {
+      "title": "GERAL",
+      "description": "Outras conversas"
+    }
+  }
+}

@@ -1,5 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export const FooterV2 = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation('footer');
 
   return (
     <footer className="py-12 px-6 border-t border-text-muted/20">
@@ -36,24 +39,24 @@ export const FooterV2 = () => {
           </div>
 
           {/* Copyright */}
-          <div className="text-text-muted/60">© {currentYear}</div>
+          <div className="text-text-muted/60">{t('copyright', { year: currentYear })}</div>
         </div>
 
         {/* Bases */}
         <div className="mt-8 pt-6 border-t border-text-muted/10">
           <p className="text-xs text-text-muted/50 font-mono-v2 text-center mb-2">
-            PRESENÇA
+            {t('presence.title')}
           </p>
           <p className="text-sm text-text-muted/70 text-center">
-            Florianópolis · Curitiba · São José dos Campos · Brasília
-            <span className="text-matrix-green/60 ml-2">e crescendo</span>
+            {t('presence.locations')}
+            <span className="text-matrix-green/60 ml-2">{t('presence.growing')}</span>
           </p>
         </div>
 
         {/* Tagline */}
         <div className="mt-6 text-center">
           <p className="text-xs text-text-muted/40 font-mono-v2 tracking-widest">
-            O FUTURO É ANCESTRAL
+            {t('tagline')}
           </p>
         </div>
       </div>

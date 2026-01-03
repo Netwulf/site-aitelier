@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { textReveal, staggerContainer } from "@/utils/motionVariants";
 
@@ -10,6 +11,7 @@ interface HeroV2Props {
 export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
   const [isVisible, setIsVisible] = useState(false);
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('home');
 
   useEffect(() => {
     setIsVisible(true);
@@ -64,7 +66,7 @@ export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
               animate={prefersReducedMotion ? {} : { opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              AI.TELIER
+              {t('hero.brand')}
             </motion.div>
 
             {/* Main Title - Glitch effect */}
@@ -73,14 +75,14 @@ export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
                 ? "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.9] tracking-tight text-ancestral-white"
                 : "glitch text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.9] tracking-tight text-ancestral-white"
               }
-              data-text="Escola de arte para a era da IA."
+              data-text={t('hero.titlePlain')}
               variants={prefersReducedMotion ? {} : textReveal}
               initial="hidden"
               animate="visible"
             >
-              Escola de <span className="text-tech-olive">arte</span>
+              {t('hero.titlePlain').split(/\s+/).slice(0, 2).join(' ')} <span className="text-tech-olive">{t('hero.titlePlain').split(/\s+/)[2]}</span>
               <br />
-              para a era da IA.
+              {t('hero.titlePlain').split(/\s+/).slice(3).join(' ')}
             </motion.h1>
 
             {/* Subtitle - poetic positioning */}
@@ -92,7 +94,7 @@ export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
               animate={prefersReducedMotion ? {} : { opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              Onde Criadores de Mundos se Encontram.
+              {t('hero.subtitle')}
             </motion.p>
 
             {/* Philosophy tagline */}
@@ -102,7 +104,7 @@ export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
               animate={prefersReducedMotion ? {} : { opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.2 }}
             >
-              // O futuro é ancestral.
+              {t('hero.tagline')}
             </motion.div>
           </div>
         </div>
@@ -123,7 +125,7 @@ export const HeroV2 = ({ variant = "A" }: HeroV2Props) => {
             }
             className="text-text-muted text-sm font-mono-v2 flex flex-col items-center gap-2"
           >
-            <span className="text-xs tracking-widest">SCROLL</span>
+            <span className="text-xs tracking-widest">{t('hero.scroll')}</span>
             <span>↓</span>
           </motion.div>
         </motion.div>

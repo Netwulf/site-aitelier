@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { SectionContainer } from "./SectionContainer";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export const RuptureSection = () => {
   const prefersReducedMotion = useReducedMotion();
+  const { t } = useTranslation('home');
 
   return (
     <SectionContainer number={1} className="bg-ancestral-black relative">
@@ -19,25 +21,25 @@ export const RuptureSection = () => {
       >
         {/* Terminal header */}
         <div className="code-text text-xs mb-6 terminal-flicker text-matrix-green">
-          &gt; RUPTURE_ANALYSIS.exe
+          {t('rupture.terminal')}
         </div>
 
         <p
           className="text-2xl md:text-3xl font-display text-ancestral-white
                       leading-relaxed mb-8"
         >
-          Vivemos uma ruptura comparável à invenção da escrita.
+          {t('rupture.title')}
         </p>
 
         <div className="w-24 h-px bg-matrix-green mb-8" />
 
         <div className="space-y-4 text-lg text-text-secondary leading-relaxed">
-          <p>A IA automatiza o que era técnico.</p>
+          <p>{t('rupture.paragraph1')}</p>
           <p>
-            O que resta é o que sempre foi essencial:
+            {t('rupture.paragraph2')}
             <br />
             <span className="text-ancestral-white">
-              visão, linguagem, presença, alma.
+              {t('rupture.essence')}
             </span>
           </p>
         </div>
@@ -46,23 +48,23 @@ export const RuptureSection = () => {
           className="mt-12 text-text-muted text-base border-l-2
                       border-matrix-green pl-4"
         >
-          Isso não se aprende em tutoriais.
+          {t('rupture.conclusion1')}
           <br />
-          Se forma como <span className="code-text text-matrix-green">escola</span>.
+          {t('rupture.conclusion2')} <span className="code-text text-matrix-green">{t('rupture.school')}</span>.
           <br />
-          Se organiza como <span className="code-text text-matrix-green">atelier</span>.
+          {t('rupture.conclusion3')} <span className="code-text text-matrix-green">{t('rupture.atelier')}</span>.
         </p>
 
         {/* Canonical phrase */}
         <div className="mt-12 pt-8 border-t border-matrix-green/20">
           <p className="text-xl md:text-2xl font-display text-ancestral-white">
-            Menos operadores. <span className="text-matrix-green">Mais autores.</span>
+            {t('rupture.manifesto')} <span className="text-matrix-green">{t('rupture.manifestoHighlight')}</span>
           </p>
         </div>
 
         {/* Code annotation */}
         <div className="mt-8 code-text text-xs text-matrix-green/40">
-          // CONSCIOUSNESS_SHIFT_DETECTED
+          {t('rupture.codeComment')}
         </div>
       </motion.div>
     </SectionContainer>
