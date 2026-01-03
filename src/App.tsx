@@ -68,6 +68,9 @@ const App = () => (
                   {/* Home */}
                   <Route index element={<IndexV3 />} />
 
+                  {/* Redirect atelier to home */}
+                  <Route path="atelier" element={<Navigate to="" replace />} />
+
                   {/* Main pages - PT routes */}
                   <Route path="escola" element={<Estudos />} />
                   <Route path="escola/cinema-sem-cameras" element={<CinemaSemCameras />} />
@@ -106,6 +109,7 @@ const App = () => (
                 </Route>
 
                 {/* Legacy routes without language prefix - redirect to PT */}
+                <Route path="/atelier" element={<Navigate to="/pt/" replace />} />
                 <Route path="/escola" element={<Navigate to="/pt/escola" replace />} />
                 <Route path="/escola/*" element={<Navigate to="/pt/escola" replace />} />
                 <Route path="/studio" element={<Navigate to="/pt/studio" replace />} />

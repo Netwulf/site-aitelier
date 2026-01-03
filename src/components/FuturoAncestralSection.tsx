@@ -35,75 +35,45 @@ export const FuturoAncestralSection = () => {
           <div className="w-24 h-px bg-matrix-green mx-auto mb-12" />
 
           <div className="space-y-8">
-            {/* Opening statement */}
-            <div className="space-y-2">
-              <p className="text-xl md:text-2xl text-text-secondary">
-                {t('futuroAncestral.intro')}
-              </p>
-              <p className="text-2xl md:text-3xl font-display text-ancestral-white">
-                {t('futuroAncestral.wetreat')}
-              </p>
-            </div>
+            <p
+              className="text-2xl md:text-3xl font-display text-ancestral-white
+                          leading-relaxed"
+            >
+              {t('futuroAncestral.line1')}
+              <br />
+              {t('futuroAncestral.line2')}
+            </p>
 
-            {/* Technology evolution - stacked */}
             <div className="py-8 border-y border-matrix-green/20 brutal-container">
-              <div className="space-y-3 text-lg text-text-secondary">
-                <p><span className="text-tech-olive">{t('futuroAncestral.fire')}</span></p>
-                <p><span className="text-tech-olive">{t('futuroAncestral.writing')}</span></p>
-                <p><span className="text-tech-olive">{t('futuroAncestral.language')}</span></p>
-              </div>
+              <p className="text-lg text-text-secondary leading-loose">
+                <span className="code-text text-matrix-green">{t('futuroAncestral.ia')}</span> {t('futuroAncestral.iaLine')}
+                <br />
+                <span className="code-text text-matrix-green">{t('futuroAncestral.storytelling')}</span> {t('futuroAncestral.storytellingLine')}
+                <br />
+                <span className="code-text text-ancestral-white">{t('futuroAncestral.you')}</span> {t('futuroAncestral.youLine')}
+              </p>
             </div>
 
-            {/* Natural integration */}
             <p className="text-xl text-ancestral-white leading-relaxed">
-              {t('futuroAncestral.paragraph1')}
-            </p>
-
-            {/* AI prediction */}
-            <p className="text-2xl md:text-3xl font-display text-matrix-green">
-              {t('futuroAncestral.aiWill')}
-            </p>
-
-            <p className="text-lg text-text-secondary leading-relaxed">
-              {t('futuroAncestral.paragraph2')}
+              {t('futuroAncestral.tool1')}
+              <br />
+              {t('futuroAncestral.tool2')}
             </p>
 
             <div className="w-32 h-px bg-matrix-green mx-auto my-8" />
 
-            {/* Core message */}
-            <div className="space-y-2">
-              <p className="text-lg text-text-secondary">
-                {t('futuroAncestral.notAbout')}
-              </p>
-              <p className="text-xl text-ancestral-white leading-relaxed">
-                {t('futuroAncestral.aboutHumans')}
-              </p>
-            </div>
-
-            <div className="w-16 h-px bg-ancestral-amber mx-auto my-8" />
-
-            {/* Therefore */}
-            <p className="text-lg text-ancestral-amber font-display">
-              {t('futuroAncestral.therefore')} <span className="text-2xl">{t('futuroAncestral.title')}</span>
+            <p className="text-lg text-tech-olive font-display">
+              {t('futuroAncestral.comparison')}
             </p>
 
-            {/* Three pillars */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
-              <div className="text-center">
-                <p className="text-tech-olive font-mono-v2 text-sm tracking-widest">
-                  {t('futuroAncestral.techEdge')}
-                </p>
-              </div>
-              <div className="text-center">
-                <p className="text-ancestral-amber font-mono-v2 text-sm tracking-widest">
-                  {t('futuroAncestral.ancientWisdom')}
-                </p>
-              </div>
-              <div className="text-center">
-                <p className="text-ancestral-white font-mono-v2 text-sm tracking-widest">
-                  {t('futuroAncestral.humanEssence')}
-                </p>
-              </div>
+            {/* New closing statement */}
+            <div className="pt-8 mt-8 border-t border-ancestral-amber/20">
+              <p className="text-lg text-text-secondary">
+                {t('futuroAncestral.closing1')}
+              </p>
+              <p className="text-2xl md:text-3xl font-display text-ancestral-amber mt-2">
+                {t('futuroAncestral.closing2')}
+              </p>
             </div>
           </div>
 

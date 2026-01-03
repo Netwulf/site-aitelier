@@ -24,23 +24,22 @@ const cloneNames: Record<string, string> = {
   "tayna-puri": "Taynã Puri",
 };
 
-// Coming soon clones - 30+ minds being prepared
+// Coming soon clones - minds being prepared
 const comingSoonClones = [
   { name: "Leonardo da Vinci", initials: "LV" },
   { name: "Steve Jobs", initials: "SJ" },
   { name: "Walt Disney", initials: "WD" },
   { name: "Carl Jung", initials: "CJ" },
   { name: "Joseph Campbell", initials: "JC" },
-  { name: "Elon Musk", initials: "EM" },
+  { name: "Isaac Asimov", initials: "IA" },
+  { name: "Werner Herzog", initials: "WH" },
   { name: "Naval Ravikant", initials: "NR" },
-  { name: "Alan Watts", initials: "AW" },
   { name: "Nikola Tesla", initials: "NT" },
   { name: "Frida Kahlo", initials: "FK" },
   { name: "Stanley Kubrick", initials: "SK" },
   { name: "Marie Curie", initials: "MC" },
   { name: "Albert Einstein", initials: "AE" },
   { name: "Simone de Beauvoir", initials: "SB" },
-  { name: "Marcus Aurelius", initials: "MA" },
   { name: "Miyamoto Musashi", initials: "MM" },
   { name: "Virginia Woolf", initials: "VW" },
   { name: "Paulo Freire", initials: "PF" },
